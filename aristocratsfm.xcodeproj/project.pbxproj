@@ -1,0 +1,503 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16020DE1251E6D4700D8B062 /* aristocratsfmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16020DE0251E6D4700D8B062 /* aristocratsfmApp.swift */; };
+		16020DE3251E6D4700D8B062 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16020DE2251E6D4700D8B062 /* ContentView.swift */; };
+		16020DE5251E6D4700D8B062 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16020DE4251E6D4700D8B062 /* Assets.xcassets */; };
+		16020DE8251E6D4700D8B062 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16020DE7251E6D4700D8B062 /* Preview Assets.xcassets */; };
+		16020DF1251E6E8E00D8B062 /* TrackMetadataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16020DF0251E6E8E00D8B062 /* TrackMetadataView.swift */; };
+		1613B0BE2529FE070068B045 /* PlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613B0BD2529FE070068B045 /* PlaylistView.swift */; };
+		1613B0C1252A022C0068B045 /* PlaylistSingleTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613B0C0252A022C0068B045 /* PlaylistSingleTrack.swift */; };
+		1613B0C5252A0F7E0068B045 /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613B0C4252A0F7E0068B045 /* RoundedCornerView.swift */; };
+		1615AE932528EBD10026184B /* AristocratsBufferingAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 1615AE922528EBD10026184B /* AristocratsBufferingAnimation.json */; };
+		1615AE962528EC6D0026184B /* PlayIconLottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1615AE952528EC6D0026184B /* PlayIconLottieView.swift */; };
+		1615AEA1252910390026184B /* NowPlayingObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1615AEA0252910390026184B /* NowPlayingObservableObject.swift */; };
+		166200DD251F50470073EEE5 /* RadioControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166200DC251F50470073EEE5 /* RadioControlView.swift */; };
+		166200E0251F52210073EEE5 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166200DF251F52210073EEE5 /* PlayButton.swift */; };
+		166200E3251FAA410073EEE5 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166200E2251FAA410073EEE5 /* AppConstants.swift */; };
+		166200E6251FB4210073EEE5 /* AristocratsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166200E5251FB4210073EEE5 /* AristocratsMainView.swift */; };
+		167711892524FDD30011D6A6 /* PlayerObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167711882524FDD30011D6A6 /* PlayerObservableObject.swift */; };
+		16DA2092252E40B5006FA9B2 /* ArtistocratsTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA2091252E40B5006FA9B2 /* ArtistocratsTrack.swift */; };
+		16DA209B252E459B006FA9B2 /* StreamType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA209A252E459B006FA9B2 /* StreamType.swift */; };
+		16DA20BA252E557E006FA9B2 /* MusicBrainzAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA20B9252E557E006FA9B2 /* MusicBrainzAPIResponse.swift */; };
+		16DA20C1252E70C3006FA9B2 /* CoverArtAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA20C0252E70C3006FA9B2 /* CoverArtAPIResponse.swift */; };
+		66FCEF8AE8C5E7ADE782C965 /* Pods_aristocratsfm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0A38687F9B48F3310C1AD8 /* Pods_aristocratsfm.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		16020DDD251E6D4700D8B062 /* aristocratsfm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aristocratsfm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		16020DE0251E6D4700D8B062 /* aristocratsfmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aristocratsfmApp.swift; sourceTree = "<group>"; };
+		16020DE2251E6D4700D8B062 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		16020DE4251E6D4700D8B062 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		16020DE7251E6D4700D8B062 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		16020DE9251E6D4700D8B062 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16020DF0251E6E8E00D8B062 /* TrackMetadataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackMetadataView.swift; sourceTree = "<group>"; };
+		1613B0BD2529FE070068B045 /* PlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistView.swift; sourceTree = "<group>"; };
+		1613B0C0252A022C0068B045 /* PlaylistSingleTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistSingleTrack.swift; sourceTree = "<group>"; };
+		1613B0C4252A0F7E0068B045 /* RoundedCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
+		1615AE922528EBD10026184B /* AristocratsBufferingAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AristocratsBufferingAnimation.json; sourceTree = "<group>"; };
+		1615AE952528EC6D0026184B /* PlayIconLottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayIconLottieView.swift; sourceTree = "<group>"; };
+		1615AEA0252910390026184B /* NowPlayingObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingObservableObject.swift; sourceTree = "<group>"; };
+		166200DC251F50470073EEE5 /* RadioControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioControlView.swift; sourceTree = "<group>"; };
+		166200DF251F52210073EEE5 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
+		166200E2251FAA410073EEE5 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		166200E5251FB4210073EEE5 /* AristocratsMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AristocratsMainView.swift; sourceTree = "<group>"; };
+		167711882524FDD30011D6A6 /* PlayerObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerObservableObject.swift; sourceTree = "<group>"; };
+		1677119A2525082F0011D6A6 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		16DA2089252E3839006FA9B2 /* TestPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = TestPlayground.playground; path = "../../../Library/Autosave Information/TestPlayground.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		16DA2091252E40B5006FA9B2 /* ArtistocratsTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistocratsTrack.swift; sourceTree = "<group>"; };
+		16DA209A252E459B006FA9B2 /* StreamType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamType.swift; sourceTree = "<group>"; };
+		16DA20B9252E557E006FA9B2 /* MusicBrainzAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicBrainzAPIResponse.swift; sourceTree = "<group>"; };
+		16DA20C0252E70C3006FA9B2 /* CoverArtAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverArtAPIResponse.swift; sourceTree = "<group>"; };
+		4C88BD31FCC6DF9D5D7A7346 /* Pods-aristocratsfm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aristocratsfm.release.xcconfig"; path = "Target Support Files/Pods-aristocratsfm/Pods-aristocratsfm.release.xcconfig"; sourceTree = "<group>"; };
+		52FA9DA3C0E8544254434888 /* Pods-aristocratsfm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aristocratsfm.debug.xcconfig"; path = "Target Support Files/Pods-aristocratsfm/Pods-aristocratsfm.debug.xcconfig"; sourceTree = "<group>"; };
+		8B0A38687F9B48F3310C1AD8 /* Pods_aristocratsfm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aristocratsfm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		16020DDA251E6D4700D8B062 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66FCEF8AE8C5E7ADE782C965 /* Pods_aristocratsfm.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		16020DD4251E6D4700D8B062 = {
+			isa = PBXGroup;
+			children = (
+				16DA2089252E3839006FA9B2 /* TestPlayground.playground */,
+				16020DDF251E6D4700D8B062 /* aristocratsfm */,
+				16020DDE251E6D4700D8B062 /* Products */,
+				AD83E4CA77C234AD29FD2DCF /* Pods */,
+				98D3BA43ACA3CA0402EAF409 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		16020DDE251E6D4700D8B062 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				16020DDD251E6D4700D8B062 /* aristocratsfm.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		16020DDF251E6D4700D8B062 /* aristocratsfm */ = {
+			isa = PBXGroup;
+			children = (
+				1613B0C3252A0F6B0068B045 /* Helpers */,
+				1615AE912528EBBD0026184B /* Resources */,
+				16A0CCCF25250C1B0092C693 /* View */,
+				167711872524FDAC0011D6A6 /* Models */,
+				16020DE0251E6D4700D8B062 /* aristocratsfmApp.swift */,
+				16020DE2251E6D4700D8B062 /* ContentView.swift */,
+				16020DE4251E6D4700D8B062 /* Assets.xcassets */,
+				16020DE9251E6D4700D8B062 /* Info.plist */,
+				16020DE6251E6D4700D8B062 /* Preview Content */,
+				166200E2251FAA410073EEE5 /* AppConstants.swift */,
+			);
+			path = aristocratsfm;
+			sourceTree = "<group>";
+		};
+		16020DE6251E6D4700D8B062 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				16020DE7251E6D4700D8B062 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1613B0C3252A0F6B0068B045 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1613B0C4252A0F7E0068B045 /* RoundedCornerView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1615AE912528EBBD0026184B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1615AE922528EBD10026184B /* AristocratsBufferingAnimation.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		167711872524FDAC0011D6A6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				167711882524FDD30011D6A6 /* PlayerObservableObject.swift */,
+				1615AEA0252910390026184B /* NowPlayingObservableObject.swift */,
+				16DA2091252E40B5006FA9B2 /* ArtistocratsTrack.swift */,
+				16DA209A252E459B006FA9B2 /* StreamType.swift */,
+				16DA20B9252E557E006FA9B2 /* MusicBrainzAPIResponse.swift */,
+				16DA20C0252E70C3006FA9B2 /* CoverArtAPIResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		16A0CCCF25250C1B0092C693 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1613B0BD2529FE070068B045 /* PlaylistView.swift */,
+				1613B0C0252A022C0068B045 /* PlaylistSingleTrack.swift */,
+				1615AE952528EC6D0026184B /* PlayIconLottieView.swift */,
+				16020DF0251E6E8E00D8B062 /* TrackMetadataView.swift */,
+				166200DC251F50470073EEE5 /* RadioControlView.swift */,
+				166200DF251F52210073EEE5 /* PlayButton.swift */,
+				166200E5251FB4210073EEE5 /* AristocratsMainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		98D3BA43ACA3CA0402EAF409 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1677119A2525082F0011D6A6 /* Lottie.framework */,
+				8B0A38687F9B48F3310C1AD8 /* Pods_aristocratsfm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD83E4CA77C234AD29FD2DCF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				52FA9DA3C0E8544254434888 /* Pods-aristocratsfm.debug.xcconfig */,
+				4C88BD31FCC6DF9D5D7A7346 /* Pods-aristocratsfm.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		16020DDC251E6D4700D8B062 /* aristocratsfm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16020DEC251E6D4700D8B062 /* Build configuration list for PBXNativeTarget "aristocratsfm" */;
+			buildPhases = (
+				4272A7729F62EFB0B3B47918 /* [CP] Check Pods Manifest.lock */,
+				16020DD9251E6D4700D8B062 /* Sources */,
+				16020DDA251E6D4700D8B062 /* Frameworks */,
+				16020DDB251E6D4700D8B062 /* Resources */,
+				32DF65010FC40A9C0B011E9A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = aristocratsfm;
+			productName = aristocratsfm;
+			productReference = 16020DDD251E6D4700D8B062 /* aristocratsfm.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		16020DD5251E6D4700D8B062 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					16020DDC251E6D4700D8B062 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+				};
+			};
+			buildConfigurationList = 16020DD8251E6D4700D8B062 /* Build configuration list for PBXProject "aristocratsfm" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 16020DD4251E6D4700D8B062;
+			productRefGroup = 16020DDE251E6D4700D8B062 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				16020DDC251E6D4700D8B062 /* aristocratsfm */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		16020DDB251E6D4700D8B062 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1615AE932528EBD10026184B /* AristocratsBufferingAnimation.json in Resources */,
+				16020DE8251E6D4700D8B062 /* Preview Assets.xcassets in Resources */,
+				16020DE5251E6D4700D8B062 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		32DF65010FC40A9C0B011E9A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-aristocratsfm/Pods-aristocratsfm-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-aristocratsfm/Pods-aristocratsfm-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-aristocratsfm/Pods-aristocratsfm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4272A7729F62EFB0B3B47918 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-aristocratsfm-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		16020DD9251E6D4700D8B062 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				166200DD251F50470073EEE5 /* RadioControlView.swift in Sources */,
+				167711892524FDD30011D6A6 /* PlayerObservableObject.swift in Sources */,
+				1615AE962528EC6D0026184B /* PlayIconLottieView.swift in Sources */,
+				166200E3251FAA410073EEE5 /* AppConstants.swift in Sources */,
+				166200E6251FB4210073EEE5 /* AristocratsMainView.swift in Sources */,
+				1613B0C5252A0F7E0068B045 /* RoundedCornerView.swift in Sources */,
+				16DA209B252E459B006FA9B2 /* StreamType.swift in Sources */,
+				1613B0C1252A022C0068B045 /* PlaylistSingleTrack.swift in Sources */,
+				16DA20BA252E557E006FA9B2 /* MusicBrainzAPIResponse.swift in Sources */,
+				1613B0BE2529FE070068B045 /* PlaylistView.swift in Sources */,
+				166200E0251F52210073EEE5 /* PlayButton.swift in Sources */,
+				16020DE3251E6D4700D8B062 /* ContentView.swift in Sources */,
+				16020DF1251E6E8E00D8B062 /* TrackMetadataView.swift in Sources */,
+				1615AEA1252910390026184B /* NowPlayingObservableObject.swift in Sources */,
+				16DA2092252E40B5006FA9B2 /* ArtistocratsTrack.swift in Sources */,
+				16DA20C1252E70C3006FA9B2 /* CoverArtAPIResponse.swift in Sources */,
+				16020DE1251E6D4700D8B062 /* aristocratsfmApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		16020DEA251E6D4700D8B062 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		16020DEB251E6D4700D8B062 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		16020DED251E6D4700D8B062 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52FA9DA3C0E8544254434888 /* Pods-aristocratsfm.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"aristocratsfm/Preview Content\"";
+				DEVELOPMENT_TEAM = 4DJX9FMJKB;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = aristocratsfm/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vadimklimenko.aristocratsfm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		16020DEE251E6D4700D8B062 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C88BD31FCC6DF9D5D7A7346 /* Pods-aristocratsfm.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"aristocratsfm/Preview Content\"";
+				DEVELOPMENT_TEAM = 4DJX9FMJKB;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = aristocratsfm/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vadimklimenko.aristocratsfm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		16020DD8251E6D4700D8B062 /* Build configuration list for PBXProject "aristocratsfm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16020DEA251E6D4700D8B062 /* Debug */,
+				16020DEB251E6D4700D8B062 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16020DEC251E6D4700D8B062 /* Build configuration list for PBXNativeTarget "aristocratsfm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16020DED251E6D4700D8B062 /* Debug */,
+				16020DEE251E6D4700D8B062 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 16020DD5251E6D4700D8B062 /* Project object */;
+}
