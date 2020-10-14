@@ -88,7 +88,7 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
     
     func setNowPlayingTrack(currentTrack: NowPlayingTrack) {
         var nowPlayingInfo = [String : Any]()
-        nowPlayingInfo[MPMediaItemPropertyTitle] = currentTrack.title
+        nowPlayingInfo[MPMediaItemPropertyTitle] = currentTrack.song
         nowPlayingInfo[MPMediaItemPropertyArtist] = currentTrack.artist
         nowPlayingInfo[MPNowPlayingInfoPropertyIsLiveStream] = true
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo

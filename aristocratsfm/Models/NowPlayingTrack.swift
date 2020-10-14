@@ -9,6 +9,6 @@ import Foundation
 import Combine
 
 struct NowPlayingTrack: Equatable {
-    var title: String = "Аристократи"
-    var artist: String = " "
+    var artist: String = "Аристократи"
+    var song: String = " "
 }
