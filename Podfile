@@ -9,6 +9,5 @@ target 'aristocratsfm' do
   pod 'lottie-ios'
   pod "SwiftyXMLParser", :git => 'https://github.com/yahoojapan/SwiftyXMLParser.git'
   pod 'Alamofire', '~> 5.2'
-  pod 'ObjectMapper', '~> 3.5'
 
 end

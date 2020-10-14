@@ -11,7 +11,7 @@ import Combine
 struct TrackMetadataView: View {
     var artworkImage = Image("artwork-preview")
     var stream: String? = Streams.Main.Name
-    @ObservedObject var nowPlayingObservableObject: NowPlayingObservableObject = .shared
+//    @ObservedObject var nowPlayingObservableObject: NowPlayingObservableObject = .shared
 
     var body: some View {
         VStack(alignment: .center) {
@@ -27,18 +27,18 @@ struct TrackMetadataView: View {
                     y:2
                 )
 
-            Text(self.nowPlayingObservableObject.nowPlaying[Streams.Main.Name]!.title)
-                .font(Font.system(size: 20, weight: .medium, design: .default))
-                .foregroundColor(Design.Primary.DarkGray)
-                .padding(.top, 20)
-                .multilineTextAlignment(.center)
-
-            Text(self.nowPlayingObservableObject.nowPlaying[Streams.Main.Name]!.artist)
-                .font(Font.system(size: 17, weight: .light, design: .default))
-                .padding(.top, 11)
-                .foregroundColor(Design.Primary.LightGray)
-                .multilineTextAlignment(.center)
-        }.padding()
+//            Text(self.nowPlayingObservableObject.nowPlaying[Streams.Main.Name]!.title)
+//                .font(Font.system(size: 20, weight: .medium, design: .default))
+//       Text(self.nowPlayingObservableObject.nowPlaying[Streams.Main.Name]!.artist)
+            //                .font(Font.system(size: 17, weight: .light, design: .default))
+            //                .padding(.top, 11)
+            //                .foregroundColor(Design.Primary.LightGray)
+            //                .multilineTextAlignment(.center)
+                    }.padding()          .foregroundColor(Design.Primary.DarkGray)
+//                .padding(.top, 20)
+//                .multilineTextAlignment(.center)
+//
+//
     }
 }
 

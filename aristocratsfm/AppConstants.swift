@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 struct Design {
     struct Primary {
@@ -18,11 +19,11 @@ struct Design {
 }
 
 struct Streams {
-    static let Main = StreamType(Name: "Main", URI: "http://air.aristocrats.fm:8000/live2", NowPlayingTrackURI: "https://aristocrats.fm/service/nowplaying-aristocrats8.xml")
+    static let Main = StreamType(Name: "Main", URI: "http://air.aristocrats.fm:8000/live2", NowPlayingTrackURI: URL(string: "https://aristocrats.fm/service/nowplaying-aristocrats8.xml")!)
     
-    static let Music = StreamType(Name: "Music", URI: "http://air.aristocrats.fm:8000/live2", NowPlayingTrackURI: "https://aristocrats.fm/service/nowplaying-amusic8.xml")
+    static let Music = StreamType(Name: "Music", URI: "http://air.aristocrats.fm:8000/live2", NowPlayingTrackURI: URL(string:"https://aristocrats.fm/service/nowplaying-amusic8.xml")!)
 
-    static let Jazz = StreamType(Name: "Jazz", URI: "http://air.aristocrats.fm:8000/live2", NowPlayingTrackURI: "https://aristocrats.fm/service/nowplaying-amusic8.xml")
+    static let Jazz = StreamType(Name: "Jazz", URI: "http://air.aristocrats.fm:8000/live2", NowPlayingTrackURI: URL(string:"https://aristocrats.fm/service/nowplaying-amusic8.xml")!)
 }
 
 var SupportedStreams = [Streams.Main]

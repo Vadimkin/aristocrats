@@ -23,10 +23,14 @@
 		166200E3251FAA410073EEE5 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166200E2251FAA410073EEE5 /* AppConstants.swift */; };
 		166200E6251FB4210073EEE5 /* AristocratsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166200E5251FB4210073EEE5 /* AristocratsMainView.swift */; };
 		167711892524FDD30011D6A6 /* PlayerObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167711882524FDD30011D6A6 /* PlayerObservableObject.swift */; };
-		16DA2092252E40B5006FA9B2 /* ArtistocratsTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA2091252E40B5006FA9B2 /* ArtistocratsTrack.swift */; };
+		168B788025362A240078D0A5 /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B787F25362A240078D0A5 /* JSONDecoder.swift */; };
+		168B788525362A950078D0A5 /* MusicBrainzURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B788425362A950078D0A5 /* MusicBrainzURL.swift */; };
+		168B788825362AF70078D0A5 /* NowPlayingParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B788725362AF70078D0A5 /* NowPlayingParserDelegate.swift */; };
+		168B788C25362B4F0078D0A5 /* Publishers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B788B25362B4F0078D0A5 /* Publishers.swift */; };
+		16DA2092252E40B5006FA9B2 /* NowPlayingTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA2091252E40B5006FA9B2 /* NowPlayingTrack.swift */; };
 		16DA209B252E459B006FA9B2 /* StreamType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA209A252E459B006FA9B2 /* StreamType.swift */; };
-		16DA20BA252E557E006FA9B2 /* MusicBrainzAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA20B9252E557E006FA9B2 /* MusicBrainzAPIResponse.swift */; };
-		16DA20C1252E70C3006FA9B2 /* CoverArtAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA20C0252E70C3006FA9B2 /* CoverArtAPIResponse.swift */; };
+		16DA20BA252E557E006FA9B2 /* MusicBrainz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA20B9252E557E006FA9B2 /* MusicBrainz.swift */; };
+		16DA20C1252E70C3006FA9B2 /* CoverArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA20C0252E70C3006FA9B2 /* CoverArt.swift */; };
 		66FCEF8AE8C5E7ADE782C965 /* Pods_aristocratsfm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0A38687F9B48F3310C1AD8 /* Pods_aristocratsfm.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,11 +54,15 @@
 		166200E5251FB4210073EEE5 /* AristocratsMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AristocratsMainView.swift; sourceTree = "<group>"; };
 		167711882524FDD30011D6A6 /* PlayerObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerObservableObject.swift; sourceTree = "<group>"; };
 		1677119A2525082F0011D6A6 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		16DA2089252E3839006FA9B2 /* TestPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = TestPlayground.playground; path = "../../../Library/Autosave Information/TestPlayground.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		16DA2091252E40B5006FA9B2 /* ArtistocratsTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistocratsTrack.swift; sourceTree = "<group>"; };
+		168B78762534D15E0078D0A5 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		168B787F25362A240078D0A5 /* JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
+		168B788425362A950078D0A5 /* MusicBrainzURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicBrainzURL.swift; sourceTree = "<group>"; };
+		168B788725362AF70078D0A5 /* NowPlayingParserDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingParserDelegate.swift; sourceTree = "<group>"; };
+		168B788B25362B4F0078D0A5 /* Publishers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publishers.swift; sourceTree = "<group>"; };
+		16DA2091252E40B5006FA9B2 /* NowPlayingTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingTrack.swift; sourceTree = "<group>"; };
 		16DA209A252E459B006FA9B2 /* StreamType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamType.swift; sourceTree = "<group>"; };
-		16DA20B9252E557E006FA9B2 /* MusicBrainzAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicBrainzAPIResponse.swift; sourceTree = "<group>"; };
-		16DA20C0252E70C3006FA9B2 /* CoverArtAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverArtAPIResponse.swift; sourceTree = "<group>"; };
+		16DA20B9252E557E006FA9B2 /* MusicBrainz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicBrainz.swift; sourceTree = "<group>"; };
+		16DA20C0252E70C3006FA9B2 /* CoverArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverArt.swift; sourceTree = "<group>"; };
 		4C88BD31FCC6DF9D5D7A7346 /* Pods-aristocratsfm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aristocratsfm.release.xcconfig"; path = "Target Support Files/Pods-aristocratsfm/Pods-aristocratsfm.release.xcconfig"; sourceTree = "<group>"; };
 		52FA9DA3C0E8544254434888 /* Pods-aristocratsfm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aristocratsfm.debug.xcconfig"; path = "Target Support Files/Pods-aristocratsfm/Pods-aristocratsfm.debug.xcconfig"; sourceTree = "<group>"; };
 		8B0A38687F9B48F3310C1AD8 /* Pods_aristocratsfm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aristocratsfm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,7 +83,6 @@
 		16020DD4251E6D4700D8B062 = {
 			isa = PBXGroup;
 			children = (
-				16DA2089252E3839006FA9B2 /* TestPlayground.playground */,
 				16020DDF251E6D4700D8B062 /* aristocratsfm */,
 				16020DDE251E6D4700D8B062 /* Products */,
 				AD83E4CA77C234AD29FD2DCF /* Pods */,
@@ -94,6 +101,8 @@
 		16020DDF251E6D4700D8B062 /* aristocratsfm */ = {
 			isa = PBXGroup;
 			children = (
+				168B788225362A4D0078D0A5 /* Extensions */,
+				168B78762534D15E0078D0A5 /* MyPlayground.playground */,
 				1613B0C3252A0F6B0068B045 /* Helpers */,
 				1615AE912528EBBD0026184B /* Resources */,
 				16A0CCCF25250C1B0092C693 /* View */,
@@ -137,12 +146,23 @@
 			children = (
 				167711882524FDD30011D6A6 /* PlayerObservableObject.swift */,
 				1615AEA0252910390026184B /* NowPlayingObservableObject.swift */,
-				16DA2091252E40B5006FA9B2 /* ArtistocratsTrack.swift */,
+				16DA2091252E40B5006FA9B2 /* NowPlayingTrack.swift */,
 				16DA209A252E459B006FA9B2 /* StreamType.swift */,
-				16DA20B9252E557E006FA9B2 /* MusicBrainzAPIResponse.swift */,
-				16DA20C0252E70C3006FA9B2 /* CoverArtAPIResponse.swift */,
+				16DA20B9252E557E006FA9B2 /* MusicBrainz.swift */,
+				16DA20C0252E70C3006FA9B2 /* CoverArt.swift */,
+				168B788725362AF70078D0A5 /* NowPlayingParserDelegate.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		168B788225362A4D0078D0A5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				168B787F25362A240078D0A5 /* JSONDecoder.swift */,
+				168B788425362A950078D0A5 /* MusicBrainzURL.swift */,
+				168B788B25362B4F0078D0A5 /* Publishers.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		16A0CCCF25250C1B0092C693 /* View */ = {
@@ -299,14 +319,18 @@
 				1613B0C5252A0F7E0068B045 /* RoundedCornerView.swift in Sources */,
 				16DA209B252E459B006FA9B2 /* StreamType.swift in Sources */,
 				1613B0C1252A022C0068B045 /* PlaylistSingleTrack.swift in Sources */,
-				16DA20BA252E557E006FA9B2 /* MusicBrainzAPIResponse.swift in Sources */,
+				16DA20BA252E557E006FA9B2 /* MusicBrainz.swift in Sources */,
 				1613B0BE2529FE070068B045 /* PlaylistView.swift in Sources */,
 				166200E0251F52210073EEE5 /* PlayButton.swift in Sources */,
 				16020DE3251E6D4700D8B062 /* ContentView.swift in Sources */,
+				168B788025362A240078D0A5 /* JSONDecoder.swift in Sources */,
 				16020DF1251E6E8E00D8B062 /* TrackMetadataView.swift in Sources */,
 				1615AEA1252910390026184B /* NowPlayingObservableObject.swift in Sources */,
-				16DA2092252E40B5006FA9B2 /* ArtistocratsTrack.swift in Sources */,
-				16DA20C1252E70C3006FA9B2 /* CoverArtAPIResponse.swift in Sources */,
+				16DA2092252E40B5006FA9B2 /* NowPlayingTrack.swift in Sources */,
+				168B788825362AF70078D0A5 /* NowPlayingParserDelegate.swift in Sources */,
+				168B788525362A950078D0A5 /* MusicBrainzURL.swift in Sources */,
+				168B788C25362B4F0078D0A5 /* Publishers.swift in Sources */,
+				16DA20C1252E70C3006FA9B2 /* CoverArt.swift in Sources */,
 				16020DE1251E6D4700D8B062 /* aristocratsfmApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

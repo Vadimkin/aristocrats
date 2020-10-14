@@ -77,16 +77,16 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
     }
     
     func setupNowPlayingInfoCenter() {
-        let nowPlayingObservableObject = NowPlayingObservableObject.shared
-        cancellable = nowPlayingObservableObject.publisher.sink{ [weak self] in
-            guard let self = self else {return}
+//        let nowPlayingObservableObject = NowPlayingObservableObject.shared
+//        cancellable = nowPlayingObservableObject.publisher.sink{ [weak self] in
+//            guard let self = self else {return}
             
-            let currentTrackMetadata = nowPlayingObservableObject.nowPlaying[self.stream!]
-            self.setNowPlayingTrack(currentTrack: currentTrackMetadata!)
-        }
+//            let currentTrackMetadata = nowPlayingObservableObject.nowPlaying[self.stream!]
+//            self.setNowPlayingTrack(currentTrack: currentTrackMetadata!)
+//        }
     }
     
-    func setNowPlayingTrack(currentTrack: AristocratsTrack) {
+    func setNowPlayingTrack(currentTrack: NowPlayingTrack) {
         var nowPlayingInfo = [String : Any]()
         nowPlayingInfo[MPMediaItemPropertyTitle] = currentTrack.title
         nowPlayingInfo[MPMediaItemPropertyArtist] = currentTrack.artist
