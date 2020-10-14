@@ -1,8 +1,60 @@
-//
-//  LoadingLottieView.swift
-//  aristocratsfm
-//
-//  Created by Vadim Klimenko on 14.10.2020.
-//
+import SwiftUI
+import Lottie
 
-import Foundation
+struct LoadingLottieView: UIViewRepresentable {
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+    
+    var name: String! = "LoadingDots"
+    
+    var animationView = AnimationView()
+    
+    class Coordinator: NSObject {
+        var parent: LoadingLottieView
+        
+        init(_ animationView: LoadingLottieView) {
+            self.parent = animationView
+            super.init()
+        }
+    }
+    
+    func makeUIView(context: UIViewRepresentableContext<LoadingLottieView>) -> UIView {
+        let view = UIView()
+        
+        animationView.animation = Animation.named(name)
+        animationView.contentMode = .scaleAspectFit
+        
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(animationView)
+        
+        NSLayoutConstraint.activate([
+            animationView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            animationView.heightAnchor.constraint(equalTo: view.heightAnchor)
+        ])
+        
+        return view
+    }
+    
+    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<LoadingLottieView>) {
+        let animationView = context.coordinator.parent.animationView;
+        animationView.loopMode = .loop
+        animationView.animationSpeed = 1
+        animationView.play()
+        
+//        if (self.isLoading && !animationView.isAnimationPlaying) {
+//            animationView.animationSpeed = 1;
+//            animationView.play()
+//        }
+        
+//        if (!self.isLoading && !self.isPlaying && animationView.isAnimationPlaying) {
+//            animationView.stop()
+//        }
+        
+//        if (self.isPlaying) {
+//            // TODO Stop or just animate as slow [?]
+//            animationView.stop()
+////            animationView.animationSpeed = 0.3;
+//        }
+    }
+}
