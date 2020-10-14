@@ -31,6 +31,8 @@
 		16DA209B252E459B006FA9B2 /* StreamType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA209A252E459B006FA9B2 /* StreamType.swift */; };
 		16DA20BA252E557E006FA9B2 /* MusicBrainz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA20B9252E557E006FA9B2 /* MusicBrainz.swift */; };
 		16DA20C1252E70C3006FA9B2 /* CoverArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA20C0252E70C3006FA9B2 /* CoverArt.swift */; };
+		3B77F84B253775580002A022 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B77F84A253775580002A022 /* Publisher.swift */; };
+		3B77F85825377E050002A022 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B77F85725377E050002A022 /* ImageView.swift */; };
 		66FCEF8AE8C5E7ADE782C965 /* Pods_aristocratsfm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0A38687F9B48F3310C1AD8 /* Pods_aristocratsfm.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +65,8 @@
 		16DA209A252E459B006FA9B2 /* StreamType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamType.swift; sourceTree = "<group>"; };
 		16DA20B9252E557E006FA9B2 /* MusicBrainz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicBrainz.swift; sourceTree = "<group>"; };
 		16DA20C0252E70C3006FA9B2 /* CoverArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverArt.swift; sourceTree = "<group>"; };
+		3B77F84A253775580002A022 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
+		3B77F85725377E050002A022 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		4C88BD31FCC6DF9D5D7A7346 /* Pods-aristocratsfm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aristocratsfm.release.xcconfig"; path = "Target Support Files/Pods-aristocratsfm/Pods-aristocratsfm.release.xcconfig"; sourceTree = "<group>"; };
 		52FA9DA3C0E8544254434888 /* Pods-aristocratsfm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aristocratsfm.debug.xcconfig"; path = "Target Support Files/Pods-aristocratsfm/Pods-aristocratsfm.debug.xcconfig"; sourceTree = "<group>"; };
 		8B0A38687F9B48F3310C1AD8 /* Pods_aristocratsfm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aristocratsfm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +165,7 @@
 				168B787F25362A240078D0A5 /* JSONDecoder.swift */,
 				168B788425362A950078D0A5 /* MusicBrainzURL.swift */,
 				168B788B25362B4F0078D0A5 /* Publishers.swift */,
+				3B77F84A253775580002A022 /* Publisher.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 				166200DC251F50470073EEE5 /* RadioControlView.swift */,
 				166200DF251F52210073EEE5 /* PlayButton.swift */,
 				166200E5251FB4210073EEE5 /* AristocratsMainView.swift */,
+				3B77F85725377E050002A022 /* ImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -326,11 +332,13 @@
 				168B788025362A240078D0A5 /* JSONDecoder.swift in Sources */,
 				16020DF1251E6E8E00D8B062 /* TrackMetadataView.swift in Sources */,
 				1615AEA1252910390026184B /* NowPlayingObservableObject.swift in Sources */,
+				3B77F85825377E050002A022 /* ImageView.swift in Sources */,
 				16DA2092252E40B5006FA9B2 /* NowPlayingTrack.swift in Sources */,
 				168B788825362AF70078D0A5 /* NowPlayingParserDelegate.swift in Sources */,
 				168B788525362A950078D0A5 /* MusicBrainzURL.swift in Sources */,
 				168B788C25362B4F0078D0A5 /* Publishers.swift in Sources */,
 				16DA20C1252E70C3006FA9B2 /* CoverArt.swift in Sources */,
+				3B77F84B253775580002A022 /* Publisher.swift in Sources */,
 				16020DE1251E6D4700D8B062 /* aristocratsfmApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
