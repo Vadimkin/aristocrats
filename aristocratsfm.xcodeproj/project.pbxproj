@@ -23,6 +23,8 @@
 		166200E3251FAA410073EEE5 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166200E2251FAA410073EEE5 /* AppConstants.swift */; };
 		166200E6251FB4210073EEE5 /* AristocratsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166200E5251FB4210073EEE5 /* AristocratsMainView.swift */; };
 		167711892524FDD30011D6A6 /* PlayerObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167711882524FDD30011D6A6 /* PlayerObservableObject.swift */; };
+		168B789D253774920078D0A5 /* LoadingDots.json in Resources */ = {isa = PBXBuildFile; fileRef = 168B789C253774920078D0A5 /* LoadingDots.json */; };
+		168B78A0253774D40078D0A5 /* LoadingLottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B789F253774D40078D0A5 /* LoadingLottieView.swift */; };
 		16DA2092252E40B5006FA9B2 /* ArtistocratsTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA2091252E40B5006FA9B2 /* ArtistocratsTrack.swift */; };
 		16DA209B252E459B006FA9B2 /* StreamType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA209A252E459B006FA9B2 /* StreamType.swift */; };
 		16DA20BA252E557E006FA9B2 /* MusicBrainzAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA20B9252E557E006FA9B2 /* MusicBrainzAPIResponse.swift */; };
@@ -50,6 +52,8 @@
 		166200E5251FB4210073EEE5 /* AristocratsMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AristocratsMainView.swift; sourceTree = "<group>"; };
 		167711882524FDD30011D6A6 /* PlayerObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerObservableObject.swift; sourceTree = "<group>"; };
 		1677119A2525082F0011D6A6 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		168B789C253774920078D0A5 /* LoadingDots.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LoadingDots.json; sourceTree = "<group>"; };
+		168B789F253774D40078D0A5 /* LoadingLottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingLottieView.swift; sourceTree = "<group>"; };
 		16DA2089252E3839006FA9B2 /* TestPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = TestPlayground.playground; path = "../../../Library/Autosave Information/TestPlayground.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		16DA2091252E40B5006FA9B2 /* ArtistocratsTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistocratsTrack.swift; sourceTree = "<group>"; };
 		16DA209A252E459B006FA9B2 /* StreamType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamType.swift; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 		1615AE912528EBBD0026184B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				168B789C253774920078D0A5 /* LoadingDots.json */,
 				1615AE922528EBD10026184B /* AristocratsBufferingAnimation.json */,
 			);
 			path = Resources;
@@ -155,6 +160,7 @@
 				166200DC251F50470073EEE5 /* RadioControlView.swift */,
 				166200DF251F52210073EEE5 /* PlayButton.swift */,
 				166200E5251FB4210073EEE5 /* AristocratsMainView.swift */,
+				168B789F253774D40078D0A5 /* LoadingLottieView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -236,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				168B789D253774920078D0A5 /* LoadingDots.json in Resources */,
 				1615AE932528EBD10026184B /* AristocratsBufferingAnimation.json in Resources */,
 				16020DE8251E6D4700D8B062 /* Preview Assets.xcassets in Resources */,
 				16020DE5251E6D4700D8B062 /* Assets.xcassets in Resources */,
@@ -297,6 +304,7 @@
 				166200E3251FAA410073EEE5 /* AppConstants.swift in Sources */,
 				166200E6251FB4210073EEE5 /* AristocratsMainView.swift in Sources */,
 				1613B0C5252A0F7E0068B045 /* RoundedCornerView.swift in Sources */,
+				168B78A0253774D40078D0A5 /* LoadingLottieView.swift in Sources */,
 				16DA209B252E459B006FA9B2 /* StreamType.swift in Sources */,
 				1613B0C1252A022C0068B045 /* PlaylistSingleTrack.swift in Sources */,
 				16DA20BA252E557E006FA9B2 /* MusicBrainzAPIResponse.swift in Sources */,
