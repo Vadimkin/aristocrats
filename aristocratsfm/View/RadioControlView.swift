@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct RadioControlView: View {
+    @Environment(\.colorScheme) var colorScheme
+
     var body: some View {
         HStack(alignment: .center) {
+            Spacer()
+            
             Button(action: {}) {
                 Image(systemName: "suit.heart")
-                    .foregroundColor(Design.Primary.Gray)
+                    .foregroundColor(colorScheme == .dark ? Color.white : Design.Primary.Gray)
                     .font(Font.title)
                     .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, 12)
             }
@@ -25,13 +29,14 @@ struct RadioControlView: View {
 
             Button(action: {}) {
                 Image(systemName: "square.and.arrow.up")
-                    .foregroundColor(Design.Primary.Gray)
+                    .foregroundColor(colorScheme == .dark ? Color.white : Design.Primary.Gray)
                     .font(Font.title)
                     .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, 12)
             }
+            Spacer()
         }
         .padding(.horizontal)
-        .padding(.top, 20)
+        .padding(.bottom, 100)
     }
 }
 

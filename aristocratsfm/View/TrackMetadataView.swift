@@ -9,41 +9,81 @@ import SwiftUI
 import Combine
 
 struct TrackMetadataView: View {
-    var artworkImage = Image("artwork-preview")
+    @Environment(\.colorScheme) var colorScheme
+    @ObservedObject var nowPlaying: NowPlayingObservableObject = .shared
+    
     var stream: String? = Streams.Main.Name
-    @ObservedObject var nowPlayingObservableObject: NowPlayingObservableObject = .shared
-
+    
     var body: some View {
-        VStack(alignment: .center) {
-            artworkImage
-                .resizable()
-                .scaledToFit()
-                .padding()
-                .cornerRadius(30)
-                .shadow(
-                    color: Color(red: 0.51, green: 0.51, blue: 0.51, opacity: 0.1),
-                    radius: 4,
-                    x:0,
-                    y:2
-                )
-
-            Text(self.nowPlayingObservableObject.nowPlaying[Streams.Main.Name]!.title)
-                .font(Font.system(size: 20, weight: .medium, design: .default))
-                .foregroundColor(Design.Primary.DarkGray)
-                .padding(.top, 20)
-                .multilineTextAlignment(.center)
-
-            Text(self.nowPlayingObservableObject.nowPlaying[Streams.Main.Name]!.artist)
-                .font(Font.system(size: 17, weight: .light, design: .default))
-                .padding(.top, 11)
-                .foregroundColor(Design.Primary.LightGray)
-                .multilineTextAlignment(.center)
-        }.padding()
+        let playback = nowPlaying.playback;
+        
+        let artworkImageName = colorScheme == .dark ? "AristocratsLogoWhite" : "AristocratsLogoPurple"
+        
+        let ArtworkImage = Image(artworkImageName)
+            .padding()
+            .scaleEffect(0.5, anchor: .center)
+        
+        let ImageWrapperView = Rectangle()
+            .fill(colorScheme == .dark ? Design.Primary.Base : Color.white)
+            .padding()
+            .aspectRatio(1.0, contentMode: .fit)
+            .cornerRadius(30)
+//          TODO To use or not to use?
+//            .frame(maxWidth: 300, alignment: .center)
+        
+        VStack() {
+            switch playback {
+            case .nothing:
+                VStack(alignment: .center) {
+                    ImageWrapperView
+                        .overlay(ArtworkImage);
+                    
+                    Text("Аристократи")
+                        .font(Font.system(size: 20, weight: .medium, design: .default))
+                        .foregroundColor(colorScheme == .dark ? Color.white : Design.Primary.DarkGray)
+                        .padding(.top, 20)
+                        .padding(.horizontal)
+                        .multilineTextAlignment(.center)
+                    
+                    Text("...")
+                        .font(Font.system(size: 17, weight: .light, design: .default))
+                        .padding(.top, 11)
+                        .padding(.horizontal)
+                        .foregroundColor(colorScheme == .dark ? Color.white : Design.Primary.LightGray)
+                        .multilineTextAlignment(.center)
+                }
+                
+            case let .playing(track, artwork):
+                if (artwork != nil) {
+                    ImageWrapperView.overlay(
+                        ImageView(withURL: artwork?.images.first?.thumbnails.large ?? "")
+                    );
+                } else {
+                    ImageWrapperView
+                        .overlay(ArtworkImage);
+                }
+                
+                Text(track.song)
+                    .font(Font.system(size: 20, weight: .medium, design: .default))
+                    .foregroundColor(colorScheme == .dark ? Color.white : Design.Primary.DarkGray)
+                    .padding(.top, 20)
+                    .padding(.horizontal)
+                    .multilineTextAlignment(.center)
+                
+                Text(track.artist)
+                    .font(Font.system(size: 17, weight: .light, design: .default))
+                    .padding(.top, 11)
+                    .padding(.horizontal)
+                    .foregroundColor(colorScheme == .dark ? Color.white : Design.Primary.LightGray)
+                    .multilineTextAlignment(.center)
+            }
+        }
     }
 }
 
 struct TrackMetadataView_Previews: PreviewProvider {
     static var previews: some View {
         TrackMetadataView()
+        
     }
 }
