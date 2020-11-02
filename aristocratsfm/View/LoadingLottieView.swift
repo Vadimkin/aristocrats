@@ -41,20 +41,5 @@ struct LoadingLottieView: UIViewRepresentable {
         animationView.loopMode = .loop
         animationView.animationSpeed = 1
         animationView.play()
-        
-//        if (self.isLoading && !animationView.isAnimationPlaying) {
-//            animationView.animationSpeed = 1;
-//            animationView.play()
-//        }
-        
-//        if (!self.isLoading && !self.isPlaying && animationView.isAnimationPlaying) {
-//            animationView.stop()
-//        }
-        
-//        if (self.isPlaying) {
-//            // TODO Stop or just animate as slow [?]
-//            animationView.stop()
-////            animationView.animationSpeed = 0.3;
-//        }
     }
 }

@@ -12,45 +12,47 @@ import Lottie
 struct PlayButton: View {
     @ObservedObject var player: PlayerObservableObject = .shared
     
-    func getPlayIconFontSymbol() -> String? {
+    func getPlayIconFontSymbol() -> String {
         if player.isPlaying {
             return "pause.fill";
-        }
-        
-        if player.isLoading {
-            return nil
         }
         
         return "play.fill";
     }
     
     var body: some View {
-        let iconImage: String? = self.getPlayIconFontSymbol();
+        let iconImage: String = self.getPlayIconFontSymbol();
         
         //  Put icons to center
         let extraPadding: CGFloat = player.isPlaying ? -1.0 : 3.0;
-        
+
         ZStack {
-            PlayIconLottieView(isLoading: $player.isLoading, isPlaying: $player.isPlaying).frame(width: 200, height: 200)
-            
-            if (!player.isLoading) {
-                Button(action: {
-                    if (player.isPlaying) {
-                        self.player.player?.pause()
-                    } else {
-                        self.player.playItem(at: Streams.Main.URI, stream: Streams.Main.Name)
-                        self.player.player?.play()
+            Circle()
+                .fill(Design.Primary.Base)
+                .frame(maxHeight: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .overlay(
+                    Button(action: {
+                        if (player.isPlaying) {
+                            self.player.player?.pause()
+                        } else {
+                            self.player.playItem(at: Streams.Main.URI, stream: Streams.Main.Name)
+                            self.player.player?.play()
+                        }
+                    }) {
+                        Image(systemName: iconImage)
+                            .resizable()
+                            .foregroundColor(.white)
+                            .scaledToFit()
+                            .scaleEffect(0.3)
+                            .padding(.leading, extraPadding)
+                            .opacity(player.isLoading ? 0 : 1)
                     }
-                }) {
-                    Image(systemName: iconImage!)
-                        .foregroundColor(.white)
-                        .font(Font.custom("Play", fixedSize: 57))
-                        .padding(.leading, extraPadding)
-                }.frame(width: 200, height: 200)
-            }
+                )
+            
             
             if (player.isLoading) {
-                LoadingLottieView().frame(width: 110, height: 110)
+                LoadingLottieView()
+                    .frame(maxHeight: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }
         }
     }

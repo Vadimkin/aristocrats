@@ -15,20 +15,25 @@
 		1613B0BE2529FE070068B045 /* PlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613B0BD2529FE070068B045 /* PlaylistView.swift */; };
 		1613B0C1252A022C0068B045 /* PlaylistSingleTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613B0C0252A022C0068B045 /* PlaylistSingleTrack.swift */; };
 		1613B0C5252A0F7E0068B045 /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613B0C4252A0F7E0068B045 /* RoundedCornerView.swift */; };
-		1615AE932528EBD10026184B /* AristocratsBufferingAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 1615AE922528EBD10026184B /* AristocratsBufferingAnimation.json */; };
-		1615AE962528EC6D0026184B /* PlayIconLottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1615AE952528EC6D0026184B /* PlayIconLottieView.swift */; };
 		1615AEA1252910390026184B /* NowPlayingObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1615AEA0252910390026184B /* NowPlayingObservableObject.swift */; };
 		166200DD251F50470073EEE5 /* RadioControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166200DC251F50470073EEE5 /* RadioControlView.swift */; };
 		166200E0251F52210073EEE5 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166200DF251F52210073EEE5 /* PlayButton.swift */; };
 		166200E3251FAA410073EEE5 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166200E2251FAA410073EEE5 /* AppConstants.swift */; };
 		166200E6251FB4210073EEE5 /* AristocratsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166200E5251FB4210073EEE5 /* AristocratsMainView.swift */; };
+		16659F16254EF06F005F7D2C /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16659F15254EF06F005F7D2C /* UIImage.swift */; };
 		167711892524FDD30011D6A6 /* PlayerObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167711882524FDD30011D6A6 /* PlayerObservableObject.swift */; };
 		168B789D253774920078D0A5 /* LoadingDots.json in Resources */ = {isa = PBXBuildFile; fileRef = 168B789C253774920078D0A5 /* LoadingDots.json */; };
 		168B78A0253774D40078D0A5 /* LoadingLottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B789F253774D40078D0A5 /* LoadingLottieView.swift */; };
-		16DA2092252E40B5006FA9B2 /* ArtistocratsTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA2091252E40B5006FA9B2 /* ArtistocratsTrack.swift */; };
+		168B78B025377A2C0078D0A5 /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B78AF25377A2C0078D0A5 /* JSONDecoder.swift */; };
+		168B78B425377A420078D0A5 /* MusicBrainzURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B78B325377A420078D0A5 /* MusicBrainzURL.swift */; };
+		168B78B725377A6F0078D0A5 /* Publishers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B78B625377A6F0078D0A5 /* Publishers.swift */; };
+		168B78BB25377AFC0078D0A5 /* NowPlayingParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B78BA25377AFC0078D0A5 /* NowPlayingParserDelegate.swift */; };
+		168B78C025377B330078D0A5 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B78BF25377B330078D0A5 /* Publisher.swift */; };
+		168B78C3253781C80078D0A5 /* ImageLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B78C2253781C80078D0A5 /* ImageLoaderView.swift */; };
+		16DA2092252E40B5006FA9B2 /* NowPlayingTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA2091252E40B5006FA9B2 /* NowPlayingTrack.swift */; };
 		16DA209B252E459B006FA9B2 /* StreamType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA209A252E459B006FA9B2 /* StreamType.swift */; };
-		16DA20BA252E557E006FA9B2 /* MusicBrainzAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA20B9252E557E006FA9B2 /* MusicBrainzAPIResponse.swift */; };
-		16DA20C1252E70C3006FA9B2 /* CoverArtAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA20C0252E70C3006FA9B2 /* CoverArtAPIResponse.swift */; };
+		16DA20BA252E557E006FA9B2 /* MusicBrainz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA20B9252E557E006FA9B2 /* MusicBrainz.swift */; };
+		16DA20C1252E70C3006FA9B2 /* CoverArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA20C0252E70C3006FA9B2 /* CoverArt.swift */; };
 		66FCEF8AE8C5E7ADE782C965 /* Pods_aristocratsfm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0A38687F9B48F3310C1AD8 /* Pods_aristocratsfm.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,22 +48,26 @@
 		1613B0BD2529FE070068B045 /* PlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistView.swift; sourceTree = "<group>"; };
 		1613B0C0252A022C0068B045 /* PlaylistSingleTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistSingleTrack.swift; sourceTree = "<group>"; };
 		1613B0C4252A0F7E0068B045 /* RoundedCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
-		1615AE922528EBD10026184B /* AristocratsBufferingAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AristocratsBufferingAnimation.json; sourceTree = "<group>"; };
-		1615AE952528EC6D0026184B /* PlayIconLottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayIconLottieView.swift; sourceTree = "<group>"; };
 		1615AEA0252910390026184B /* NowPlayingObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingObservableObject.swift; sourceTree = "<group>"; };
 		166200DC251F50470073EEE5 /* RadioControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioControlView.swift; sourceTree = "<group>"; };
 		166200DF251F52210073EEE5 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		166200E2251FAA410073EEE5 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		166200E5251FB4210073EEE5 /* AristocratsMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AristocratsMainView.swift; sourceTree = "<group>"; };
+		16659F15254EF06F005F7D2C /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		167711882524FDD30011D6A6 /* PlayerObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerObservableObject.swift; sourceTree = "<group>"; };
 		1677119A2525082F0011D6A6 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		168B789C253774920078D0A5 /* LoadingDots.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LoadingDots.json; sourceTree = "<group>"; };
 		168B789F253774D40078D0A5 /* LoadingLottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingLottieView.swift; sourceTree = "<group>"; };
-		16DA2089252E3839006FA9B2 /* TestPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = TestPlayground.playground; path = "../../../Library/Autosave Information/TestPlayground.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		16DA2091252E40B5006FA9B2 /* ArtistocratsTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistocratsTrack.swift; sourceTree = "<group>"; };
+		168B78AF25377A2C0078D0A5 /* JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
+		168B78B325377A420078D0A5 /* MusicBrainzURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicBrainzURL.swift; sourceTree = "<group>"; };
+		168B78B625377A6F0078D0A5 /* Publishers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publishers.swift; sourceTree = "<group>"; };
+		168B78BA25377AFC0078D0A5 /* NowPlayingParserDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingParserDelegate.swift; sourceTree = "<group>"; };
+		168B78BF25377B330078D0A5 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
+		168B78C2253781C80078D0A5 /* ImageLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderView.swift; sourceTree = "<group>"; };
+		16DA2091252E40B5006FA9B2 /* NowPlayingTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingTrack.swift; sourceTree = "<group>"; };
 		16DA209A252E459B006FA9B2 /* StreamType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamType.swift; sourceTree = "<group>"; };
-		16DA20B9252E557E006FA9B2 /* MusicBrainzAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicBrainzAPIResponse.swift; sourceTree = "<group>"; };
-		16DA20C0252E70C3006FA9B2 /* CoverArtAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverArtAPIResponse.swift; sourceTree = "<group>"; };
+		16DA20B9252E557E006FA9B2 /* MusicBrainz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicBrainz.swift; sourceTree = "<group>"; };
+		16DA20C0252E70C3006FA9B2 /* CoverArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverArt.swift; sourceTree = "<group>"; };
 		4C88BD31FCC6DF9D5D7A7346 /* Pods-aristocratsfm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aristocratsfm.release.xcconfig"; path = "Target Support Files/Pods-aristocratsfm/Pods-aristocratsfm.release.xcconfig"; sourceTree = "<group>"; };
 		52FA9DA3C0E8544254434888 /* Pods-aristocratsfm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aristocratsfm.debug.xcconfig"; path = "Target Support Files/Pods-aristocratsfm/Pods-aristocratsfm.debug.xcconfig"; sourceTree = "<group>"; };
 		8B0A38687F9B48F3310C1AD8 /* Pods_aristocratsfm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aristocratsfm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,7 +88,6 @@
 		16020DD4251E6D4700D8B062 = {
 			isa = PBXGroup;
 			children = (
-				16DA2089252E3839006FA9B2 /* TestPlayground.playground */,
 				16020DDF251E6D4700D8B062 /* aristocratsfm */,
 				16020DDE251E6D4700D8B062 /* Products */,
 				AD83E4CA77C234AD29FD2DCF /* Pods */,
@@ -98,6 +106,7 @@
 		16020DDF251E6D4700D8B062 /* aristocratsfm */ = {
 			isa = PBXGroup;
 			children = (
+				168B78AE25377A1A0078D0A5 /* Extensions */,
 				1613B0C3252A0F6B0068B045 /* Helpers */,
 				1615AE912528EBBD0026184B /* Resources */,
 				16A0CCCF25250C1B0092C693 /* View */,
@@ -132,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				168B789C253774920078D0A5 /* LoadingDots.json */,
-				1615AE922528EBD10026184B /* AristocratsBufferingAnimation.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -142,12 +150,25 @@
 			children = (
 				167711882524FDD30011D6A6 /* PlayerObservableObject.swift */,
 				1615AEA0252910390026184B /* NowPlayingObservableObject.swift */,
-				16DA2091252E40B5006FA9B2 /* ArtistocratsTrack.swift */,
+				16DA2091252E40B5006FA9B2 /* NowPlayingTrack.swift */,
 				16DA209A252E459B006FA9B2 /* StreamType.swift */,
-				16DA20B9252E557E006FA9B2 /* MusicBrainzAPIResponse.swift */,
-				16DA20C0252E70C3006FA9B2 /* CoverArtAPIResponse.swift */,
+				16DA20B9252E557E006FA9B2 /* MusicBrainz.swift */,
+				16DA20C0252E70C3006FA9B2 /* CoverArt.swift */,
+				168B78BA25377AFC0078D0A5 /* NowPlayingParserDelegate.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		168B78AE25377A1A0078D0A5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				168B78AF25377A2C0078D0A5 /* JSONDecoder.swift */,
+				168B78B325377A420078D0A5 /* MusicBrainzURL.swift */,
+				168B78B625377A6F0078D0A5 /* Publishers.swift */,
+				168B78BF25377B330078D0A5 /* Publisher.swift */,
+				16659F15254EF06F005F7D2C /* UIImage.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		16A0CCCF25250C1B0092C693 /* View */ = {
@@ -155,12 +176,12 @@
 			children = (
 				1613B0BD2529FE070068B045 /* PlaylistView.swift */,
 				1613B0C0252A022C0068B045 /* PlaylistSingleTrack.swift */,
-				1615AE952528EC6D0026184B /* PlayIconLottieView.swift */,
 				16020DF0251E6E8E00D8B062 /* TrackMetadataView.swift */,
 				166200DC251F50470073EEE5 /* RadioControlView.swift */,
 				166200DF251F52210073EEE5 /* PlayButton.swift */,
 				166200E5251FB4210073EEE5 /* AristocratsMainView.swift */,
 				168B789F253774D40078D0A5 /* LoadingLottieView.swift */,
+				168B78C2253781C80078D0A5 /* ImageLoaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -243,7 +264,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				168B789D253774920078D0A5 /* LoadingDots.json in Resources */,
-				1615AE932528EBD10026184B /* AristocratsBufferingAnimation.json in Resources */,
 				16020DE8251E6D4700D8B062 /* Preview Assets.xcassets in Resources */,
 				16020DE5251E6D4700D8B062 /* Assets.xcassets in Resources */,
 			);
@@ -300,21 +320,27 @@
 			files = (
 				166200DD251F50470073EEE5 /* RadioControlView.swift in Sources */,
 				167711892524FDD30011D6A6 /* PlayerObservableObject.swift in Sources */,
-				1615AE962528EC6D0026184B /* PlayIconLottieView.swift in Sources */,
 				166200E3251FAA410073EEE5 /* AppConstants.swift in Sources */,
 				166200E6251FB4210073EEE5 /* AristocratsMainView.swift in Sources */,
 				1613B0C5252A0F7E0068B045 /* RoundedCornerView.swift in Sources */,
+				168B78B025377A2C0078D0A5 /* JSONDecoder.swift in Sources */,
 				168B78A0253774D40078D0A5 /* LoadingLottieView.swift in Sources */,
 				16DA209B252E459B006FA9B2 /* StreamType.swift in Sources */,
 				1613B0C1252A022C0068B045 /* PlaylistSingleTrack.swift in Sources */,
-				16DA20BA252E557E006FA9B2 /* MusicBrainzAPIResponse.swift in Sources */,
+				16659F16254EF06F005F7D2C /* UIImage.swift in Sources */,
+				16DA20BA252E557E006FA9B2 /* MusicBrainz.swift in Sources */,
 				1613B0BE2529FE070068B045 /* PlaylistView.swift in Sources */,
 				166200E0251F52210073EEE5 /* PlayButton.swift in Sources */,
+				168B78C025377B330078D0A5 /* Publisher.swift in Sources */,
 				16020DE3251E6D4700D8B062 /* ContentView.swift in Sources */,
+				168B78C3253781C80078D0A5 /* ImageLoaderView.swift in Sources */,
 				16020DF1251E6E8E00D8B062 /* TrackMetadataView.swift in Sources */,
 				1615AEA1252910390026184B /* NowPlayingObservableObject.swift in Sources */,
-				16DA2092252E40B5006FA9B2 /* ArtistocratsTrack.swift in Sources */,
-				16DA20C1252E70C3006FA9B2 /* CoverArtAPIResponse.swift in Sources */,
+				16DA2092252E40B5006FA9B2 /* NowPlayingTrack.swift in Sources */,
+				168B78BB25377AFC0078D0A5 /* NowPlayingParserDelegate.swift in Sources */,
+				168B78B425377A420078D0A5 /* MusicBrainzURL.swift in Sources */,
+				168B78B725377A6F0078D0A5 /* Publishers.swift in Sources */,
+				16DA20C1252E70C3006FA9B2 /* CoverArt.swift in Sources */,
 				16020DE1251E6D4700D8B062 /* aristocratsfmApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
