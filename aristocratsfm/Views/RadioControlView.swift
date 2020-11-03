@@ -36,7 +36,7 @@ struct RadioControlView: View {
             Spacer()
         }
         .padding(.horizontal)
-        .padding(.bottom, 100)
+        .padding(.vertical, 30)
     }
 }
 

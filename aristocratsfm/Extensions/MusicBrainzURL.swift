@@ -9,7 +9,7 @@ import Foundation
 
 extension URL {
     enum Music {
-        static let nowPlaying = URL(string: "https://aristocrats.fm/service/nowplaying-aristocrats8.xml")!
+        static let nowPlaying = Streams.Main.NowPlayingTrackURI
 
         static func musicBrainz(artist: String, song: String) -> URL {
             var components = URLComponents(string: "https://musicbrainz.org/ws/2/recording")!

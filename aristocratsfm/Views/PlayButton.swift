@@ -29,7 +29,7 @@ struct PlayButton: View {
         ZStack {
             Circle()
                 .fill(Design.Primary.Base)
-                .frame(maxHeight: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(maxHeight: 100, alignment: .center)
                 .overlay(
                     Button(action: {
                         if (player.isPlaying) {

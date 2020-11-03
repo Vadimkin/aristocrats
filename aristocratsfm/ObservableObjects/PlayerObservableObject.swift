@@ -21,6 +21,8 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
     private var playerContext = 0
     
     var player: AVPlayer? = nil
+    var playerItem: AVPlayerItem? = nil
+
     var stream: String?
     
     func playItem(at itemURL: String, stream: String) {
@@ -30,17 +32,19 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
         
         // cleanup for previous player
         self.player?.removeObserver(self, forKeyPath: "timeControlStatus")
+        self.playerItem?.removeObserver(self, forKeyPath: "status")
         
         try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
         try? AVAudioSession.sharedInstance().setActive(true)
         
         // setup new player
         let playerItem = AVPlayerItem(url: url)
-        playerItem.addObserver(self, forKeyPath: #keyPath(AVPlayerItem.status), options: [.old, .new], context: &playerContext)
+        playerItem.addObserver(self, forKeyPath: "status", options: [.old, .new], context: &playerContext)
 
         let newPlayer = AVPlayer(playerItem: playerItem)
         newPlayer.addObserver(self, forKeyPath: "timeControlStatus", options: [.old, .new], context: &playerContext)
  
+        self.playerItem = playerItem
         self.player = newPlayer
         self.stream = stream
         
@@ -87,7 +91,7 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
             receiveCompletion: {
                completion in
           }) { value in
-            if case let .playing(track, artwork) = value {
+            if case let .playing(track, _) = value {
                 self.setNowPlayingTrack(currentTrack: track)
             }
          }

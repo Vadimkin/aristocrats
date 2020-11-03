@@ -22,6 +22,8 @@
 		166200E6251FB4210073EEE5 /* AristocratsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166200E5251FB4210073EEE5 /* AristocratsMainView.swift */; };
 		16659F16254EF06F005F7D2C /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16659F15254EF06F005F7D2C /* UIImage.swift */; };
 		167711892524FDD30011D6A6 /* PlayerObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167711882524FDD30011D6A6 /* PlayerObservableObject.swift */; };
+		167FE61A2550BA2F00E65949 /* PlaylistObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167FE6192550BA2F00E65949 /* PlaylistObservableObject.swift */; };
+		167FE61D2550BE9800E65949 /* PlaylistParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167FE61C2550BE9800E65949 /* PlaylistParserDelegate.swift */; };
 		168B789D253774920078D0A5 /* LoadingDots.json in Resources */ = {isa = PBXBuildFile; fileRef = 168B789C253774920078D0A5 /* LoadingDots.json */; };
 		168B78A0253774D40078D0A5 /* LoadingLottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B789F253774D40078D0A5 /* LoadingLottieView.swift */; };
 		168B78B025377A2C0078D0A5 /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B78AF25377A2C0078D0A5 /* JSONDecoder.swift */; };
@@ -56,6 +58,9 @@
 		16659F15254EF06F005F7D2C /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		167711882524FDD30011D6A6 /* PlayerObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerObservableObject.swift; sourceTree = "<group>"; };
 		1677119A2525082F0011D6A6 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		167FE6192550BA2F00E65949 /* PlaylistObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistObservableObject.swift; sourceTree = "<group>"; };
+		167FE61C2550BE9800E65949 /* PlaylistParserDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistParserDelegate.swift; sourceTree = "<group>"; };
+		167FE6222550CCC900E65949 /* aristocratsfm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = aristocratsfm.entitlements; sourceTree = "<group>"; };
 		168B789C253774920078D0A5 /* LoadingDots.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LoadingDots.json; sourceTree = "<group>"; };
 		168B789F253774D40078D0A5 /* LoadingLottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingLottieView.swift; sourceTree = "<group>"; };
 		168B78AF25377A2C0078D0A5 /* JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
@@ -106,10 +111,13 @@
 		16020DDF251E6D4700D8B062 /* aristocratsfm */ = {
 			isa = PBXGroup;
 			children = (
+				167FE6222550CCC900E65949 /* aristocratsfm.entitlements */,
+				167FE6202550CA0C00E65949 /* ParserDelegates */,
+				167FE61F2550C9C800E65949 /* ObservableObjects */,
 				168B78AE25377A1A0078D0A5 /* Extensions */,
 				1613B0C3252A0F6B0068B045 /* Helpers */,
 				1615AE912528EBBD0026184B /* Resources */,
-				16A0CCCF25250C1B0092C693 /* View */,
+				16A0CCCF25250C1B0092C693 /* Views */,
 				167711872524FDAC0011D6A6 /* Models */,
 				16020DE0251E6D4700D8B062 /* aristocratsfmApp.swift */,
 				16020DE2251E6D4700D8B062 /* ContentView.swift */,
@@ -148,15 +156,31 @@
 		167711872524FDAC0011D6A6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				167711882524FDD30011D6A6 /* PlayerObservableObject.swift */,
-				1615AEA0252910390026184B /* NowPlayingObservableObject.swift */,
 				16DA2091252E40B5006FA9B2 /* NowPlayingTrack.swift */,
 				16DA209A252E459B006FA9B2 /* StreamType.swift */,
 				16DA20B9252E557E006FA9B2 /* MusicBrainz.swift */,
 				16DA20C0252E70C3006FA9B2 /* CoverArt.swift */,
-				168B78BA25377AFC0078D0A5 /* NowPlayingParserDelegate.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		167FE61F2550C9C800E65949 /* ObservableObjects */ = {
+			isa = PBXGroup;
+			children = (
+				167FE6192550BA2F00E65949 /* PlaylistObservableObject.swift */,
+				167711882524FDD30011D6A6 /* PlayerObservableObject.swift */,
+				1615AEA0252910390026184B /* NowPlayingObservableObject.swift */,
+			);
+			path = ObservableObjects;
+			sourceTree = "<group>";
+		};
+		167FE6202550CA0C00E65949 /* ParserDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				168B78BA25377AFC0078D0A5 /* NowPlayingParserDelegate.swift */,
+				167FE61C2550BE9800E65949 /* PlaylistParserDelegate.swift */,
+			);
+			path = ParserDelegates;
 			sourceTree = "<group>";
 		};
 		168B78AE25377A1A0078D0A5 /* Extensions */ = {
@@ -171,7 +195,7 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		16A0CCCF25250C1B0092C693 /* View */ = {
+		16A0CCCF25250C1B0092C693 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				1613B0BD2529FE070068B045 /* PlaylistView.swift */,
@@ -183,7 +207,7 @@
 				168B789F253774D40078D0A5 /* LoadingLottieView.swift */,
 				168B78C2253781C80078D0A5 /* ImageLoaderView.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		98D3BA43ACA3CA0402EAF409 /* Frameworks */ = {
@@ -323,9 +347,11 @@
 				166200E3251FAA410073EEE5 /* AppConstants.swift in Sources */,
 				166200E6251FB4210073EEE5 /* AristocratsMainView.swift in Sources */,
 				1613B0C5252A0F7E0068B045 /* RoundedCornerView.swift in Sources */,
+				167FE61D2550BE9800E65949 /* PlaylistParserDelegate.swift in Sources */,
 				168B78B025377A2C0078D0A5 /* JSONDecoder.swift in Sources */,
 				168B78A0253774D40078D0A5 /* LoadingLottieView.swift in Sources */,
 				16DA209B252E459B006FA9B2 /* StreamType.swift in Sources */,
+				167FE61A2550BA2F00E65949 /* PlaylistObservableObject.swift in Sources */,
 				1613B0C1252A022C0068B045 /* PlaylistSingleTrack.swift in Sources */,
 				16659F16254EF06F005F7D2C /* UIImage.swift in Sources */,
 				16DA20BA252E557E006FA9B2 /* MusicBrainz.swift in Sources */,
@@ -470,6 +496,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = aristocratsfm/aristocratsfm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"aristocratsfm/Preview Content\"";
 				DEVELOPMENT_TEAM = 4DJX9FMJKB;
@@ -482,6 +509,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vadimklimenko.aristocratsfm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -493,6 +521,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = aristocratsfm/aristocratsfm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"aristocratsfm/Preview Content\"";
 				DEVELOPMENT_TEAM = 4DJX9FMJKB;
@@ -505,6 +534,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vadimklimenko.aristocratsfm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

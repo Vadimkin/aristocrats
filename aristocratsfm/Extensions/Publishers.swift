@@ -41,4 +41,18 @@ extension Publishers {
             .decode(type: CoverArt.self, decoder: JSONDecoder.shared)
             .eraseToAnyPublisher()
     }
+    
+    static func playlistPublisher() -> AnyPublisher<[NowPlayingTrack]?, Error> {
+        return URLSession.shared
+            .dataTaskPublisher(for: Streams.Main.PlaylistURI)
+            .tryMap { response -> [NowPlayingTrack]? in
+                let delegate: PlaylistParserDelegate = .shared
+
+                let parser = XMLParser(data: response.data)
+                parser.delegate = delegate
+
+                return parser.parse() ? try delegate.build() : nil
+            }
+            .eraseToAnyPublisher()
+    }
 }
