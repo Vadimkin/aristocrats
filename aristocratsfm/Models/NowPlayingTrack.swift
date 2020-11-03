@@ -8,7 +8,9 @@
 import Foundation
 import Combine
 
-struct NowPlayingTrack: Equatable {
+
+struct NowPlayingTrack: Decodable, Equatable, Hashable {
     var artist: String = "Аристократи"
     var song: String = " "
+    var time: String?
 }

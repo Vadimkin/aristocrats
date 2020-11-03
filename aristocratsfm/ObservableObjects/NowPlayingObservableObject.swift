@@ -24,6 +24,7 @@ class NowPlayingObservableObject: ObservableObject {
     
     init() {
         self.cancellable = Deferred { Just(Date()) }
+            // FIXME Do not fail when internet is down
             .append(Timer.publish(every: 2, on: .main, in: .common).autoconnect())
             .flatMap { _ in Publishers.nowPlaying() }
             .removeDuplicates()
