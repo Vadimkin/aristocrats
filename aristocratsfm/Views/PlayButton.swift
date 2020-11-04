@@ -16,7 +16,7 @@ struct PlayButton: View {
         if player.isPlaying {
             return "pause.fill";
         }
-        
+
         return "play.fill";
     }
     
