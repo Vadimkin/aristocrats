@@ -22,10 +22,8 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
     
     var player: AVPlayer? = nil
     var playerItem: AVPlayerItem? = nil
-
-    var stream: String?
     
-    func playItem(at itemURL: String, stream: String) {
+    func playItem(at itemURL: String) {
         guard let url = URL(string: itemURL) else { return }
         
         self.isLoading = true
@@ -46,7 +44,6 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
  
         self.playerItem = playerItem
         self.player = newPlayer
-        self.stream = stream
         
         setupRemoteTransportControls()
         setupNowPlayingInfoCenter()
@@ -67,20 +64,16 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
         
         // Add handler for Play Command
         commandCenter.playCommand.addTarget { [unowned self] event in
-            if self.player?.rate == 0.0 {
-                self.player?.play()
-                return .success
-            }
-            return .commandFailed
+            // Looks like we need to reinitialize playItem and player both
+            playItem(at: Streams.Main.URI)
+            self.player?.play()
+            return .success
         }
         
         // Add handler for Pause Command
         commandCenter.pauseCommand.addTarget { [unowned self] event in
-            if self.player?.rate == 1.0 {
-                self.player?.pause()
-                return .success
-            }
-            return .commandFailed
+            self.player?.pause()
+            return .success
         }
     }
     

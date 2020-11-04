@@ -54,7 +54,8 @@ struct AristocratsMainView: View {
                         )
                         // END First screen
                         VStack(alignment: .leading) {
-                            PlaylistView().id("Playlist")
+                            PlaylistView()
+                                .id("Playlist")
                         }
                         
                     })
