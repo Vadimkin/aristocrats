@@ -35,8 +35,9 @@ struct PlayButton: View {
                         if (player.isPlaying) {
                             self.player.player?.pause()
                         } else {
-                            self.player.playItem(at: Streams.Main.URI, stream: Streams.Main.Name)
+                            self.player.playItem(at: Streams.Main.URI)
                             self.player.player?.play()
+                            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                         }
                     }) {
                         Image(systemName: iconImage)
@@ -52,7 +53,10 @@ struct PlayButton: View {
             
             if (player.isLoading) {
                 LoadingLottieView()
-                    .frame(maxHeight: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .frame(maxHeight: 100, alignment: .center)
+                    .onTapGesture {
+                        self.player.player?.pause()
+                    }
             }
         }
     }

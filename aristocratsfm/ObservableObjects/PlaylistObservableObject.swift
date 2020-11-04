@@ -15,22 +15,32 @@ class PlaylistObservableObject: ObservableObject {
 
     @Published var playlist: [NowPlayingTrack]?
 
-    private var cancellable: Cancellable?
+    @Published var cancellable: Cancellable?
     
     init() {
+        initializeTimer()
+    }
+    
+    func initializeTimer() {
         self.cancellable = Deferred { Just(Date()) }
-            .append(Timer.publish(every: 10, on: .main, in: .common).autoconnect())
-            .flatMap { _ in Publishers.playlistPublisher() }
+            .append(Timer.publish(every: 5, on: .main, in: .common).autoconnect())
+            .flatMap { _ in Publishers.playlistPublisher().replaceErrorWithNil(Error.self) }
             .removeDuplicates()
             .wrapInResult()
             .receive(on: DispatchQueue.main)
             .sink { result in
                 do {
                     let playback = try result.get()
-                    self.playlist = playback
+                    if (playback != nil) {
+                        self.playlist = playback as? [NowPlayingTrack]
+                    }
                 } catch {
                     debugPrint(error)
                 }
             }
+    }
+    
+    func stopTimer() {
+        self.cancellable?.cancel()
     }
 }

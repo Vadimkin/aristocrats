@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PlaylistView: View {
     @ObservedObject var playlist: PlaylistObservableObject = .shared
-
+    
     var body: some View {
         LazyVStack {
             if (playlist.playlist != nil) {
@@ -21,6 +21,13 @@ struct PlaylistView: View {
         }
         .padding(.bottom, 30)
         .background(Design.Primary.Base)
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+            playlist.stopTimer()
+            
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+            playlist.initializeTimer()
+        }
     }
 }
 
