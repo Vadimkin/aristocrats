@@ -32,6 +32,8 @@ struct AristocratsMainView: View {
                             Spacer()
                             
                             RadioControlView()
+                            
+                            Spacer()
 
                             Text("ПЛЕЙЛИСТ")
                                 .font(.subheadline)
@@ -68,12 +70,13 @@ struct AristocratsMainView: View {
     }
 }
 
+#if DEBUG
 struct AristocratsMainView_Previews: PreviewProvider {
     static var previews: some View {
         AristocratsMainView()
             .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
-        
         AristocratsMainView()
-            .previewDevice("iPhone 11 Pro Max")
+            .previewDevice(PreviewDevice(rawValue: "iPhone XS Max"))
     }
 }
+#endif
