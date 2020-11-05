@@ -7,8 +7,6 @@
 
 import Foundation
 import Combine
-import Alamofire
-import SwiftyXMLParser
 
 class PlaylistObservableObject: ObservableObject {
     static let shared = PlaylistObservableObject.init()
@@ -23,8 +21,9 @@ class PlaylistObservableObject: ObservableObject {
     
     func initializeTimer() {
         self.cancellable = Deferred { Just(Date()) }
-            .append(Timer.publish(every: 5, on: .main, in: .common).autoconnect())
+            .append(Timer.publish(every: 10, on: .main, in: .common).autoconnect())
             .flatMap { _ in Publishers.playlistPublisher().replaceErrorWithNil(Error.self) }
+            // TODO To not sink when we already know that error is here?
             .removeDuplicates()
             .wrapInResult()
             .receive(on: DispatchQueue.main)

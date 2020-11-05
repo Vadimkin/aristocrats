@@ -77,7 +77,9 @@ struct TrackMetadataView: View {
         
         var artworkImageView: ImageView?
         if case let .playing(_, artwork) = playback {
-            artworkImageView = ImageView(withURL: artwork?.images.first?.thumbnails.large ?? "")
+            if(artwork != nil) {
+                artworkImageView = ImageView(withURL: artwork?.images.first?.thumbnails.large ?? "")
+            }
         }
         
         return VStack() {
