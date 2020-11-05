@@ -1,36 +1,16 @@
 PODS:
-  - Alamofire (5.2.2)
   - lottie-ios (3.1.8)
-  - ObjectMapper (3.5.3)
-  - SwiftyXMLParser (5.1.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.2)
   - lottie-ios
-  - ObjectMapper (~> 3.5)
-  - SwiftyXMLParser (from `https://github.com/yahoojapan/SwiftyXMLParser.git`)
 
 SPEC REPOS:
   trunk:
-    - Alamofire
     - lottie-ios
-    - ObjectMapper
-
-EXTERNAL SOURCES:
-  SwiftyXMLParser:
-    :git: https://github.com/yahoojapan/SwiftyXMLParser.git
-
-CHECKOUT OPTIONS:
-  SwiftyXMLParser:
-    :commit: 0ca0e992ce0135169c715a6580b99f3e99c503e7
-    :git: https://github.com/yahoojapan/SwiftyXMLParser.git
 
 SPEC CHECKSUMS:
-  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
-  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
-  SwiftyXMLParser: c39a7854b7d32e447e19d0fabdd98696fe26f03a
 
-PODFILE CHECKSUM: b30d8db9ba2991b9f142210ceda17bf958ebadb3
+PODFILE CHECKSUM: ad58c06d461c99dd446a38d0177b153156833490
 
 COCOAPODS: 1.9.3

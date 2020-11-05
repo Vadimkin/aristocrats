@@ -7,8 +7,6 @@
 
 import Foundation
 import Combine
-import Alamofire
-import SwiftyXMLParser
 
 enum Playback: Equatable {
     case nothing
@@ -25,7 +23,7 @@ class NowPlayingObservableObject: ObservableObject {
     init() {
         self.cancellable = Deferred { Just(Date()) }
             // FIXME Do not fail when internet is down
-            .append(Timer.publish(every: 5, on: .main, in: .common).autoconnect())
+            .append(Timer.publish(every: 10, on: .main, in: .common).autoconnect())
             .flatMap { _ in Publishers.nowPlaying().replaceErrorWithNil(Error.self) }
             .removeDuplicates()
             .flatMap { nowPlaying -> AnyPublisher<(NowPlayingTrack, MusicBrainz?)?, Error> in
