@@ -10,7 +10,7 @@ import Combine
 
 enum Playback: Equatable {
     case nothing
-    case playing(_ playing: NowPlayingTrack, _ coverArt: CoverArt?)
+    case playing(_ playing: AristocratsTrack, _ coverArt: CoverArt?)
 }
 
 class NowPlayingObservableObject: ObservableObject {
@@ -21,12 +21,14 @@ class NowPlayingObservableObject: ObservableObject {
     private var cancellable: Cancellable?
     
     init() {
+        let timer = Timer.publish(every: 5, tolerance: 0.5, on: .main, in: .common)
+
         self.cancellable = Deferred { Just(Date()) }
             // FIXME Do not fail when internet is down
-            .append(Timer.publish(every: 10, on: .main, in: .common).autoconnect())
+            .append(timer.autoconnect())
             .flatMap { _ in Publishers.nowPlaying().replaceErrorWithNil(Error.self) }
             .removeDuplicates()
-            .flatMap { nowPlaying -> AnyPublisher<(NowPlayingTrack, MusicBrainz?)?, Error> in
+            .flatMap { nowPlaying -> AnyPublisher<(AristocratsTrack, MusicBrainz?)?, Error> in
                 guard let nowPlaying = nowPlaying else {
                     return Just(nil)
                         .setFailureType(to: Error.self)
@@ -49,7 +51,7 @@ class NowPlayingObservableObject: ObservableObject {
                     .setFailureType(to: Error.self)
                     .eraseToAnyPublisher()
             }
-            .flatMap { (nowPlayingMusicBrainz) -> AnyPublisher<(NowPlayingTrack, CoverArt?)?, Error> in
+            .flatMap { (nowPlayingMusicBrainz) -> AnyPublisher<(AristocratsTrack, CoverArt?)?, Error> in
                 guard let nowPlayingMusicBrainz = nowPlayingMusicBrainz else {
                     return Just(nil)
                         .setFailureType(to: Error.self)

@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 
-struct NowPlayingTrack: Decodable, Equatable, Hashable {
+struct AristocratsTrack: Decodable, Equatable, Hashable {
     var artist: String = "Аристократи"
     var song: String = " "
     var time: String?

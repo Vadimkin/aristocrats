@@ -9,32 +9,28 @@ import SwiftUI
 
 struct RadioControlView: View {
     @Environment(\.colorScheme) var colorScheme
+    @ObservedObject var nowPlaying: NowPlayingObservableObject = .shared
+    
+    @State var currentTrack:AristocratsTrack? = nil
 
     var body: some View {
-        HStack(alignment: .center) {
-            Spacer()
-            
-            Button(action: {}) {
-                Image(systemName: "suit.heart")
-                    .foregroundColor(colorScheme == .dark ? Color.white : Design.Primary.Gray)
-                    .font(Font.title)
-                    .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, 12)
+        ZStack{
+            HStack() {
+                
+                if case let .playing(track, _) = nowPlaying.playback {
+                    LikeButton(track: track)
+                }
+                
+                Spacer()
+                
+                if case let .playing(track, _) = nowPlaying.playback {
+                    ShareButton(track: track)
+                }
+
             }
-
-            Spacer()
-
             PlayButton()
-
-            Spacer()
-
-            Button(action: {}) {
-                Image(systemName: "square.and.arrow.up")
-                    .foregroundColor(colorScheme == .dark ? Color.white : Design.Primary.Gray)
-                    .font(Font.title)
-                    .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, 12)
-            }
-            Spacer()
         }
+            
         .padding(.horizontal)
         .padding(.vertical, 30)
     }

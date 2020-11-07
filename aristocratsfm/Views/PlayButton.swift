@@ -40,13 +40,14 @@ struct PlayButton: View {
                             UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                         }
                     }) {
-                        Image(systemName: iconImage)
-                            .resizable()
-                            .foregroundColor(.white)
-                            .scaledToFit()
-                            .scaleEffect(0.3)
-                            .padding(.leading, extraPadding)
-                            .opacity(player.isLoading ? 0 : 1)
+                        if (!player.isLoading) {
+                            Image(systemName: iconImage)
+                                .resizable()
+                                .foregroundColor(.white)
+                                .scaledToFit()
+                                .scaleEffect(0.3)
+                                .padding(.leading, extraPadding)
+                        }
                     }
                 )
             

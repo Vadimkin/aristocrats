@@ -92,7 +92,7 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
         nowPlayingObservableObject.$playback.subscribe(subscriber)
     }
     
-    func setNowPlayingTrack(currentTrack: NowPlayingTrack) {
+    func setNowPlayingTrack(currentTrack: AristocratsTrack) {
         var nowPlayingInfo = [String : Any]()
         nowPlayingInfo[MPMediaItemPropertyTitle] = currentTrack.song
         nowPlayingInfo[MPMediaItemPropertyArtist] = currentTrack.artist

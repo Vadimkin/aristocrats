@@ -14,9 +14,9 @@ final class NowPlayingParserDelegate: NSObject, XMLParserDelegate {
     private var song: String?
     private var error: Error?
     
-    func build() throws -> NowPlayingTrack? {
+    func build() throws -> AristocratsTrack? {
         if let artist = artist, let song = song {
-            return NowPlayingTrack(artist: artist, song: song)
+            return AristocratsTrack(artist: artist, song: song)
         } else if let error = error {
             throw error
         }
