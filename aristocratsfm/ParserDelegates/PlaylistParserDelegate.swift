@@ -13,13 +13,13 @@ final class PlaylistParserDelegate: NSObject, XMLParserDelegate {
 
     private var error: Error?
     
-    private var playlist: [NowPlayingTrack]? = []
-    var newTrack: NowPlayingTrack? = nil
+    private var playlist: [AristocratsTrack]? = []
+    var newTrack: AristocratsTrack? = nil
     
     enum State { case none, artist, song, time }
     var state: State = .none
     
-    func build() throws -> [NowPlayingTrack]? {
+    func build() throws -> [AristocratsTrack]? {
         return self.playlist
     }
     
@@ -36,7 +36,7 @@ final class PlaylistParserDelegate: NSObject, XMLParserDelegate {
     ) {
         switch elementName {
         case "track":
-            self.newTrack = NowPlayingTrack()
+            self.newTrack = AristocratsTrack()
             self.state = .none
         case "artist":
             self.state = .artist

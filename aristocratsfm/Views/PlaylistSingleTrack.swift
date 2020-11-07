@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PlaylistSingleTrack: View {
-    let track: NowPlayingTrack
+    let track: AristocratsTrack
     
     var body: some View {
             HStack {
@@ -40,7 +40,7 @@ struct PlaylistSingleTrack: View {
 
 struct PlaylistSingleTrack_Previews: PreviewProvider {
     static var previews: some View {
-        PlaylistSingleTrack(track: NowPlayingTrack(artist: "Hey", song: "Hop", time: "10:10"))
+        PlaylistSingleTrack(track: AristocratsTrack(artist: "Hey", song: "Hop", time: "10:10"))
             .background(Design.Primary.Base)
     }
 }

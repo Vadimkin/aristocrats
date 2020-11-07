@@ -15,7 +15,7 @@ import Foundation
         let thumbnails: CoverArtThumbnail
 
         struct CoverArtThumbnail: Decodable, Equatable {
-            let large: String
+            var large: String
         }
     }
 }

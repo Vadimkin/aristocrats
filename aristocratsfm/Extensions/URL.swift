@@ -21,6 +21,17 @@ extension URL {
             ]
             return components.url!
         }
+        
+        static func songwhip(artist: String, song: String) -> URL {
+            // TODO Is not used yet, expected to use for sharing
+            var components = URLComponents(string: "https://songwhip.com/api/")!
+            components.queryItems = [
+                .init(name: "q", value: "\(artist) \(song)"),
+                .init(name: "country", value: "UA"),
+                .init(name: "limit", value: "1")
+            ]
+            return components.url!
+        }
 
         static func coverArt(id: String) -> URL {
             URL(string: "https://coverartarchive.org/release/\(id)")!

@@ -11,8 +11,7 @@ import Combine
 class PlaylistObservableObject: ObservableObject {
     static let shared = PlaylistObservableObject.init()
 
-    @Published var playlist: [NowPlayingTrack]?
-
+    @Published var playlist: [AristocratsTrack]?
     @Published var cancellable: Cancellable?
     
     init() {
@@ -21,7 +20,8 @@ class PlaylistObservableObject: ObservableObject {
     
     func initializeTimer() {
         self.cancellable = Deferred { Just(Date()) }
-            .append(Timer.publish(every: 10, on: .main, in: .common).autoconnect())
+            // To not have two timers at the same time
+            .append(Timer.publish(every: 11, tolerance: 1, on: .main, in: .common).autoconnect())
             .flatMap { _ in Publishers.playlistPublisher().replaceErrorWithNil(Error.self) }
             // TODO To not sink when we already know that error is here?
             .removeDuplicates()
@@ -31,7 +31,7 @@ class PlaylistObservableObject: ObservableObject {
                 do {
                     let playback = try result.get()
                     if (playback != nil) {
-                        self.playlist = playback as? [NowPlayingTrack]
+                        self.playlist = playback as? [AristocratsTrack]
                     }
                 } catch {
                     debugPrint(error)
