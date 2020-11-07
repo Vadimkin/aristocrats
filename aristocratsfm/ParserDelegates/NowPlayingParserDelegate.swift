@@ -12,11 +12,13 @@ final class NowPlayingParserDelegate: NSObject, XMLParserDelegate {
 
     private var artist: String?
     private var song: String?
+    private var isLive: Bool?
+    
     private var error: Error?
     
     func build() throws -> AristocratsTrack? {
-        if let artist = artist, let song = song {
-            return AristocratsTrack(artist: artist, song: song)
+        if let artist = artist, let song = song, let isLive = isLive {
+            return AristocratsTrack(artist: artist, song: song, isLive: isLive)
         } else if let error = error {
             throw error
         }
@@ -34,6 +36,7 @@ final class NowPlayingParserDelegate: NSObject, XMLParserDelegate {
         switch elementName {
         case "artist":
             artist = attributeDict["title"] != "" ? attributeDict["title"] : "Прямий етер"
+            isLive = true
 
         case "song":
             song = attributeDict["title"] != "" ? attributeDict["title"] : "Аристократи"
@@ -46,5 +49,6 @@ final class NowPlayingParserDelegate: NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
         artist = nil
         song = nil
+        isLive = false
     }
 }

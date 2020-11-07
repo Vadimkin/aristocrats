@@ -37,4 +37,11 @@ extension URL {
             URL(string: "https://coverartarchive.org/release/\(id)")!
         }
     }
+    
+    static func alwaysSecuredURL(insecuredURL: URL) -> URL {
+        var comps = URLComponents(url: insecuredURL, resolvingAgainstBaseURL: false)!
+        comps.scheme = "https"
+        let https = comps.url!
+        return https
+    }
 }

@@ -62,6 +62,8 @@ struct LikeButton: View {
         newFavorite.created_at = Date()
 
         save()
+        
+        UINotificationFeedbackGenerator().notificationOccurred(.warning)
     }
 
     private func removeFromFavorite(_ favorite: Favorite) {

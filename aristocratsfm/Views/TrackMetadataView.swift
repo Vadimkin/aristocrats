@@ -78,7 +78,11 @@ struct TrackMetadataView: View {
         var artworkImageView: ImageView?
         if case let .playing(_, artwork) = playback {
             if(artwork != nil) {
-                artworkImageView = ImageView(withURL: artwork?.images.first?.thumbnails.large ?? "")
+                if let artworkUnsecuredImage = artwork?.images.first?.thumbnails.large {
+                    if let artworkImage = URL(string: artworkUnsecuredImage) {
+                        artworkImageView = ImageView(withURL: URL.alwaysSecuredURL(insecuredURL: artworkImage))
+                    }
+                }
             }
         }
         

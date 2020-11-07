@@ -13,8 +13,8 @@ struct ImageView: View {
     @ObservedObject private var imageLoader: ImageLoader
     @State var image: UIImage = UIImage()
     
-    init(withURL url:String) {
-        imageLoader = ImageLoader(urlString:url)
+    init(withURL url:URL) {
+        imageLoader = ImageLoader(url:url)
     }
     
     var body: some View {
@@ -43,14 +43,11 @@ class ImageLoader: ObservableObject {
         }
     }
 
-    init(urlString:String) {
-        guard let url = URL(string: urlString) else { return }
-        
+    init(url:URL) {
         let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) -> Void in
             guard let data = data else { return }
             DispatchQueue.main.async {
                 self.data = data
-//                completion(nil, nil)
             }
         })
 

@@ -16,7 +16,6 @@ struct RadioControlView: View {
     var body: some View {
         ZStack{
             HStack() {
-                
                 if case let .playing(track, _) = nowPlaying.playback {
                     LikeButton(track: track)
                 }
@@ -26,7 +25,6 @@ struct RadioControlView: View {
                 if case let .playing(track, _) = nowPlaying.playback {
                     ShareButton(track: track)
                 }
-
             }
             PlayButton()
         }

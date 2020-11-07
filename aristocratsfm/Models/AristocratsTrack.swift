@@ -12,5 +12,7 @@ import Combine
 struct AristocratsTrack: Decodable, Equatable, Hashable {
     var artist: String = "Аристократи"
     var song: String = " "
-    var time: String?
+    var time: String? // Is empty when this track is for playlist, usually in format HH:MM
+
+    var isLive: Bool = false // Is current track is playing
 }
