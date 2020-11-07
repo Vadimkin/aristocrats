@@ -10,43 +10,38 @@ import Combine
 import CoreData
 
 struct LikeButton: View {
-    var track: AristocratsTrack?
+    var track: AristocratsTrack
 
     @Environment(\.managedObjectContext) private var moc
     @Environment(\.colorScheme) var colorScheme
     
-    @State var isFavorited: Bool = false
+    @FetchRequest var favorites: FetchedResults<Favorite>
 
-    func addToFavorites(track: AristocratsTrack) -> Bool {
-        let newFavorite = Favorite(context: moc)
+    var favorite: Favorite? { favorites.first }
 
-        newFavorite.uuid = UUID()
-        newFavorite.artist = track.artist
-        newFavorite.song = track.song
-        newFavorite.created_at = Date()
-
-        do {
-            try moc.save()
-        } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
-
-        return true
+    init(track: AristocratsTrack) {
+        self.track = track
+        self._favorites = FetchRequest(
+            entity: Favorite.entity(),
+            sortDescriptors: [],
+            predicate: NSCompoundPredicate(andPredicateWithSubpredicates: [
+                NSPredicate(format: "artist = %@ ", track.artist),
+                NSPredicate(format: "song = %@ ", track.song)
+            ])
+        )
     }
 
     var body: some View {
-        ZStack{
-            Button(action: {
-                UINotificationFeedbackGenerator().notificationOccurred(.warning)
-
-                // TODO Add/remove from favorites
-                isFavorited.toggle()
-            }) {
-                if (!isFavorited) {
-                    Image(systemName: isFavorited ? "suit.heart.fill" : "suit.heart")
+        ZStack {
+            if let favorite = favorite {
+                LikeAnimatedButton()
+                    .scaledToFit()
+                    .onTapGesture(perform: {
+                        removeFromFavorite(favorite)
+                    })
+            } else {
+                Button(action: addToFavorites) {
+                    Image(systemName: "suit.heart")
                         .resizable()
                         .scaledToFit()
                         .scaleEffect(0.6)
@@ -55,14 +50,35 @@ struct LikeButton: View {
                         .padding(.leading, 10)
                 }
             }
-            if (isFavorited) {
-                    LikeAnimatedButton()
-                        .scaledToFit()
-                        .onTapGesture {
-                            isFavorited.toggle()
-                        }
-            }
         }.frame(maxHeight: 70, alignment: .leading)
+    }
+
+    private func addToFavorites() {
+        let newFavorite = Favorite(context: moc)
+
+        newFavorite.uuid = UUID()
+        newFavorite.artist = track.artist
+        newFavorite.song = track.song
+        newFavorite.created_at = Date()
+
+        save()
+    }
+
+    private func removeFromFavorite(_ favorite: Favorite) {
+        moc.delete(favorite)
+
+        save()
+    }
+
+    private func save() {
+        do {
+            try moc.save()
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
     }
 }
 
