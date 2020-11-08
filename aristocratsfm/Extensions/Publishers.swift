@@ -9,10 +9,10 @@ import Foundation
 import Combine
 
 extension Publishers {
-    static func nowPlaying() -> AnyPublisher<NowPlayingTrack?, Error> {
+    static func nowPlaying() -> AnyPublisher<AristocratsTrack?, Error> {
         return URLSession.shared
             .dataTaskPublisher(for: Streams.Main.NowPlayingTrackURI)
-            .tryMap { response -> NowPlayingTrack? in
+            .tryMap { response -> AristocratsTrack? in
                 let delegate: NowPlayingParserDelegate = .shared
 
                 let parser = XMLParser(data: response.data)
@@ -39,6 +39,20 @@ extension Publishers {
             .dataTaskPublisher(for: URL.Music.coverArt(id: id))
             .map { $0.data }
             .decode(type: CoverArt.self, decoder: JSONDecoder.shared)
+            .eraseToAnyPublisher()
+    }
+    
+    static func playlistPublisher() -> AnyPublisher<[AristocratsTrack]?, Error> {
+        return URLSession.shared
+            .dataTaskPublisher(for: Streams.Main.PlaylistURI)
+            .tryMap { response -> [AristocratsTrack]? in
+                let delegate: PlaylistParserDelegate = .shared
+
+                let parser = XMLParser(data: response.data)
+                parser.delegate = delegate
+
+                return parser.parse() ? try delegate.build() : nil
+            }
             .eraseToAnyPublisher()
     }
 }
