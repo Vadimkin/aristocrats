@@ -14,6 +14,7 @@ struct LikeAnimatedButton: UIViewRepresentable {
     }
     
     var name: String! = "LikeAnimatedButton"
+    var animated: Bool = true
     
     var animationView = AnimationView()
     
@@ -46,6 +47,11 @@ struct LikeAnimatedButton: UIViewRepresentable {
     func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<LikeAnimatedButton>) {
         let animationView = context.coordinator.parent.animationView;
         animationView.animationSpeed = 1.5
-        animationView.play()
+
+        if (animated) {
+            animationView.play(toProgress: 1, loopMode: .playOnce)
+        } else {
+            animationView.currentProgress = 1
+        }
     }
 }

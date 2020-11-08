@@ -28,7 +28,7 @@ struct PlayButton: View {
 
         ZStack {
             Circle()
-                .fill(Design.Primary.Base)
+                .fill(Color(UIColor(named: "BaseColor")!))
                 .frame(maxHeight: 100, alignment: .center)
                 .overlay(
                     Button(action: {

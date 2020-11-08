@@ -20,14 +20,7 @@ struct PlaylistView: View {
             }
         }
         .padding(.bottom, 30)
-        .background(Design.Primary.Base)
-        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
-            playlist.stopTimer()
-            
-        }
-        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-            playlist.initializeTimer()
-        }
+        .background(Color(UIColor(named: "BaseColor")!))
     }
 }
 

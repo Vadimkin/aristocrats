@@ -10,14 +10,6 @@ import SwiftUI
 struct AristocratsMainView: View {
     @Environment(\.colorScheme) var colorScheme
     
-    var isBottom: Bool {
-        // Returns true if it's iPhone without stupid home button
-        if #available(iOS 11.0, *),let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow }), keyWindow.safeAreaInsets.bottom > 0 {
-            return true
-        }
-        return false
-    }
-    
     var body: some View {
         GeometryReader { geometry in
             ScrollViewReader { scrollView in
@@ -27,6 +19,8 @@ struct AristocratsMainView: View {
                         
                         // First screen:
                         VStack(alignment: .center, spacing: 0, content: {
+//                            TopBarView()
+
                             TrackMetadataView()
                             
                             Spacer()
@@ -40,9 +34,9 @@ struct AristocratsMainView: View {
                                 .foregroundColor(.white)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding(.top, 20)
-                                .padding(.bottom, isBottom ? 30 : 20)
+                                .padding(.bottom, UIApplication.withoutHomeButton() ? 30 : 20)
                                 .padding(.horizontal)
-                                .background(RoundedCornerView(color: Design.Primary.Base, tl: 20, tr: 20, bl: 0, br: 0))
+                                .background(RoundedCornerView(color: Color(UIColor(named: "BaseColor")!), tl: 20, tr: 20, bl: 0, br: 0))
                                 .onTapGesture {
                                     withAnimation {
                                         scrollView.scrollTo("Playlist", anchor: .top)
@@ -64,7 +58,7 @@ struct AristocratsMainView: View {
                 }
             }
         }
-        .padding(.top, 30)
+        .padding(.top, UIApplication.withoutHomeButton() ? 30 : 50)
         .background(colorScheme == .dark ? Design.Primary.DarkGray : Color.white)
         .edgesIgnoringSafeArea(.all)
     }

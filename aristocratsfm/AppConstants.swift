@@ -11,8 +11,6 @@ import Combine
 
 struct Design {
     struct Primary {
-        static let Base = Color(red: 0.65, green: 0.03, blue: 0.24)
-        static let Gray = Color(red: 0.6, green: 0.6, blue: 0.6)
         static let DarkGray = Color(red: 0.11, green: 0.11, blue: 0.11)
         static let LightGray = Color(red: 0.055, green: 0.055, blue: 0.055)
     }
