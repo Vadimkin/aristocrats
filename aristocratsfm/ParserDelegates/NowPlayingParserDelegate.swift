@@ -36,7 +36,7 @@ final class NowPlayingParserDelegate: NSObject, XMLParserDelegate {
         switch elementName {
         case "artist":
             artist = attributeDict["title"] != "" ? attributeDict["title"] : "Прямий етер"
-            isLive = true
+            isLive = attributeDict["title"] == ""
 
         case "song":
             song = attributeDict["title"] != "" ? attributeDict["title"] : "Аристократи"

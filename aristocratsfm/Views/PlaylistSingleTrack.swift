@@ -34,13 +34,13 @@ struct PlaylistSingleTrack: View {
             .padding(.top, 10)
             .padding(.bottom, 10)
             .padding(.horizontal)
-        .listRowBackground(Design.Primary.Base)
+            .listRowBackground(Color(UIColor(named: "BaseColor")!))
     }
 }
 
 struct PlaylistSingleTrack_Previews: PreviewProvider {
     static var previews: some View {
         PlaylistSingleTrack(track: AristocratsTrack(artist: "Hey", song: "Hop", time: "10:10"))
-            .background(Design.Primary.Base)
+            .background(Color(UIColor(named: "BaseColor")!))
     }
 }

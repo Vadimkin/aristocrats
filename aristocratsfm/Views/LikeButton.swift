@@ -13,9 +13,10 @@ struct LikeButton: View {
     var track: AristocratsTrack
 
     @Environment(\.managedObjectContext) private var moc
-    @Environment(\.colorScheme) var colorScheme
     
     @FetchRequest var favorites: FetchedResults<Favorite>
+
+    @State var animateLoading: Bool = false
 
     var favorite: Favorite? { favorites.first }
 
@@ -34,7 +35,7 @@ struct LikeButton: View {
     var body: some View {
         ZStack {
             if let favorite = favorite {
-                LikeAnimatedButton()
+                LikeAnimatedButton(animated: animateLoading)
                     .scaledToFit()
                     .onTapGesture(perform: {
                         removeFromFavorite(favorite)
@@ -45,7 +46,7 @@ struct LikeButton: View {
                         .resizable()
                         .scaledToFit()
                         .scaleEffect(0.6)
-                        .foregroundColor(colorScheme == .dark ? Color.white : Design.Primary.Gray)
+                        .foregroundColor(Color(UIColor(named: "ButtonForegroundColor")!))
                         .padding(.vertical, 12)
                         .padding(.leading, 10)
                 }
@@ -73,6 +74,8 @@ struct LikeButton: View {
     }
 
     private func save() {
+        self.animateLoading = true
+
         do {
             try moc.save()
         } catch {

@@ -14,5 +14,5 @@ struct AristocratsTrack: Decodable, Equatable, Hashable {
     var song: String = " "
     var time: String? // Is empty when this track is for playlist, usually in format HH:MM
 
-    var isLive: Bool = false // Is current track is playing
+    var isLive: Bool = false // Live stream from studio
 }

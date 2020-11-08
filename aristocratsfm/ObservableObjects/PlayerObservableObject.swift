@@ -9,11 +9,14 @@ import Foundation
 import AVFoundation
 import MediaPlayer
 import Combine
+import CoreData
 
 class PlayerObservableObject: AVPlayer, ObservableObject {
     @Published var isPlaying: Bool = false
     @Published var isLoading: Bool = false
     @Published var isError: Bool = false
+    
+    private var moc = PersistenceController.shared.container.viewContext
 
     static let shared = PlayerObservableObject()
     var cancellable: AnyCancellable?
@@ -60,7 +63,19 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
         commandCenter.likeCommand.isEnabled = false
         
         commandCenter.bookmarkCommand.isEnabled = true
-        commandCenter.bookmarkCommand.addTarget { (commandEvent) -> MPRemoteCommandHandlerStatus in  print("Add to Bookmarks");  return .success }
+        commandCenter.bookmarkCommand.addTarget { [unowned self] commandEvent in
+            let nowPlayingObservableObject = NowPlayingObservableObject.shared
+
+            if case let .playing(track, _) = nowPlayingObservableObject.playback {
+                if (!track.isLive) {
+                    let isSuccess = self.addToFavorites(track: track)
+                    if (isSuccess) {
+                        return .success
+                    }
+                }
+            }
+            return .commandFailed
+        }
         
         // Add handler for Play Command
         commandCenter.playCommand.addTarget { [unowned self] event in
@@ -104,29 +119,37 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
     
+    func addToFavorites(track: AristocratsTrack) -> Bool {
+        let fetchRequest = NSFetchRequest<Favorite>(entityName: "Favorite")
+        fetchRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
+            NSPredicate(format: "artist = %@ ", track.artist),
+            NSPredicate(format: "song = %@ ", track.song)
+        ])
+        
+        let favoritesObjects = try? moc.count(for: fetchRequest)
+        if let favoritesObjectsUnwrapped = favoritesObjects {
+            if favoritesObjectsUnwrapped > 0 {
+                return false;
+            }
+        }
+        
+        let newFavorite = Favorite(context: self.moc)
+
+        newFavorite.uuid = UUID()
+        newFavorite.artist = track.artist
+        newFavorite.song = track.song
+        newFavorite.created_at = Date()
+
+        try? moc.save()
+        return true
+    }
+    
     func getNowPlayingArtwork() -> MPMediaItemArtwork {
         // TODO Fetch from resource
         let canvasSize = CGSize(width: 512, height: 512)
-        
-        let renderer = UIGraphicsImageRenderer(size: canvasSize)
-        let img = renderer.image { ctx in
-            ctx.cgContext.setFillColor(Design.Primary.Base.cgColor!)
-            ctx.cgContext.addRect(CGRect(x: 0, y: 0, width: canvasSize.width, height: canvasSize.height))
-            ctx.cgContext.drawPath(using: .fillStroke)
-
-            var image = UIImage(named: "AristocratsLogoWhite")!
-            image = image.resized(to: CGSize(width: image.size.width * 0.6, height: image.size.height * 0.6))
-
-            let imagePaddingX = (canvasSize.width - image.size.width) / 2
-            let imagePaddingY = (canvasSize.height - image.size.height) / 2
-            
-            let imageRect: CGRect = CGRect(x:imagePaddingX, y:imagePaddingY, width:image.size.width, height:image.size.height);
-
-            image.draw(in: imageRect)
-        }
 
         let albumArtwork = MPMediaItemArtwork.init(boundsSize: canvasSize, requestHandler: { (size) -> UIImage in
-            return img
+            return UIImage(named: "AristocratsCat")!
         })
         
         return albumArtwork

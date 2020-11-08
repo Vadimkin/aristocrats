@@ -17,7 +17,7 @@ struct TrackMetadataView: View {
     var artworkView: some View {
         let playback = nowPlaying.playback;
         
-        var fillWrapperColor = colorScheme == .dark ? Design.Primary.Base : Color.white
+        var fillWrapperColor = colorScheme == .dark ? Color(UIColor(named: "BaseColor")!) : Color.white
         if colorScheme == .dark {
             if case let .playing(_, artwork) = playback {
                 if (artwork != nil) {
@@ -69,11 +69,10 @@ struct TrackMetadataView: View {
     var body: some View {
         let playback = nowPlaying.playback;
         
-        let artworkImageName = colorScheme == .dark ? "AristocratsLogoWhite" : "AristocratsLogoPurple"
-        
-        let artworkImage = Image(artworkImageName)
+        let artworkImage = Image("AristocratsCat")
+            .resizable()
+            .scaledToFit()
             .padding()
-            .scaleEffect(0.5, anchor: .center)
         
         var artworkImageView: ImageView?
         if case let .playing(_, artwork) = playback {
