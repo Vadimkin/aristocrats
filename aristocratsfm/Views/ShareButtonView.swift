@@ -1,5 +1,5 @@
 //
-//  ShareButton.swift
+//  ShareButtonView.swift
 //  aristocratsfm
 //
 //  Created by Vadim Klimenko on 07.11.2020.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ShareButton: View {
+struct ShareButtonView: View {
     var track: AristocratsTrack?
     
     func shareTrack() {
@@ -24,17 +24,16 @@ struct ShareButton: View {
             Image(systemName: "square.and.arrow.up")
                 .resizable()
                 .scaledToFit()
-                .scaleEffect(0.6)
                 .foregroundColor(Color(UIColor(named: "ButtonForegroundColor")!))
                 .padding(.vertical, 12)
                 .padding(.trailing, 10)
-                .frame(maxHeight: 70, alignment: .trailing)
+                .frame(maxHeight: 50, alignment: .trailing)
         }
     }
 }
 
 struct ShareButton_Previews: PreviewProvider {
     static var previews: some View {
-        ShareButton()
+        ShareButtonView()
     }
 }

@@ -1,5 +1,5 @@
 //
-//  PlaylistView.swift
+//  PlaylistListView.swift
 //  aristocratsfm
 //
 //  Created by Vadim Klimenko on 04.10.2020.
@@ -7,18 +7,19 @@
 
 import SwiftUI
 
-struct PlaylistView: View {
+struct PlaylistListView: View {
     @ObservedObject var playlist: PlaylistObservableObject = .shared
     
     var body: some View {
         LazyVStack {
             if (playlist.playlist != nil) {
                 ForEach(playlist.playlist!, id: \.self) { track in
-                    PlaylistSingleTrack(track: track)
+                    PlaylistTrackView(track: track)
                     Divider()
                 }
             }
         }
+        .padding(.top, 10)
         .padding(.bottom, 30)
         .background(Color(UIColor(named: "BaseColor")!))
     }
@@ -27,6 +28,6 @@ struct PlaylistView: View {
 
 struct PlaylistView_Previews: PreviewProvider {
     static var previews: some View {
-        PlaylistView()
+        PlaylistListView()
     }
 }

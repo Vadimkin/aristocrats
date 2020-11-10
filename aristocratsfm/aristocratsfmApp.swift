@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct aristocratsfmApp: App {
-    let persistenceController = PersistenceController.shared
+    let dataController = DataController.shared
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext).tag(2)
+                .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }
