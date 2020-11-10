@@ -16,7 +16,7 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
     @Published var isLoading: Bool = false
     @Published var isError: Bool = false
     
-    private var moc = PersistenceController.shared.container.viewContext
+    private var moc = DataController.shared.container.viewContext
 
     static let shared = PlayerObservableObject()
     var cancellable: AnyCancellable?
@@ -138,7 +138,7 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
         newFavorite.uuid = UUID()
         newFavorite.artist = track.artist
         newFavorite.song = track.song
-        newFavorite.created_at = Date()
+        newFavorite.createdAt = Date()
 
         try? moc.save()
         return true

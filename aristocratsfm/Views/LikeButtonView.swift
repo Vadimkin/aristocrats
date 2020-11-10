@@ -1,5 +1,5 @@
 //
-//  LikeButton.swift
+//  LikeButtonView.swift
 //  aristocratsfm
 //
 //  Created by Vadim Klimenko on 05.11.2020.
@@ -9,13 +9,11 @@ import SwiftUI
 import Combine
 import CoreData
 
-struct LikeButton: View {
+struct LikeButtonView: View {
     var track: AristocratsTrack
-
-    @Environment(\.managedObjectContext) private var moc
+    let dataController: DataController = DataController.shared
     
     @FetchRequest var favorites: FetchedResults<Favorite>
-
     @State var animateLoading: Bool = false
 
     var favorite: Favorite? { favorites.first }
@@ -35,8 +33,10 @@ struct LikeButton: View {
     var body: some View {
         ZStack {
             if let favorite = favorite {
-                LikeAnimatedButton(animated: animateLoading)
+                LikeButtonLottieView(animated: animateLoading)
+                    .scaleEffect(1/0.666) // Magic coeficient to keep the same size for image and button
                     .scaledToFit()
+                    .padding(.leading, -1)
                     .onTapGesture(perform: {
                         removeFromFavorite(favorite)
                     })
@@ -45,50 +45,36 @@ struct LikeButton: View {
                     Image(systemName: "suit.heart")
                         .resizable()
                         .scaledToFit()
-                        .scaleEffect(0.6)
+                        .scaleEffect(1)
                         .foregroundColor(Color(UIColor(named: "ButtonForegroundColor")!))
                         .padding(.vertical, 12)
                         .padding(.leading, 10)
                 }
             }
-        }.frame(maxHeight: 70, alignment: .leading)
+        }.frame(maxHeight: 50, alignment: .leading)
     }
 
     private func addToFavorites() {
-        let newFavorite = Favorite(context: moc)
+        if (track.isLive) {
+            UINotificationFeedbackGenerator().notificationOccurred(.error)
+            return
+        }
 
-        newFavorite.uuid = UUID()
-        newFavorite.artist = track.artist
-        newFavorite.song = track.song
-        newFavorite.created_at = Date()
-
-        save()
-        
+        try? dataController.insertFavoriteTrack(track: track)
         UINotificationFeedbackGenerator().notificationOccurred(.warning)
+        
+        self.animateLoading = true
     }
 
     private func removeFromFavorite(_ favorite: Favorite) {
-        moc.delete(favorite)
-
-        save()
-    }
-
-    private func save() {
+        try? dataController.delete(favorite: favorite)
+        
         self.animateLoading = true
-
-        do {
-            try moc.save()
-        } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
     }
 }
 
 struct LikeButton_Previews: PreviewProvider {
     static var previews: some View {
-        LikeButton(track: AristocratsTrack(artist: "Hey", song: "Hey"))
+        LikeButtonView(track: AristocratsTrack(artist: "Hey", song: "Hey"))
     }
 }

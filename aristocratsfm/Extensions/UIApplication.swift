@@ -8,11 +8,11 @@
 import SwiftUI
 
 extension UIApplication {
-    static func withoutHomeButton() -> Bool {
-        // Returns true if it's iPhone without home button
+    static func withHomeButton() -> Bool {
+        // Returns true if it's iPhone with home button
         if #available(iOS 11.0, *),let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow }), keyWindow.safeAreaInsets.bottom > 0 {
-            return true
+            return false
         }
-        return false
+        return true
     }
 }

@@ -16,16 +16,16 @@ struct AristocratsMainView: View {
                 ScrollView {
                     // All Screens Stack:
                     VStack(alignment: .leading, spacing: 0, content: {
-                        
+
                         // First screen:
                         VStack(alignment: .center, spacing: 0, content: {
-//                            TopBarView()
+                            TopNavigationView()
 
-                            TrackMetadataView()
+                            RadioCurrentTrackView()
                             
                             Spacer()
                             
-                            RadioControlView()
+                            RadioControlsView()
                             
                             Spacer()
 
@@ -34,7 +34,7 @@ struct AristocratsMainView: View {
                                 .foregroundColor(.white)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding(.top, 20)
-                                .padding(.bottom, UIApplication.withoutHomeButton() ? 30 : 20)
+                                .padding(.bottom, UIApplication.withHomeButton() ? 20 : 30)
                                 .padding(.horizontal)
                                 .background(RoundedCornerView(color: Color(UIColor(named: "BaseColor")!), tl: 20, tr: 20, bl: 0, br: 0))
                                 .onTapGesture {
@@ -50,7 +50,7 @@ struct AristocratsMainView: View {
                         )
                         // END First screen
                         VStack(alignment: .leading) {
-                            PlaylistView()
+                            PlaylistListView()
                                 .id("Playlist")
                         }
                         
@@ -58,7 +58,7 @@ struct AristocratsMainView: View {
                 }
             }
         }
-        .padding(.top, UIApplication.withoutHomeButton() ? 30 : 50)
+        .padding(.top, UIApplication.withHomeButton() ? 10 : 30)
         .background(colorScheme == .dark ? Design.Primary.DarkGray : Color.white)
         .edgesIgnoringSafeArea(.all)
     }

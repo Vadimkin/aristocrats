@@ -1,33 +1,33 @@
 //
-//  LikeAnimatedButton.swift
+//  LottieView.swift
 //  aristocratsfm
 //
-//  Created by Vadim Klimenko on 07.11.2020.
+//  Created by Vadim Klimenko on 09.11.2020.
 //
 
 import SwiftUI
 import Lottie
 
-struct LikeAnimatedButton: UIViewRepresentable {
+struct LottieView: UIViewRepresentable {
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
     
-    var name: String! = "LikeAnimatedButton"
-    var animated: Bool = true
+    var name: String! = "CircleLoader"
+    var isLooped: Bool = true
     
     var animationView = AnimationView()
     
     class Coordinator: NSObject {
-        var parent: LikeAnimatedButton
+        var parent: LottieView
         
-        init(_ animationView: LikeAnimatedButton) {
+        init(_ animationView: LottieView) {
             self.parent = animationView
             super.init()
         }
     }
     
-    func makeUIView(context: UIViewRepresentableContext<LikeAnimatedButton>) -> UIView {
+    func makeUIView(context: UIViewRepresentableContext<LottieView>) -> UIView {
         let view = UIView()
         
         animationView.animation = Animation.named(name)
@@ -44,14 +44,10 @@ struct LikeAnimatedButton: UIViewRepresentable {
         return view
     }
     
-    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<LikeAnimatedButton>) {
+    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<LottieView>) {
         let animationView = context.coordinator.parent.animationView;
-        animationView.animationSpeed = 1.5
-
-        if (animated) {
-            animationView.play(toProgress: 1, loopMode: .playOnce)
-        } else {
-            animationView.currentProgress = 1
-        }
+        animationView.loopMode = isLooped ? .loop : .playOnce
+        animationView.animationSpeed = 1
+        animationView.play()
     }
 }

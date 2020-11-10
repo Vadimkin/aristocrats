@@ -1,5 +1,5 @@
 //
-//  TrackMetadataView.swift
+//  RadioCurrentTrackView.swift
 //  aristocratsfm
 //
 //  Created by Vadim Klimenko on 25.09.2020.
@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-struct TrackMetadataView: View {
+struct RadioCurrentTrackView: View {
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var nowPlaying: NowPlayingObservableObject = .shared
     
@@ -99,9 +99,9 @@ struct TrackMetadataView: View {
     }
 }
 
-struct TrackMetadataView_Previews: PreviewProvider {
+struct RadioCurrentTrackView_Previews: PreviewProvider {
     static var previews: some View {
-        TrackMetadataView()
+        RadioCurrentTrackView()
         
     }
 }
