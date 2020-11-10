@@ -16,6 +16,7 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
     @Published var isLoading: Bool = false
     @Published var isError: Bool = false
     
+    private let dataController: DataController = DataController.shared
     private var moc = DataController.shared.container.viewContext
 
     static let shared = PlayerObservableObject()
@@ -60,7 +61,6 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
         commandCenter.nextTrackCommand.isEnabled = false
         commandCenter.skipForwardCommand.isEnabled = false
         commandCenter.skipBackwardCommand.isEnabled = false
-        commandCenter.likeCommand.isEnabled = false
         
         commandCenter.bookmarkCommand.isEnabled = true
         commandCenter.bookmarkCommand.addTarget { [unowned self] commandEvent in
@@ -120,6 +120,7 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
     }
     
     func addToFavorites(track: AristocratsTrack) -> Bool {
+        // TODO Move to DataController
         let fetchRequest = NSFetchRequest<Favorite>(entityName: "Favorite")
         fetchRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
             NSPredicate(format: "artist = %@ ", track.artist),
@@ -133,14 +134,7 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
             }
         }
         
-        let newFavorite = Favorite(context: self.moc)
-
-        newFavorite.uuid = UUID()
-        newFavorite.artist = track.artist
-        newFavorite.song = track.song
-        newFavorite.createdAt = Date()
-
-        try? moc.save()
+        try? self.dataController.insertFavoriteTrack(track: track)
         return true
     }
     

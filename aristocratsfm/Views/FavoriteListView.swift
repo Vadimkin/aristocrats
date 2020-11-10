@@ -27,7 +27,8 @@ struct FavoriteListView: View {
                     }.onDelete(perform: { indexSet in
                         self.delete(at: indexSet)
                     })
-                }.navigationBarTitle("Обране")
+                }
+                .navigationBarTitle("Обране")
                 .navigationBarItems(leading: EditButton())
             } else {
                     VStack(alignment: .center) {
