@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct TopNavigationView: View {
-    @State var showingDetail = false
+    @State var showingFavorites = false
+    @State var showingSettings = false
+
     @Environment(\.managedObjectContext) var moc
     
     func getImage(systemName: String) -> some View {
@@ -21,17 +23,26 @@ struct TopNavigationView: View {
     var body: some View {
         HStack {
             Button(action: {
-                self.showingDetail.toggle()
+                self.showingFavorites.toggle()
             }) {
                 self.getImage(systemName: "text.badge.star")
-            }.sheet(isPresented: $showingDetail) {
+            }.sheet(isPresented: $showingFavorites) {
                 FavoriteListView()
                     .environment(\.managedObjectContext, self.moc)
             }
             
             Spacer()
             
-            self.getImage(systemName: "gearshape")
+            Button(action: {
+                self.showingSettings.toggle()
+            }) {
+                self.getImage(systemName: "gearshape")
+            }.sheet(isPresented: $showingSettings) {
+                SettingsView()
+                    .environment(\.managedObjectContext, self.moc)
+            }
+            
+            
         }
         .padding(.horizontal)
         .padding(.top, 20)

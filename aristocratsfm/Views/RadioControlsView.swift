@@ -25,7 +25,7 @@ struct RadioControlsView: View {
                     ShareButtonView(track: track)
                 }
             }
-            PlayButtonView()
+            RadioPlayButtonView()
         }
         .padding(.horizontal)
         .padding(.vertical, 30)

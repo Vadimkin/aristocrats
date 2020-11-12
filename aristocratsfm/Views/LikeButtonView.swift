@@ -59,17 +59,16 @@ struct LikeButtonView: View {
             UINotificationFeedbackGenerator().notificationOccurred(.error)
             return
         }
+        self.animateLoading = true
 
         try? dataController.insertFavoriteTrack(track: track)
         UINotificationFeedbackGenerator().notificationOccurred(.warning)
-        
-        self.animateLoading = true
     }
 
     private func removeFromFavorite(_ favorite: Favorite) {
-        try? dataController.delete(favorite: favorite)
-        
         self.animateLoading = true
+
+        try? dataController.delete(favorite: favorite)
     }
 }
 

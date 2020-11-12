@@ -1,5 +1,5 @@
 //
-//  PlayButtonView.swift
+//  RadioPlayButtonView.swift
 //  aristocratsfm
 //
 //  Created by Vadim Klimenko on 26.09.2020.
@@ -9,7 +9,7 @@ import SwiftUI
 import AVFoundation
 import Lottie
 
-struct PlayButtonView: View {
+struct RadioPlayButtonView: View {
     @ObservedObject var player: PlayerObservableObject = .shared
     
     func getPlayIconFontSymbol() -> String {
@@ -65,6 +65,6 @@ struct PlayButtonView: View {
 
 struct PlayButton_Previews: PreviewProvider {
     static var previews: some View {
-        PlayButtonView()
+        RadioPlayButtonView()
     }
 }

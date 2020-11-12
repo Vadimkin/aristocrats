@@ -17,7 +17,7 @@
 		1615AEA1252910390026184B /* NowPlayingObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1615AEA0252910390026184B /* NowPlayingObservableObject.swift */; };
 		1661F8C32555F189006C6630 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1661F8C22555F189006C6630 /* DataController.swift */; };
 		166200DD251F50470073EEE5 /* RadioControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166200DC251F50470073EEE5 /* RadioControlsView.swift */; };
-		166200E0251F52210073EEE5 /* PlayButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166200DF251F52210073EEE5 /* PlayButtonView.swift */; };
+		166200E0251F52210073EEE5 /* RadioPlayButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166200DF251F52210073EEE5 /* RadioPlayButtonView.swift */; };
 		166200E3251FAA410073EEE5 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166200E2251FAA410073EEE5 /* AppConstants.swift */; };
 		166200E6251FB4210073EEE5 /* AristocratsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166200E5251FB4210073EEE5 /* AristocratsMainView.swift */; };
 		16659F16254EF06F005F7D2C /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16659F15254EF06F005F7D2C /* UIImage.swift */; };
@@ -42,13 +42,21 @@
 		16AA1CE92555D9C100839F30 /* Aristocrats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 16AA1CE72555D9C100839F30 /* Aristocrats.xcdatamodeld */; };
 		16BE322525573C95002403F2 /* FavoriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE322425573C95002403F2 /* FavoriteListView.swift */; };
 		16BE322825574078002403F2 /* FavoriteTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE322725574078002403F2 /* FavoriteTrack.swift */; };
+		16C73834255C6F240099BAB1 /* TeaCup.json in Resources */ = {isa = PBXBuildFile; fileRef = 16C73833255C6F240099BAB1 /* TeaCup.json */; };
+		16C73837255C71740099BAB1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C73836255C71740099BAB1 /* SettingsView.swift */; };
+		16C73843255C80670099BAB1 /* IconNamesObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C73842255C80670099BAB1 /* IconNamesObservableObject.swift */; };
+		16C7386E255C88FD0099BAB1 /* Dark-Icon-App.png in Resources */ = {isa = PBXBuildFile; fileRef = 16C73868255C88FD0099BAB1 /* Dark-Icon-App.png */; };
+		16C7386F255C88FD0099BAB1 /* Dark-Icon-App@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16C73869255C88FD0099BAB1 /* Dark-Icon-App@3x.png */; };
+		16C73870255C88FD0099BAB1 /* Purple-Icon-App.png in Resources */ = {isa = PBXBuildFile; fileRef = 16C7386A255C88FD0099BAB1 /* Purple-Icon-App.png */; };
+		16C73871255C88FD0099BAB1 /* Dark-Icon-App@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16C7386B255C88FD0099BAB1 /* Dark-Icon-App@2x.png */; };
+		16C73872255C88FD0099BAB1 /* Purple-Icon-App@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16C7386C255C88FD0099BAB1 /* Purple-Icon-App@2x.png */; };
+		16C73873255C88FD0099BAB1 /* Purple-Icon-App@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16C7386D255C88FD0099BAB1 /* Purple-Icon-App@3x.png */; };
 		16DA2092252E40B5006FA9B2 /* AristocratsTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA2091252E40B5006FA9B2 /* AristocratsTrack.swift */; };
 		16DA209B252E459B006FA9B2 /* StreamType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA209A252E459B006FA9B2 /* StreamType.swift */; };
 		16DA20BA252E557E006FA9B2 /* MusicBrainz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA20B9252E557E006FA9B2 /* MusicBrainz.swift */; };
 		16DA20C1252E70C3006FA9B2 /* CoverArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA20C0252E70C3006FA9B2 /* CoverArt.swift */; };
 		16EDE056255B29F700A3FBAD /* ImageLoaderObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EDE055255B29F700A3FBAD /* ImageLoaderObservableObject.swift */; };
 		16EDE05D255B2AC400A3FBAD /* TopNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EDE05C255B2AC400A3FBAD /* TopNavigationView.swift */; };
-		16EDE066255B380800A3FBAD /* TeaCup.json in Resources */ = {isa = PBXBuildFile; fileRef = 16EDE065255B380800A3FBAD /* TeaCup.json */; };
 		66FCEF8AE8C5E7ADE782C965 /* Pods_aristocratsfm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0A38687F9B48F3310C1AD8 /* Pods_aristocratsfm.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +73,7 @@
 		1615AEA0252910390026184B /* NowPlayingObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingObservableObject.swift; sourceTree = "<group>"; };
 		1661F8C22555F189006C6630 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		166200DC251F50470073EEE5 /* RadioControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioControlsView.swift; sourceTree = "<group>"; };
-		166200DF251F52210073EEE5 /* PlayButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButtonView.swift; sourceTree = "<group>"; };
+		166200DF251F52210073EEE5 /* RadioPlayButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayButtonView.swift; sourceTree = "<group>"; };
 		166200E2251FAA410073EEE5 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		166200E5251FB4210073EEE5 /* AristocratsMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AristocratsMainView.swift; sourceTree = "<group>"; };
 		16659F15254EF06F005F7D2C /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -92,13 +100,21 @@
 		16AA1CE82555D9C100839F30 /* Aristocrats.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Aristocrats.xcdatamodel; sourceTree = "<group>"; };
 		16BE322425573C95002403F2 /* FavoriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListView.swift; sourceTree = "<group>"; };
 		16BE322725574078002403F2 /* FavoriteTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTrack.swift; sourceTree = "<group>"; };
+		16C73833255C6F240099BAB1 /* TeaCup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TeaCup.json; sourceTree = "<group>"; };
+		16C73836255C71740099BAB1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		16C73842255C80670099BAB1 /* IconNamesObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconNamesObservableObject.swift; sourceTree = "<group>"; };
+		16C73868255C88FD0099BAB1 /* Dark-Icon-App.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dark-Icon-App.png"; sourceTree = "<group>"; };
+		16C73869255C88FD0099BAB1 /* Dark-Icon-App@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dark-Icon-App@3x.png"; sourceTree = "<group>"; };
+		16C7386A255C88FD0099BAB1 /* Purple-Icon-App.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple-Icon-App.png"; sourceTree = "<group>"; };
+		16C7386B255C88FD0099BAB1 /* Dark-Icon-App@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dark-Icon-App@2x.png"; sourceTree = "<group>"; };
+		16C7386C255C88FD0099BAB1 /* Purple-Icon-App@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple-Icon-App@2x.png"; sourceTree = "<group>"; };
+		16C7386D255C88FD0099BAB1 /* Purple-Icon-App@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple-Icon-App@3x.png"; sourceTree = "<group>"; };
 		16DA2091252E40B5006FA9B2 /* AristocratsTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AristocratsTrack.swift; sourceTree = "<group>"; };
 		16DA209A252E459B006FA9B2 /* StreamType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamType.swift; sourceTree = "<group>"; };
 		16DA20B9252E557E006FA9B2 /* MusicBrainz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicBrainz.swift; sourceTree = "<group>"; };
 		16DA20C0252E70C3006FA9B2 /* CoverArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverArt.swift; sourceTree = "<group>"; };
 		16EDE055255B29F700A3FBAD /* ImageLoaderObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderObservableObject.swift; sourceTree = "<group>"; };
 		16EDE05C255B2AC400A3FBAD /* TopNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationView.swift; sourceTree = "<group>"; };
-		16EDE065255B380800A3FBAD /* TeaCup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TeaCup.json; sourceTree = "<group>"; };
 		4C88BD31FCC6DF9D5D7A7346 /* Pods-aristocratsfm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aristocratsfm.release.xcconfig"; path = "Target Support Files/Pods-aristocratsfm/Pods-aristocratsfm.release.xcconfig"; sourceTree = "<group>"; };
 		52FA9DA3C0E8544254434888 /* Pods-aristocratsfm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aristocratsfm.debug.xcconfig"; path = "Target Support Files/Pods-aristocratsfm/Pods-aristocratsfm.debug.xcconfig"; sourceTree = "<group>"; };
 		8B0A38687F9B48F3310C1AD8 /* Pods_aristocratsfm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aristocratsfm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +153,7 @@
 		16020DDF251E6D4700D8B062 /* aristocratsfm */ = {
 			isa = PBXGroup;
 			children = (
+				16C7384F255C869A0099BAB1 /* Icons */,
 				16AA1CE72555D9C100839F30 /* Aristocrats.xcdatamodeld */,
 				167FE6222550CCC900E65949 /* aristocratsfm.entitlements */,
 				167FE6202550CA0C00E65949 /* ParserDelegates */,
@@ -169,7 +186,7 @@
 			children = (
 				169E9E042559C19B005F2BB4 /* CircleLoader.json */,
 				1693A5B32556FB4D00AAA2A4 /* LikeAnimatedButton.json */,
-				16EDE065255B380800A3FBAD /* TeaCup.json */,
+				16C73833255C6F240099BAB1 /* TeaCup.json */,
 				168B789C253774920078D0A5 /* LoadingDots.json */,
 			);
 			path = Resources;
@@ -193,6 +210,7 @@
 				167711882524FDD30011D6A6 /* PlayerObservableObject.swift */,
 				1615AEA0252910390026184B /* NowPlayingObservableObject.swift */,
 				16EDE055255B29F700A3FBAD /* ImageLoaderObservableObject.swift */,
+				16C73842255C80670099BAB1 /* IconNamesObservableObject.swift */,
 			);
 			path = ObservableObjects;
 			sourceTree = "<group>";
@@ -227,7 +245,7 @@
 				1613B0C0252A022C0068B045 /* PlaylistTrackView.swift */,
 				16020DF0251E6E8E00D8B062 /* RadioCurrentTrackView.swift */,
 				166200DC251F50470073EEE5 /* RadioControlsView.swift */,
-				166200DF251F52210073EEE5 /* PlayButtonView.swift */,
+				166200DF251F52210073EEE5 /* RadioPlayButtonView.swift */,
 				166200E5251FB4210073EEE5 /* AristocratsMainView.swift */,
 				168B78C2253781C80078D0A5 /* ImageView.swift */,
 				16700F162554806E003A2F23 /* LikeButtonView.swift */,
@@ -235,8 +253,22 @@
 				16BE322425573C95002403F2 /* FavoriteListView.swift */,
 				16BE322725574078002403F2 /* FavoriteTrack.swift */,
 				16EDE05C255B2AC400A3FBAD /* TopNavigationView.swift */,
+				16C73836255C71740099BAB1 /* SettingsView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		16C7384F255C869A0099BAB1 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				16C73868255C88FD0099BAB1 /* Dark-Icon-App.png */,
+				16C7386B255C88FD0099BAB1 /* Dark-Icon-App@2x.png */,
+				16C73869255C88FD0099BAB1 /* Dark-Icon-App@3x.png */,
+				16C7386C255C88FD0099BAB1 /* Purple-Icon-App@2x.png */,
+				16C7386D255C88FD0099BAB1 /* Purple-Icon-App@3x.png */,
+				16C7386A255C88FD0099BAB1 /* Purple-Icon-App.png */,
+			);
+			path = Icons;
 			sourceTree = "<group>";
 		};
 		16EDE04D255B1AA000A3FBAD /* LottieView */ = {
@@ -326,11 +358,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16C73870255C88FD0099BAB1 /* Purple-Icon-App.png in Resources */,
+				16C73871255C88FD0099BAB1 /* Dark-Icon-App@2x.png in Resources */,
+				16C7386F255C88FD0099BAB1 /* Dark-Icon-App@3x.png in Resources */,
 				1693A5B42556FB4D00AAA2A4 /* LikeAnimatedButton.json in Resources */,
 				168B789D253774920078D0A5 /* LoadingDots.json in Resources */,
+				16C73834255C6F240099BAB1 /* TeaCup.json in Resources */,
 				169E9E052559C19B005F2BB4 /* CircleLoader.json in Resources */,
+				16C73873255C88FD0099BAB1 /* Purple-Icon-App@3x.png in Resources */,
+				16C7386E255C88FD0099BAB1 /* Dark-Icon-App.png in Resources */,
 				16020DE5251E6D4700D8B062 /* Assets.xcassets in Resources */,
-				16EDE066255B380800A3FBAD /* TeaCup.json in Resources */,
+				16C73872255C88FD0099BAB1 /* Purple-Icon-App@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +425,7 @@
 				167711892524FDD30011D6A6 /* PlayerObservableObject.swift in Sources */,
 				166200E3251FAA410073EEE5 /* AppConstants.swift in Sources */,
 				166200E6251FB4210073EEE5 /* AristocratsMainView.swift in Sources */,
+				16C73843255C80670099BAB1 /* IconNamesObservableObject.swift in Sources */,
 				1613B0C5252A0F7E0068B045 /* RoundedCornerView.swift in Sources */,
 				167FE61D2550BE9800E65949 /* PlaylistParserDelegate.swift in Sources */,
 				168B78B025377A2C0078D0A5 /* JSONDecoder.swift in Sources */,
@@ -401,7 +440,7 @@
 				16EDE056255B29F700A3FBAD /* ImageLoaderObservableObject.swift in Sources */,
 				16BE322525573C95002403F2 /* FavoriteListView.swift in Sources */,
 				1613B0BE2529FE070068B045 /* PlaylistListView.swift in Sources */,
-				166200E0251F52210073EEE5 /* PlayButtonView.swift in Sources */,
+				166200E0251F52210073EEE5 /* RadioPlayButtonView.swift in Sources */,
 				16AA1CE92555D9C100839F30 /* Aristocrats.xcdatamodeld in Sources */,
 				168B78C025377B330078D0A5 /* Publisher.swift in Sources */,
 				16020DE3251E6D4700D8B062 /* ContentView.swift in Sources */,
@@ -420,6 +459,7 @@
 				16DA20C1252E70C3006FA9B2 /* CoverArt.swift in Sources */,
 				16020DE1251E6D4700D8B062 /* aristocratsfmApp.swift in Sources */,
 				1661F8C32555F189006C6630 /* DataController.swift in Sources */,
+				16C73837255C71740099BAB1 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,7 +591,7 @@
 				CODE_SIGN_ENTITLEMENTS = aristocratsfm/aristocratsfm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 4DJX9FMJKB;
+				DEVELOPMENT_TEAM = R5F5GL339W;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = aristocratsfm/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -559,7 +599,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vadimklimenko.aristocratsfm;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vadimkin.aristocrats;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
@@ -576,7 +616,7 @@
 				CODE_SIGN_ENTITLEMENTS = aristocratsfm/aristocratsfm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 4DJX9FMJKB;
+				DEVELOPMENT_TEAM = R5F5GL339W;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = aristocratsfm/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -584,7 +624,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vadimklimenko.aristocratsfm;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vadimkin.aristocrats;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;

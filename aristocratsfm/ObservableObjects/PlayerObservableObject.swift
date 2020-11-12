@@ -139,7 +139,7 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
     }
     
     func getNowPlayingArtwork() -> MPMediaItemArtwork {
-        // TODO Fetch from resource
+        // TODO Fetch real artwork?
         let canvasSize = CGSize(width: 512, height: 512)
 
         let albumArtwork = MPMediaItemArtwork.init(boundsSize: canvasSize, requestHandler: { (size) -> UIImage in

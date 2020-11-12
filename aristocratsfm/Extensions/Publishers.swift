@@ -27,7 +27,7 @@ extension Publishers {
         artist: String,
         song: String
     ) -> AnyPublisher<MusicBrainz, Error> {
-        URLSession.shared
+        return URLSession.shared
             .dataTaskPublisher(for: URL.Music.musicBrainz(artist: artist, song: song))
             .map { $0.data }
             .decode(type: MusicBrainz.self, decoder: JSONDecoder.shared)
@@ -35,7 +35,7 @@ extension Publishers {
     }
 
     static func coverArtArchivePublisher(id: String) -> AnyPublisher<CoverArt, Error> {
-        URLSession.shared
+        return URLSession.shared
             .dataTaskPublisher(for: URL.Music.coverArt(id: id))
             .map { $0.data }
             .decode(type: CoverArt.self, decoder: JSONDecoder.shared)

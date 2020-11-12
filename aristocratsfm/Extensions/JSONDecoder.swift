@@ -7,6 +7,6 @@
 
 import Foundation
 
- extension JSONDecoder {
+extension JSONDecoder {
     static let shared = JSONDecoder()
 }
