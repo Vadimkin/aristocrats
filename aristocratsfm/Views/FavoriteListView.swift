@@ -29,17 +29,18 @@ struct FavoriteListView: View {
                     })
                 }
                 .navigationBarTitle("Обране")
-                .navigationBarItems(leading: EditButton())
             } else {
-                    VStack(alignment: .center) {
-                        LottieView(name: "TeaCup")
-                            .frame(maxHeight: 300, alignment: .center)
-                        Text("Тут з'являться треки, які ви додасте до обраного")
-                            .font(.headline)
-                            .multilineTextAlignment(.center)
-                            .padding(.horizontal, 60)
-                    }
-                    .navigationBarTitle("Обране")
+                VStack(alignment: .center) {
+                    LottieView(name: "TeaCup")
+                        .frame(maxHeight: 300, alignment: .center)
+                    Text("Тут з'являться треки,\nякі ви додасте до обраного")
+                        .font(.title3)
+                        .lineSpacing(9)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 60)
+                        .padding(.top, 20)
+                }
+                .navigationBarTitle("Обране")
             }
         }
     }

@@ -10,11 +10,16 @@ import SwiftUI
 @main
 struct aristocratsfmApp: App {
     let dataController = DataController.shared
+    
+    init() {
+        UserDefaults.standard.register(defaults: ["ArtworkEnabled": true])
+    }
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
+                .environmentObject(IconNamesObservableObject())
         }
     }
 }

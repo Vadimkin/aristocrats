@@ -24,7 +24,6 @@ class NowPlayingObservableObject: ObservableObject {
         let timer = Timer.publish(every: 5, tolerance: 0.5, on: .main, in: .common)
 
         self.cancellable = Deferred { Just(Date()) }
-            // FIXME Do not fail when internet is down
             .append(timer.autoconnect())
             .flatMap { _ in Publishers.nowPlaying().replaceErrorWithNil(Error.self) }
             .removeDuplicates()
@@ -34,8 +33,14 @@ class NowPlayingObservableObject: ObservableObject {
                         .setFailureType(to: Error.self)
                         .eraseToAnyPublisher()
                 }
-                
+
                 if let nowPlaying = nowPlaying {
+                    if (UserDefaults.standard.bool(forKey: "ArtworkEnabled") == false) {
+                        // User refuses to load any Artworks
+                        return Result.Publisher((nowPlaying, nil))
+                            .eraseToAnyPublisher()
+                    }
+                    
                     return Publishers.musicBrainzPublisher(
                         artist: nowPlaying.artist,
                         song: nowPlaying.song
