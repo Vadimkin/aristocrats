@@ -13,10 +13,15 @@ struct ShareButtonView: View {
     func shareTrack() {
         guard let unwappedTrack = track else { return }
         // TODO Consider about URL share (songwhip)
-        let av = UIActivityViewController(activityItems: ["\(unwappedTrack.artist) - \(unwappedTrack.song)"], applicationActivities: nil)
-        DispatchQueue.main.async {
-            UIApplication.shared.windows.first?.rootViewController?.present(av, animated: true, completion: nil)
+        
+        let activityItems = ["\(unwappedTrack.artist) - \(unwappedTrack.song)"]
+        let activity = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            activity.popoverPresentationController?.sourceView = UIApplication.shared.windows.first?.rootViewController!.view
         }
+        
+        UIApplication.shared.windows.first?.rootViewController?.present(activity, animated: true, completion: nil)
     }
 
     var body: some View {
