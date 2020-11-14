@@ -47,10 +47,10 @@ struct PlaylistTrackView: View {
                 VStack(alignment: .leading) {
                     Text(track.artist)
                         .foregroundColor(Color.white)
-                        .font(.headline)
+                        .font(.title3)
                     Text(track.song)
                         .foregroundColor(Color.white)
-                        .font(.subheadline)
+                        .font(.headline)
                         .fontWeight(.light)
                         .padding(.top, 3)
                 }
