@@ -27,7 +27,7 @@ struct RadioControlsView: View {
             }
             RadioPlayButtonView()
         }
-        .padding(.horizontal)
+        .padding(.horizontal, 50)
         .padding(.vertical, 30)
     }
 }

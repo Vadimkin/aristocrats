@@ -47,10 +47,10 @@ struct PlaylistTrackView: View {
                 VStack(alignment: .leading) {
                     Text(track.artist)
                         .foregroundColor(Color.white)
-                        .font(.title2)
+                        .font(.headline)
                     Text(track.song)
                         .foregroundColor(Color.white)
-                        .font(.title3)
+                        .font(.subheadline)
                         .fontWeight(.light)
                         .padding(.top, 3)
                 }
@@ -76,8 +76,7 @@ struct PlaylistTrackView: View {
                 }
                 
             }
-            .padding(.top, 10)
-            .padding(.bottom, 10)
+            .padding(.vertical, 7)
             .padding(.horizontal)
             .listRowBackground(Color(UIColor(named: "BaseColor")!))
     }

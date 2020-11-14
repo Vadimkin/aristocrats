@@ -35,8 +35,7 @@ struct ShareButtonView: View {
                 .scaledToFit()
                 .foregroundColor(Color(UIColor(named: "ButtonForegroundColor")!))
                 .padding(.vertical, 12)
-                .padding(.trailing, 10)
-                .frame(maxHeight: 50, alignment: .trailing)
+                .frame(maxHeight: 50, alignment: .leading)
         }
     }
 }

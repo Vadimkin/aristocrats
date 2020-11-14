@@ -41,11 +41,10 @@ struct TopNavigationView: View {
                 SettingsView()
                     .environment(\.managedObjectContext, self.moc)
             }
-            
-            
         }
-        .padding(.horizontal)
+        .frame(maxHeight: 50, alignment: .trailing)
         .padding(.top, 20)
+        .padding(.horizontal, 10)
     }
 }
 

@@ -36,7 +36,7 @@ struct RadioCurrentTrackView: View {
     
     var artistText: some View {
         let playback = nowPlaying.playback;
-        var author = "Аристократи"
+        var author = NSLocalizedString("aristocrats", comment: "Aristocrats")
         
         if case let .playing(track, _) = playback {
             author = track.artist

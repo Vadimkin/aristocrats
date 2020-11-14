@@ -51,7 +51,9 @@ struct LikeButtonView: View {
                         .padding(.leading, 10)
                 }
             }
-        }.frame(maxHeight: 50, alignment: .leading)
+        }
+        .frame(maxHeight: 50, alignment: .leading)
+        .padding(.leading, -10)
     }
 
     private func addToFavorites() {
@@ -77,7 +79,7 @@ struct LikeButton_Previews: PreviewProvider {
         let dataController = DataController.shared
         
         let track = AristocratsTrack(artist: "Hey", song: "Hey")
-        self.createFavoriteTrack(track: track)
+        _ = self.createFavoriteTrack(track: track)
 
         return LikeButtonView(track: track)
             .environment(\.managedObjectContext, dataController.container.viewContext)

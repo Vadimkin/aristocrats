@@ -35,6 +35,7 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
         // cleanup for previous player
         self.player?.removeObserver(self, forKeyPath: "timeControlStatus")
         self.playerItem?.removeObserver(self, forKeyPath: "status")
+        NotificationCenter.default.removeObserver(self, name: AVAudioSession.interruptionNotification, object: AVAudioSession.sharedInstance())
         
         try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
         try? AVAudioSession.sharedInstance().setActive(true)
@@ -45,6 +46,8 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
 
         let newPlayer = AVPlayer(playerItem: playerItem)
         newPlayer.addObserver(self, forKeyPath: "timeControlStatus", options: [.old, .new], context: &playerContext)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleInterruption), name: AVAudioSession.interruptionNotification, object: AVAudioSession.sharedInstance())
  
         self.playerItem = playerItem
         self.player = newPlayer
@@ -147,6 +150,28 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
         })
         
         return albumArtwork
+    }
+    
+    @objc func handleInterruption(_ notification: Notification) {
+        guard let info = notification.userInfo,
+            let typeValue = info[AVAudioSessionInterruptionTypeKey] as? UInt,
+            let type = AVAudioSession.InterruptionType(rawValue: typeValue) else {
+                return
+        }
+        if type == .began {
+            player?.pause()
+        }
+        else if type == .ended {
+            guard let optionsValue =
+                    info[AVAudioSessionInterruptionOptionKey] as? UInt else {
+                    return
+            }
+            let options = AVAudioSession.InterruptionOptions(rawValue: optionsValue)
+            if options.contains(.shouldResume) {
+                playItem(at: Streams.Main.URI)
+                player?.play()
+            }
+        }
     }
     
     override func observeValue(forKeyPath keyPath: String?,

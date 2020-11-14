@@ -52,15 +52,22 @@ struct SettingsView: View {
     }
     
     var body: some View {
-        NavigationView {
+        let noFavoritesString = NSLocalizedString("artworks", comment: "Artworks")
+        let iconString = NSLocalizedString("icon", comment: "Icon")
+        let ideasString = NSLocalizedString("ideasProposals", comment: "For ideas and proposals")
+        let telegramString = NSLocalizedString("telegram", comment: "Telegram")
+        let versionString = NSLocalizedString("version", comment: "Version")
+        let settingsString = NSLocalizedString("settings", comment: "Settings")
+        
+        return NavigationView {
             List {
                 Section {
                     Toggle(isOn: $isArtworkEnabled) {
-                        Text("Обкладинки альбомів")
+                        Text(noFavoritesString)
                     }
                     
                     HStack {
-                        Text("Іконка")
+                        Text(iconString)
                         Spacer()
                         
                         ForEach(0..<iconSettings.iconNames.count) {
@@ -80,7 +87,7 @@ struct SettingsView: View {
                     
                 }
                 
-                Section(header: Text("Для ідей та пропозицій ❤️")) {
+                Section(header: Text("\(ideasString) ❤️")) {
                     HStack {
                         Text("Email")
                         Spacer()
@@ -92,7 +99,7 @@ struct SettingsView: View {
                         }
                     }
                     HStack {
-                        Text("Телеграм")
+                        Text(telegramString)
                         Spacer()
                         Text("@\(Contacts.Telegram)").foregroundColor(.gray)
                     }
@@ -105,14 +112,14 @@ struct SettingsView: View {
                 
                 Section {
                     HStack {
-                        Text("Версія")
+                        Text(versionString)
                         Spacer()
                         Text(version).font(.subheadline).foregroundColor(.gray)
                     }
                 }
             }
             .listStyle(InsetGroupedListStyle())
-            .navigationBarTitle("Налаштування")
+            .navigationBarTitle(settingsString)
         }
     }
 }

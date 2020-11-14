@@ -19,7 +19,10 @@ struct FavoriteListView: View {
     ) var favorites: FetchedResults<Favorite>
     
     var body: some View {
-        NavigationView {
+        let favoritesString = NSLocalizedString("favorites", comment: "Favorites")
+        let noFavoritesString = NSLocalizedString("noFavoritesPlaceholder", comment: "Favorite tracks will be displayed here")
+
+        return NavigationView {
             if (favorites.count > 0) {
                 List {
                     ForEach(favorites, id: \.self) { (favorite) in
@@ -28,19 +31,19 @@ struct FavoriteListView: View {
                         self.delete(at: indexSet)
                     })
                 }
-                .navigationBarTitle("Обране")
+                .navigationBarTitle(favoritesString)
             } else {
                 VStack(alignment: .center) {
                     LottieView(name: "TeaCup")
                         .frame(maxHeight: 300, alignment: .center)
-                    Text("Тут з'являться треки,\nякі ви додасте до обраного")
+                    Text(noFavoritesString)
                         .font(.title3)
                         .lineSpacing(9)
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 60)
                         .padding(.top, 20)
                 }
-                .navigationBarTitle("Обране")
+                .navigationBarTitle(favoritesString)
             }
         }
     }
