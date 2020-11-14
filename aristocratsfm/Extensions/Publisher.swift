@@ -19,7 +19,7 @@ extension Publisher {
         .setFailureType(to: failureType)
         .eraseToAnyPublisher()
     }
-    
+
     func wrapInResult<WrappedOutput>(
         _ replacement: @escaping (Output) -> WrappedOutput
     ) -> AnyPublisher<Result<WrappedOutput, Failure>, Never> {

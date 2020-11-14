@@ -9,10 +9,10 @@ import SwiftUI
 
 struct PlaylistListView: View {
     @ObservedObject var playlist: PlaylistObservableObject = .shared
-    
+
     var body: some View {
         LazyVStack {
-            if (playlist.playlist != nil) {
+            if playlist.playlist != nil {
                 ForEach(playlist.playlist!, id: \.self) { track in
                     PlaylistTrackView(track: track)
                     Divider()

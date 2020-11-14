@@ -10,12 +10,12 @@ import SwiftUI
 struct PlaylistTrackView: View {
     let track: AristocratsTrack
     let dataController = DataController.shared
-    
+
     @Environment(\.colorScheme) var colorScheme
     @FetchRequest var favorites: FetchedResults<Favorite>
-    
+
     var favorite: Favorite? { favorites.first }
-    
+
     init(track: AristocratsTrack) {
         self.track = track
         self._favorites = FetchRequest(
@@ -27,21 +27,21 @@ struct PlaylistTrackView: View {
             ])
         )
     }
-    
+
     private func addToFavorites() {
         try? dataController.insertFavoriteTrack(track: track)
-        
+
         UINotificationFeedbackGenerator().notificationOccurred(.warning)
     }
 
     private func removeFromFavorite(_ favorite: Favorite) {
         try? dataController.delete(favorite: favorite)
     }
-    
+
     func getHearthColor() -> Color {
         return Color.white
     }
-    
+
     var body: some View {
             HStack {
                 VStack(alignment: .leading) {
@@ -55,14 +55,14 @@ struct PlaylistTrackView: View {
                         .padding(.top, 3)
                 }
                 Spacer()
-                if (track.time != nil) {
+                if track.time != nil {
                     Text(track.time!)
                         .foregroundColor(Color.white)
                         .font(.title2)
                         .fontWeight(.light)
                 }
                 Button(action: {
-                    if (favorite != nil) {
+                    if favorite != nil {
                         removeFromFavorite(self.favorite!)
                     } else {
                         addToFavorites()
@@ -74,7 +74,7 @@ struct PlaylistTrackView: View {
                         .padding(.vertical, 12)
                         .padding(.leading, 10)
                 }
-                
+
             }
             .padding(.vertical, 7)
             .padding(.horizontal)

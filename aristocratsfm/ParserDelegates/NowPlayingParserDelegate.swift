@@ -13,9 +13,9 @@ final class NowPlayingParserDelegate: NSObject, XMLParserDelegate {
     private var artist: String?
     private var song: String?
     private var isLive: Bool?
-    
+
     private var error: Error?
-    
+
     func build() throws -> AristocratsTrack? {
         if let artist = artist, let song = song, let isLive = isLive {
             return AristocratsTrack(artist: artist, song: song, isLive: isLive)
@@ -25,27 +25,35 @@ final class NowPlayingParserDelegate: NSObject, XMLParserDelegate {
 
         return nil
     }
-    
+
     func parser(
         _ parser: XMLParser,
         didStartElement elementName: String,
         namespaceURI: String?,
         qualifiedName qName: String?,
-        attributes attributeDict: [String : String] = [:]
+        attributes attributeDict: [String: String] = [:]
     ) {
         switch elementName {
         case "artist":
-            artist = attributeDict["title"] != "" ? attributeDict["title"] : NSLocalizedString("live", comment: "Live Stream")
-            isLive = attributeDict["title"] == ""
+            if attributeDict["title"] != "" {
+                artist = attributeDict["title"]
+            } else {
+                artist = NSLocalizedString("live", comment: "Live Stream")
+                isLive = true
+            }
 
         case "song":
-            song = attributeDict["title"] != "" ? attributeDict["title"] : NSLocalizedString("aristocrats", comment: "Aristocrats")
+            if attributeDict["title"] != "" {
+                song = attributeDict["title"]
+            } else {
+                song = NSLocalizedString("aristocrats", comment: "Aristocrats")
+            }
 
         default:
             break
         }
     }
-    
+
     func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
         artist = nil
         song = nil

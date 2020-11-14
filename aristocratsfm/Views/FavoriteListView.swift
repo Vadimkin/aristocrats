@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FavoriteListView: View {
     let dataController = DataController.shared
-    
+
     @Environment(\.colorScheme) var colorScheme
     @FetchRequest(
         entity: Favorite.entity(),
@@ -17,13 +17,13 @@ struct FavoriteListView: View {
             NSSortDescriptor(keyPath: \Favorite.createdAt, ascending: false)
         ]
     ) var favorites: FetchedResults<Favorite>
-    
+
     var body: some View {
         let favoritesString = NSLocalizedString("favorites", comment: "Favorites")
-        let noFavoritesString = NSLocalizedString("noFavoritesPlaceholder", comment: "Favorite tracks will be displayed here")
+        let noFavoritesString = NSLocalizedString("noFavoritesPlaceholder", comment: "Tracks will be displayed here")
 
         return NavigationView {
-            if (favorites.count > 0) {
+            if favorites.count > 0 {
                 List {
                     ForEach(favorites, id: \.self) { (favorite) in
                         FavoriteTrack(favorite: favorite)
@@ -48,7 +48,7 @@ struct FavoriteListView: View {
             }
         }
     }
-    
+
     func delete(at offsets: IndexSet) {
         let favorite = favorites[offsets.first!]
         try? dataController.delete(favorite: favorite)

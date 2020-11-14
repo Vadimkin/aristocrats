@@ -9,7 +9,7 @@ import Foundation
 
 extension URL {
     enum Music {
-        static let nowPlaying = Streams.Main.NowPlayingTrackURI
+        static let nowPlaying = Streams.Main.nowPlayingTrackURI
 
         static func musicBrainz(artist: String, song: String) -> URL {
             var components = URLComponents(string: "https://musicbrainz.org/ws/2/recording")!
@@ -21,7 +21,7 @@ extension URL {
             ]
             return components.url!
         }
-        
+
         static func songwhip(artist: String, song: String) -> URL {
             // TODO Is not used yet, expected to use for sharing
             var components = URLComponents(string: "https://songwhip.com/api/")!
@@ -37,7 +37,7 @@ extension URL {
             URL(string: "https://coverartarchive.org/release/\(id)")!
         }
     }
-    
+
     static func alwaysSecuredURL(insecuredURL: URL) -> URL {
         var comps = URLComponents(url: insecuredURL, resolvingAgainstBaseURL: false)!
         comps.scheme = "https"

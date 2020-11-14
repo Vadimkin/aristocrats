@@ -12,15 +12,15 @@ class IconNamesObservableObject: ObservableObject {
     var iconNames: [String?] = [nil]
     @Published var currentIndex = 0
     @Published var currentName = "AppIcon"
-    
+
     init() {
         getAlternateIconNames()
-        
+
         refreshCurrentIcon()
     }
-    
+
     func refreshCurrentIcon() {
-        if let currentIcon = UIApplication.shared.alternateIconName{
+        if let currentIcon = UIApplication.shared.alternateIconName {
             self.currentIndex = iconNames.firstIndex(of: currentIcon) ?? 0
             self.currentName = currentIcon
         } else {
@@ -28,21 +28,20 @@ class IconNamesObservableObject: ObservableObject {
             self.currentName = "AppIcon"
         }
     }
-        
-    func getAlternateIconNames(){
+
+    func getAlternateIconNames() {
         if let icons = Bundle.main.object(forInfoDictionaryKey: "CFBundleIcons") as? [String: Any],
-            let alternateIcons = icons["CFBundleAlternateIcons"] as? [String: Any]
-        {
+            let alternateIcons = icons["CFBundleAlternateIcons"] as? [String: Any] {
 
-             for (_, value) in alternateIcons{
+             for (_, value) in alternateIcons {
 
-                 guard let iconList = value as? Dictionary<String,Any> else{return}
+                 guard let iconList = value as? [String: Any] else {return}
                  guard let iconFiles = iconList["CFBundleIconFiles"] as? [String]
-                     else{return}
-                     
-                 guard let icon = iconFiles.first else{return}
+                     else {return}
+
+                 guard let icon = iconFiles.first else {return}
                  iconNames.append(icon)
-    
+
              }
         }
     }

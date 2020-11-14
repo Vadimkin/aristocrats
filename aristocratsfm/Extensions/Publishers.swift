@@ -11,7 +11,7 @@ import Combine
 extension Publishers {
     static func nowPlaying() -> AnyPublisher<AristocratsTrack?, Error> {
         return URLSession.shared
-            .dataTaskPublisher(for: Streams.Main.NowPlayingTrackURI)
+            .dataTaskPublisher(for: Streams.Main.nowPlayingTrackURI)
             .tryMap { response -> AristocratsTrack? in
                 let delegate: NowPlayingParserDelegate = .shared
 
@@ -41,10 +41,10 @@ extension Publishers {
             .decode(type: CoverArt.self, decoder: JSONDecoder.shared)
             .eraseToAnyPublisher()
     }
-    
+
     static func playlistPublisher() -> AnyPublisher<[AristocratsTrack]?, Error> {
         return URLSession.shared
-            .dataTaskPublisher(for: Streams.Main.PlaylistURI)
+            .dataTaskPublisher(for: Streams.Main.playlistURI)
             .tryMap { response -> [AristocratsTrack]? in
                 let delegate: PlaylistParserDelegate = .shared
 

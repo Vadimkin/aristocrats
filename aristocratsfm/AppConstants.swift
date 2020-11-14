@@ -22,11 +22,25 @@ enum Design {
 }
 
 enum Streams {
-    static let Main = StreamType(Name: "Main", URI: "http://air.aristocrats.fm:8000/live2", NowPlayingTrackURI: URL(string: "https://aristocrats.fm/service/nowplaying-aristocrats8.xml")!, PlaylistURI: URL(string: "https://aristocrats.fm/last10.php?s=live")!)
-    
-    // TODO Implement support for this stream
-    static let Music = StreamType(Name: "Music", URI: "http://air.aristocrats.fm:8000/live2", NowPlayingTrackURI: URL(string: "https://aristocrats.fm/service/nowplaying-amusic8.xml")!, PlaylistURI: URL(string: "https://aristocrats.fm/last10.php?s=music")!)
-    
-    // TODO Implement support for this stream
-    static let Jazz = StreamType(Name: "Jazz", URI: "http://air.aristocrats.fm:8000/live2", NowPlayingTrackURI: URL(string: "https://aristocrats.fm/service/nowplaying-amusic8.xml")!, PlaylistURI: URL(string: "https://aristocrats.fm/last10.php?s=jazz")!)
+    static let Main = StreamType(
+        name: "Main",
+        URI: "http://air.aristocrats.fm:8000/live2",
+        nowPlayingTrackURI: URL(string: "https://aristocrats.fm/service/nowplaying-aristocrats8.xml")!,
+        playlistURI: URL(string: "https://aristocrats.fm/last10.php?s=live")!
+    )
+
+    // Implement support for this stream
+    static let Music = StreamType(
+        name: "Music",
+        URI: "http://air.aristocrats.fm:8000/live2",
+        nowPlayingTrackURI: URL(string: "https://aristocrats.fm/service/nowplaying-amusic8.xml")!,
+        playlistURI: URL(string: "https://aristocrats.fm/last10.php?s=music")!)
+
+    // Implement support for this stream
+    static let Jazz = StreamType(
+        name: "Jazz",
+        URI: "http://air.aristocrats.fm:8000/live2",
+        nowPlayingTrackURI: URL(string: "https://aristocrats.fm/service/nowplaying-amusic8.xml")!,
+        playlistURI: URL(string: "https://aristocrats.fm/last10.php?s=jazz")!
+    )
 }
