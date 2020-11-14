@@ -18,7 +18,7 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
     
     private let dataController: DataController = DataController.shared
     private var moc = DataController.shared.container.viewContext
-
+    
     static let shared = PlayerObservableObject()
     var cancellable: AnyCancellable?
     
@@ -43,12 +43,12 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
         // setup new player
         let playerItem = AVPlayerItem(url: url)
         playerItem.addObserver(self, forKeyPath: "status", options: [.old, .new], context: &playerContext)
-
+        
         let newPlayer = AVPlayer(playerItem: playerItem)
         newPlayer.addObserver(self, forKeyPath: "timeControlStatus", options: [.old, .new], context: &playerContext)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.handleInterruption), name: AVAudioSession.interruptionNotification, object: AVAudioSession.sharedInstance())
- 
+        
         self.playerItem = playerItem
         self.player = newPlayer
         
@@ -68,7 +68,7 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
         commandCenter.bookmarkCommand.isEnabled = true
         commandCenter.bookmarkCommand.addTarget { [unowned self] commandEvent in
             let nowPlayingObservableObject = NowPlayingObservableObject.shared
-
+            
             if case let .playing(track, _) = nowPlayingObservableObject.playback {
                 if (!track.isLive) {
                     let isSuccess = self.addToFavorites(track: track)
@@ -100,12 +100,12 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
         
         let subscriber = Subscribers.Sink<Playback, Never>(
             receiveCompletion: {
-               completion in
-          }) { value in
+                completion in
+            }) { value in
             if case let .playing(track, _) = value {
                 self.setNowPlayingTrack(currentTrack: track)
             }
-         }
+        }
         
         nowPlayingObservableObject.$playback.subscribe(subscriber)
     }
@@ -115,7 +115,7 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
         nowPlayingInfo[MPMediaItemPropertyTitle] = currentTrack.song
         nowPlayingInfo[MPMediaItemPropertyArtist] = currentTrack.artist
         nowPlayingInfo[MPNowPlayingInfoPropertyIsLiveStream] = true
-
+        
         let albumArtwork = getNowPlayingArtwork()
         nowPlayingInfo[MPMediaItemPropertyArtwork] = albumArtwork
         
@@ -144,7 +144,7 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
     func getNowPlayingArtwork() -> MPMediaItemArtwork {
         // TODO Fetch real artwork?
         let canvasSize = CGSize(width: 512, height: 512)
-
+        
         let albumArtwork = MPMediaItemArtwork.init(boundsSize: canvasSize, requestHandler: { (size) -> UIImage in
             return UIImage(named: "AristocratsCat")!
         })
@@ -154,9 +154,9 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
     
     @objc func handleInterruption(_ notification: Notification) {
         guard let info = notification.userInfo,
-            let typeValue = info[AVAudioSessionInterruptionTypeKey] as? UInt,
-            let type = AVAudioSession.InterruptionType(rawValue: typeValue) else {
-                return
+              let typeValue = info[AVAudioSessionInterruptionTypeKey] as? UInt,
+              let type = AVAudioSession.InterruptionType(rawValue: typeValue) else {
+            return
         }
         if type == .began {
             player?.pause()
@@ -164,7 +164,7 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
         else if type == .ended {
             guard let optionsValue =
                     info[AVAudioSessionInterruptionOptionKey] as? UInt else {
-                    return
+                return
             }
             let options = AVAudioSession.InterruptionOptions(rawValue: optionsValue)
             if options.contains(.shouldResume) {

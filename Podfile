@@ -7,5 +7,6 @@ target 'aristocratsfm' do
 
   # Pods for aristocratsfm
   pod 'lottie-ios'
+  pod 'SwiftLint'
 
 end
