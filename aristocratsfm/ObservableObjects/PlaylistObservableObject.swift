@@ -13,11 +13,11 @@ class PlaylistObservableObject: ObservableObject {
 
     @Published var playlist: [AristocratsTrack]?
     @Published var cancellable: Cancellable?
-    
+
     init() {
         initializeTimer()
     }
-    
+
     func initializeTimer() {
         self.cancellable = Deferred { Just(Date()) }
             // To not have two timers at the same time
@@ -30,7 +30,7 @@ class PlaylistObservableObject: ObservableObject {
             .sink { result in
                 do {
                     let playback = try result.get()
-                    if (playback != nil) {
+                    if playback != nil {
                         self.playlist = playback as? [AristocratsTrack]
                     }
                 } catch {

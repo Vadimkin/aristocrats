@@ -9,18 +9,18 @@ import SwiftUI
 
 struct RadioControlsView: View {
     @ObservedObject var nowPlaying: NowPlayingObservableObject = .shared
-    
-    @State var currentTrack:AristocratsTrack? = nil
+
+    @State var currentTrack: AristocratsTrack?
 
     var body: some View {
-        ZStack{
-            HStack() {
+        ZStack {
+            HStack {
                 if case let .playing(track, _) = nowPlaying.playback {
                     LikeButtonView(track: track)
                 }
-                
+
                 Spacer()
-                
+
                 if case let .playing(track, _) = nowPlaying.playback {
                     ShareButtonView(track: track)
                 }

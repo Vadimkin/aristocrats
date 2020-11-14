@@ -19,7 +19,7 @@ class NowPlayingObservableObject: ObservableObject {
     @Published var playback: Playback = .nothing
 
     private var cancellable: Cancellable?
-    
+
     init() {
         let timer = Timer.publish(every: 5, tolerance: 0.5, on: .main, in: .common)
 
@@ -35,12 +35,12 @@ class NowPlayingObservableObject: ObservableObject {
                 }
 
                 if let nowPlaying = nowPlaying {
-                    if (UserDefaults.standard.bool(forKey: "ArtworkEnabled") == false) {
+                    if UserDefaults.standard.bool(forKey: "ArtworkEnabled") == false {
                         // User refuses to load any Artworks
                         return Result.Publisher((nowPlaying, nil))
                             .eraseToAnyPublisher()
                     }
-                    
+
                     return Publishers.musicBrainzPublisher(
                         artist: nowPlaying.artist,
                         song: nowPlaying.song
@@ -92,7 +92,8 @@ class NowPlayingObservableObject: ObservableObject {
                     case .nothing:
                         print("Nothing is playing right now.")
                     case let .playing(playing, coverArt):
-                        print("Now playing: \(playing.artist) - \(playing.song) [\(coverArt?.images.first?.thumbnails.large ?? "no cover")]")
+                        print("Now playing: \(playing.artist) - \(playing.song) " +
+                              "[\(coverArt?.images.first?.thumbnails.large ?? "no cover")]")
                     }
                 } catch {
                     debugPrint(error)

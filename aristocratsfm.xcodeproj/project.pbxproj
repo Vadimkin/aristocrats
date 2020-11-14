@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16020DE1251E6D4700D8B062 /* aristocratsfmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16020DE0251E6D4700D8B062 /* aristocratsfmApp.swift */; };
+		16020DE1251E6D4700D8B062 /* AristocratsfmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16020DE0251E6D4700D8B062 /* AristocratsfmApp.swift */; };
 		16020DE3251E6D4700D8B062 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16020DE2251E6D4700D8B062 /* ContentView.swift */; };
 		16020DE5251E6D4700D8B062 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16020DE4251E6D4700D8B062 /* Assets.xcassets */; };
 		16020DF1251E6E8E00D8B062 /* RadioCurrentTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16020DF0251E6E8E00D8B062 /* RadioCurrentTrackView.swift */; };
@@ -65,7 +65,7 @@
 
 /* Begin PBXFileReference section */
 		16020DDD251E6D4700D8B062 /* aristocratsfm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aristocratsfm.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		16020DE0251E6D4700D8B062 /* aristocratsfmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aristocratsfmApp.swift; sourceTree = "<group>"; };
+		16020DE0251E6D4700D8B062 /* AristocratsfmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AristocratsfmApp.swift; sourceTree = "<group>"; };
 		16020DE2251E6D4700D8B062 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		16020DE4251E6D4700D8B062 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16020DE9251E6D4700D8B062 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 				1615AE912528EBBD0026184B /* Resources */,
 				16A0CCCF25250C1B0092C693 /* Views */,
 				167711872524FDAC0011D6A6 /* Models */,
-				16020DE0251E6D4700D8B062 /* aristocratsfmApp.swift */,
+				16020DE0251E6D4700D8B062 /* AristocratsfmApp.swift */,
 				16020DE2251E6D4700D8B062 /* ContentView.swift */,
 				16020DE4251E6D4700D8B062 /* Assets.xcassets */,
 				16020DE9251E6D4700D8B062 /* Info.plist */,
@@ -490,7 +490,7 @@
 				168B78B425377A420078D0A5 /* URL.swift in Sources */,
 				168B78B725377A6F0078D0A5 /* Publishers.swift in Sources */,
 				16DA20C1252E70C3006FA9B2 /* CoverArt.swift in Sources */,
-				16020DE1251E6D4700D8B062 /* aristocratsfmApp.swift in Sources */,
+				16020DE1251E6D4700D8B062 /* AristocratsfmApp.swift in Sources */,
 				1661F8C32555F189006C6630 /* DataController.swift in Sources */,
 				16C73837255C71740099BAB1 /* SettingsView.swift in Sources */,
 			);

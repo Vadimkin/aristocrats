@@ -12,14 +12,14 @@ struct TopNavigationView: View {
     @State var showingSettings = false
 
     @Environment(\.managedObjectContext) var moc
-    
+
     func getImage(systemName: String) -> some View {
         return Image(systemName: systemName)
             .font(.title2)
             .foregroundColor(Color(UIColor(named: "ButtonForegroundColor")!))
             .padding(.all, 12)
     }
-    
+
     var body: some View {
         HStack {
             Button(action: {
@@ -30,9 +30,9 @@ struct TopNavigationView: View {
                 FavoriteListView()
                     .environment(\.managedObjectContext, self.moc)
             }
-            
+
             Spacer()
-            
+
             Button(action: {
                 self.showingSettings.toggle()
             }) {
