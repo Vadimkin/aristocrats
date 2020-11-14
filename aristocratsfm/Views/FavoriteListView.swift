@@ -31,6 +31,7 @@ struct FavoriteListView: View {
                         self.delete(at: indexSet)
                     })
                 }
+                .navigationBarItems(trailing: EditButton())
                 .navigationBarTitle(favoritesString)
             } else {
                 VStack(alignment: .center) {
