@@ -17,13 +17,17 @@ struct ShareButtonView: View {
         let activityItems = ["\(unwappedTrack.artist) - \(unwappedTrack.song)"]
         let activity = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            activity.popoverPresentationController?.sourceView = UIApplication.shared.windows.first?.rootViewController!.view
+        if let popoverController = activity.popoverPresentationController {
+            // FIXME Fix it someday to point to the button
+            //  with UIPopoverArrowDirection
+            popoverController.sourceRect = CGRect(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2, width: 0, height: 0)
+            popoverController.sourceView = UIApplication.shared.windows.first?.rootViewController?.view
+            popoverController.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
         }
         
         UIApplication.shared.windows.first?.rootViewController?.present(activity, animated: true, completion: nil)
     }
-
+    
     var body: some View {
         Button(action: shareTrack) {
             Image(systemName: "square.and.arrow.up")

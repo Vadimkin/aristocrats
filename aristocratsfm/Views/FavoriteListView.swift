@@ -52,7 +52,11 @@ struct FavoriteListView: View {
 }
 
 struct FavoriteListView_Previews: PreviewProvider {
+
     static var previews: some View {
-        FavoriteListView()
+        let dataController = DataController.shared
+
+        return FavoriteListView()
+            .environment(\.managedObjectContext, dataController.container.viewContext)
     }
 }

@@ -25,9 +25,9 @@ struct PlaylistListView: View {
     }
 }
 
-
 struct PlaylistView_Previews: PreviewProvider {
     static var previews: some View {
-        PlaylistListView()
+        // FIXME Fix it someday with mocked @ObservedObject
+        return PlaylistListView()
     }
 }
