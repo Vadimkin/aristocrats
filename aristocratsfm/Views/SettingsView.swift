@@ -80,7 +80,7 @@ struct SettingsView: View {
                     
                 }
                 
-                Section(header: Text("Для ідей та пропозицій")) {
+                Section(header: Text("Для ідей та пропозицій ❤️")) {
                     HStack {
                         Text("Email")
                         Spacer()
@@ -120,5 +120,6 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
+            .environmentObject(IconNamesObservableObject())
     }
 }

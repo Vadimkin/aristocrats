@@ -55,6 +55,7 @@
 		16DA209B252E459B006FA9B2 /* StreamType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA209A252E459B006FA9B2 /* StreamType.swift */; };
 		16DA20BA252E557E006FA9B2 /* MusicBrainz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA20B9252E557E006FA9B2 /* MusicBrainz.swift */; };
 		16DA20C1252E70C3006FA9B2 /* CoverArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA20C0252E70C3006FA9B2 /* CoverArt.swift */; };
+		16E4AD0D25600BA0002FDC70 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E4AD0C25600BA0002FDC70 /* PreviewProvider.swift */; };
 		16EDE056255B29F700A3FBAD /* ImageLoaderObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EDE055255B29F700A3FBAD /* ImageLoaderObservableObject.swift */; };
 		16EDE05D255B2AC400A3FBAD /* TopNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EDE05C255B2AC400A3FBAD /* TopNavigationView.swift */; };
 		66FCEF8AE8C5E7ADE782C965 /* Pods_aristocratsfm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0A38687F9B48F3310C1AD8 /* Pods_aristocratsfm.framework */; };
@@ -113,6 +114,7 @@
 		16DA209A252E459B006FA9B2 /* StreamType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamType.swift; sourceTree = "<group>"; };
 		16DA20B9252E557E006FA9B2 /* MusicBrainz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicBrainz.swift; sourceTree = "<group>"; };
 		16DA20C0252E70C3006FA9B2 /* CoverArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverArt.swift; sourceTree = "<group>"; };
+		16E4AD0C25600BA0002FDC70 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		16EDE055255B29F700A3FBAD /* ImageLoaderObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderObservableObject.swift; sourceTree = "<group>"; };
 		16EDE05C255B2AC400A3FBAD /* TopNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationView.swift; sourceTree = "<group>"; };
 		4C88BD31FCC6DF9D5D7A7346 /* Pods-aristocratsfm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aristocratsfm.release.xcconfig"; path = "Target Support Files/Pods-aristocratsfm/Pods-aristocratsfm.release.xcconfig"; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				168B78BF25377B330078D0A5 /* Publisher.swift */,
 				16659F15254EF06F005F7D2C /* UIImage.swift */,
 				169E9DFC25583366005F2BB4 /* UIApplication.swift */,
+				16E4AD0C25600BA0002FDC70 /* PreviewProvider.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				16020DF1251E6E8E00D8B062 /* RadioCurrentTrackView.swift in Sources */,
 				16700F172554806E003A2F23 /* LikeButtonView.swift in Sources */,
 				1615AEA1252910390026184B /* NowPlayingObservableObject.swift in Sources */,
+				16E4AD0D25600BA0002FDC70 /* PreviewProvider.swift in Sources */,
 				16DA2092252E40B5006FA9B2 /* AristocratsTrack.swift in Sources */,
 				16BE322825574078002403F2 /* FavoriteTrack.swift in Sources */,
 				168B78BB25377AFC0078D0A5 /* NowPlayingParserDelegate.swift in Sources */,

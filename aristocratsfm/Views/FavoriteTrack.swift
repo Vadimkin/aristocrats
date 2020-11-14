@@ -39,3 +39,13 @@ struct FavoriteTrack: View {
             .padding(.vertical, 10)
     }
 }
+
+struct FavoriteTrack_Previews: PreviewProvider {
+    static var previews: some View {
+        let track = AristocratsTrack(artist: "The xx", song: "Together")
+        let favorite = self.createFavoriteTrack(track: track)
+
+        FavoriteTrack(favorite:favorite)
+            .padding()
+    }
+}

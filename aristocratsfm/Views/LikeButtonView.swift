@@ -74,6 +74,12 @@ struct LikeButtonView: View {
 
 struct LikeButton_Previews: PreviewProvider {
     static var previews: some View {
-        LikeButtonView(track: AristocratsTrack(artist: "Hey", song: "Hey"))
+        let dataController = DataController.shared
+        
+        let track = AristocratsTrack(artist: "Hey", song: "Hey")
+        self.createFavoriteTrack(track: track)
+
+        return LikeButtonView(track: track)
+            .environment(\.managedObjectContext, dataController.container.viewContext)
     }
 }

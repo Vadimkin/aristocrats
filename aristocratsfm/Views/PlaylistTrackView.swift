@@ -85,7 +85,10 @@ struct PlaylistTrackView: View {
 
 struct PlaylistSingleTrack_Previews: PreviewProvider {
     static var previews: some View {
+        let dataController = DataController.shared
+
         PlaylistTrackView(track: AristocratsTrack(artist: "Hey", song: "Hop", time: "10:10"))
+            .environment(\.managedObjectContext, dataController.container.viewContext)
             .background(Color(UIColor(named: "BaseColor")!))
     }
 }

@@ -102,6 +102,5 @@ struct RadioCurrentTrackView: View {
 struct RadioCurrentTrackView_Previews: PreviewProvider {
     static var previews: some View {
         RadioCurrentTrackView()
-        
     }
 }
