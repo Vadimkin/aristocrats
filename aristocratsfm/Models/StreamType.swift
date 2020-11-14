@@ -10,5 +10,5 @@ struct StreamType {
     var Name: String = ""
     var URI: String = ""
     var NowPlayingTrackURI: URL // URI to API service with current track
-    var PlaylistURI: URL // Last tracks (usualy ~10)
+    var PlaylistURI: URL // Last tracks
 }

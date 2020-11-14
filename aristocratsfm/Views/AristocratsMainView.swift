@@ -29,14 +29,7 @@ struct AristocratsMainView: View {
                             
                             Spacer()
 
-                            Text("ПЛЕЙЛИСТ")
-                                .font(.subheadline)
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .padding(.top, 20)
-                                .padding(.bottom, UIApplication.withHomeButton() ? 20 : 30)
-                                .padding(.horizontal)
-                                .background(RoundedCornerView(color: Color(UIColor(named: "BaseColor")!), tl: 20, tr: 20, bl: 0, br: 0))
+                            LatestTracksHeadlineView()
                                 .onTapGesture {
                                     withAnimation {
                                         scrollView.scrollTo("Playlist", anchor: .top)

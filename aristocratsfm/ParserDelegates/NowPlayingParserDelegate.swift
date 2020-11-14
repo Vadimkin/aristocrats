@@ -35,11 +35,11 @@ final class NowPlayingParserDelegate: NSObject, XMLParserDelegate {
     ) {
         switch elementName {
         case "artist":
-            artist = attributeDict["title"] != "" ? attributeDict["title"] : "Прямий етер"
+            artist = attributeDict["title"] != "" ? attributeDict["title"] : NSLocalizedString("live", comment: "Live Stream")
             isLive = attributeDict["title"] == ""
 
         case "song":
-            song = attributeDict["title"] != "" ? attributeDict["title"] : "Аристократи"
+            song = attributeDict["title"] != "" ? attributeDict["title"] : NSLocalizedString("aristocrats", comment: "Aristocrats")
 
         default:
             break
