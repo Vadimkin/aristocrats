@@ -1,4 +1,3 @@
-
 //
 //  NowPlayingParserDelegate.swift
 //  aristocratsfm
@@ -12,27 +11,27 @@ final class PlaylistParserDelegate: NSObject, XMLParserDelegate {
     static let shared = PlaylistParserDelegate()
 
     private var error: Error?
-    
+
     private var playlist: [AristocratsTrack]? = []
-    var newTrack: AristocratsTrack? = nil
-    
+    var newTrack: AristocratsTrack?
+
     enum State { case none, artist, song, time }
     var state: State = .none
-    
+
     func build() throws -> [AristocratsTrack]? {
         return self.playlist
     }
-    
+
     func parserDidStartDocument(_ parser: XMLParser) {
         self.playlist = []
     }
-    
+
     func parser(
         _ parser: XMLParser,
         didStartElement elementName: String,
         namespaceURI: String?,
         qualifiedName qName: String?,
-        attributes attributeDict: [String : String] = [:]
+        attributes attributeDict: [String: String] = [:]
     ) {
         switch elementName {
         case "track":
@@ -48,7 +47,7 @@ final class PlaylistParserDelegate: NSObject, XMLParserDelegate {
             break
         }
     }
-    
+
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         guard let _ = self.newTrack else { return }
         switch self.state {
@@ -62,15 +61,16 @@ final class PlaylistParserDelegate: NSObject, XMLParserDelegate {
             break
         }
     }
-    
-    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+
+    func parser(_ parser: XMLParser, didEndElement elementName: String,
+                namespaceURI: String?, qualifiedName qName: String?) {
         if let newTrack = self.newTrack, elementName == "track" {
             self.playlist!.append(newTrack)
             self.newTrack = nil
         }
         self.state = .none
     }
-    
+
     func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
         self.playlist = []
     }

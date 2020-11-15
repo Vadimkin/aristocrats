@@ -8,11 +8,11 @@
 import SwiftUI
 
 @main
-struct aristocratsfmApp: App {
+struct AristocratsfmApp: App {
     let dataController = DataController.shared
-    
+
     init() {
-        UserDefaults.standard.register(defaults: ["ArtworkEnabled": true])
+        UserDefaults.standard.register(defaults: ["ArtworkEnabled": true, "Stream": Streams.Main.name])
     }
 
     var body: some Scene {

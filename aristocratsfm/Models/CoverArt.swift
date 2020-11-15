@@ -7,7 +7,7 @@
 
 import Foundation
 
- struct CoverArt: Decodable, Equatable {
+struct CoverArt: Decodable, Equatable {
     let images: [Image]
 
      struct Image: Decodable, Equatable {
