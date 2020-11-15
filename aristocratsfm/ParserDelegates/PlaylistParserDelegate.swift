@@ -52,11 +52,11 @@ final class PlaylistParserDelegate: NSObject, XMLParserDelegate {
         guard let _ = self.newTrack else { return }
         switch self.state {
         case .artist:
-            self.newTrack!.artist = string
+            self.newTrack!.artist = string.trimmingCharacters(in: .whitespacesAndNewlines)
         case .song:
-            self.newTrack!.song = string
+            self.newTrack!.song = string.trimmingCharacters(in: .whitespacesAndNewlines)
         case .time:
-            self.newTrack!.time = string
+            self.newTrack!.time = string.trimmingCharacters(in: .whitespacesAndNewlines)
         default:
             break
         }
