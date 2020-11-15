@@ -35,8 +35,7 @@ struct RadioPlayButtonView: View {
                         if player.isPlaying {
                             self.player.player?.pause()
                         } else {
-                            self.player.playItem(at: Streams.Main.URI)
-                            self.player.player?.play()
+                            self.player.playItem()
                             UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                         }
                     }) {

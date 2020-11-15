@@ -22,7 +22,11 @@ struct RadioControlsView: View {
                 Spacer()
 
                 if case let .playing(track, _) = nowPlaying.playback {
-                    ShareButtonView(track: track)
+                    if track.isLive {
+                        DiscussButtonView()
+                    } else {
+                        ShareButtonView(track: track)
+                    }
                 }
             }
             RadioPlayButtonView()

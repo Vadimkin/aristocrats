@@ -27,8 +27,10 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
     var player: AVPlayer?
     var playerItem: AVPlayerItem?
 
-    func playItem(at itemURL: String) {
-        guard let url = URL(string: itemURL) else { return }
+    func playItem() {
+        let streamName = UserDefaults.standard.string(forKey: "Stream")!
+        let stream = Streams.byName(name: streamName)
+        let url = stream.URI
 
         self.isLoading = true
 
@@ -63,6 +65,8 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
 
         setupRemoteTransportControls()
         setupNowPlayingInfoCenter()
+
+        self.player?.play()
     }
 
     func setupRemoteTransportControls() {
@@ -91,9 +95,8 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
 
         // Add handler for Play Command
         commandCenter.playCommand.addTarget { [unowned self] _ in
-            // Looks like we need to reinitialize playItem and player both
-            playItem(at: Streams.Main.URI)
-            self.player?.play()
+            // Looks like we need to reinitialize playItem
+            playItem()
             return .success
         }
 
@@ -176,8 +179,7 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
             }
             let options = AVAudioSession.InterruptionOptions(rawValue: optionsValue)
             if options.contains(.shouldResume) {
-                playItem(at: Streams.Main.URI)
-                player?.play()
+                playItem()
             }
         }
     }

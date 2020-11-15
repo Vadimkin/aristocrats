@@ -56,6 +56,9 @@
 		16DA209B252E459B006FA9B2 /* StreamType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA209A252E459B006FA9B2 /* StreamType.swift */; };
 		16DA20BA252E557E006FA9B2 /* MusicBrainz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA20B9252E557E006FA9B2 /* MusicBrainz.swift */; };
 		16DA20C1252E70C3006FA9B2 /* CoverArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA20C0252E70C3006FA9B2 /* CoverArt.swift */; };
+		16E32C7F256148D500A5AADC /* DiscussButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E32C7E256148D500A5AADC /* DiscussButtonView.swift */; };
+		16E32C8325614D4100A5AADC /* TelegramURI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E32C8225614D4100A5AADC /* TelegramURI.swift */; };
+		16E32C8625615EBD00A5AADC /* SettingsRadioStreamPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E32C8525615EBD00A5AADC /* SettingsRadioStreamPickerView.swift */; };
 		16E4AD0D25600BA0002FDC70 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E4AD0C25600BA0002FDC70 /* PreviewProvider.swift */; };
 		16E4AD1025603906002FDC70 /* LatestTracksHeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E4AD0F25603906002FDC70 /* LatestTracksHeadlineView.swift */; };
 		16EDE056255B29F700A3FBAD /* ImageLoaderObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EDE055255B29F700A3FBAD /* ImageLoaderObservableObject.swift */; };
@@ -118,6 +121,9 @@
 		16DA209A252E459B006FA9B2 /* StreamType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamType.swift; sourceTree = "<group>"; };
 		16DA20B9252E557E006FA9B2 /* MusicBrainz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicBrainz.swift; sourceTree = "<group>"; };
 		16DA20C0252E70C3006FA9B2 /* CoverArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverArt.swift; sourceTree = "<group>"; };
+		16E32C7E256148D500A5AADC /* DiscussButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussButtonView.swift; sourceTree = "<group>"; };
+		16E32C8225614D4100A5AADC /* TelegramURI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramURI.swift; sourceTree = "<group>"; };
+		16E32C8525615EBD00A5AADC /* SettingsRadioStreamPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRadioStreamPickerView.swift; sourceTree = "<group>"; };
 		16E4AD0C25600BA0002FDC70 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		16E4AD0F25603906002FDC70 /* LatestTracksHeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestTracksHeadlineView.swift; sourceTree = "<group>"; };
 		16EDE055255B29F700A3FBAD /* ImageLoaderObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderObservableObject.swift; sourceTree = "<group>"; };
@@ -207,6 +213,7 @@
 				16DA209A252E459B006FA9B2 /* StreamType.swift */,
 				16DA20B9252E557E006FA9B2 /* MusicBrainz.swift */,
 				16DA20C0252E70C3006FA9B2 /* CoverArt.swift */,
+				16E32C8225614D4100A5AADC /* TelegramURI.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -264,6 +271,8 @@
 				16EDE05C255B2AC400A3FBAD /* TopNavigationView.swift */,
 				16C73836255C71740099BAB1 /* SettingsView.swift */,
 				16E4AD0F25603906002FDC70 /* LatestTracksHeadlineView.swift */,
+				16E32C7E256148D500A5AADC /* DiscussButtonView.swift */,
+				16E32C8525615EBD00A5AADC /* SettingsRadioStreamPickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -352,7 +361,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 				uk,
 			);
 			mainGroup = 16020DD4251E6D4700D8B062;
@@ -455,6 +463,7 @@
 				166200DD251F50470073EEE5 /* RadioControlsView.swift in Sources */,
 				167711892524FDD30011D6A6 /* PlayerObservableObject.swift in Sources */,
 				166200E3251FAA410073EEE5 /* AppConstants.swift in Sources */,
+				16E32C8625615EBD00A5AADC /* SettingsRadioStreamPickerView.swift in Sources */,
 				16E4AD1025603906002FDC70 /* LatestTracksHeadlineView.swift in Sources */,
 				166200E6251FB4210073EEE5 /* AristocratsMainView.swift in Sources */,
 				16C73843255C80670099BAB1 /* IconNamesObservableObject.swift in Sources */,
@@ -470,6 +479,7 @@
 				16659F16254EF06F005F7D2C /* UIImage.swift in Sources */,
 				16DA20BA252E557E006FA9B2 /* MusicBrainz.swift in Sources */,
 				16EDE056255B29F700A3FBAD /* ImageLoaderObservableObject.swift in Sources */,
+				16E32C8325614D4100A5AADC /* TelegramURI.swift in Sources */,
 				16BE322525573C95002403F2 /* FavoriteListView.swift in Sources */,
 				1613B0BE2529FE070068B045 /* PlaylistListView.swift in Sources */,
 				166200E0251F52210073EEE5 /* RadioPlayButtonView.swift in Sources */,
@@ -477,6 +487,7 @@
 				168B78C025377B330078D0A5 /* Publisher.swift in Sources */,
 				16020DE3251E6D4700D8B062 /* ContentView.swift in Sources */,
 				1693A5B72556FB9D00AAA2A4 /* LikeButtonLottieView.swift in Sources */,
+				16E32C7F256148D500A5AADC /* DiscussButtonView.swift in Sources */,
 				168B78C3253781C80078D0A5 /* ImageView.swift in Sources */,
 				169E9E092559C76C005F2BB4 /* LottieView.swift in Sources */,
 				16020DF1251E6E8E00D8B062 /* RadioCurrentTrackView.swift in Sources */,
