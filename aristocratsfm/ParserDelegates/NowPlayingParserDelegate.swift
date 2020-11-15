@@ -36,7 +36,7 @@ final class NowPlayingParserDelegate: NSObject, XMLParserDelegate {
         switch elementName {
         case "artist":
             if attributeDict["title"] != "" {
-                self.artist = attributeDict["title"]
+                self.artist = attributeDict["title"]!.trimmingCharacters(in: .whitespacesAndNewlines)
             } else {
                 self.artist = NSLocalizedString("live", comment: "Live Stream")
                 self.isLive = true
@@ -44,7 +44,7 @@ final class NowPlayingParserDelegate: NSObject, XMLParserDelegate {
 
         case "song":
             if attributeDict["title"] != "" {
-                self.song = attributeDict["title"]
+                self.song = attributeDict["title"]!.trimmingCharacters(in: .whitespacesAndNewlines)
             } else {
                 self.song = NSLocalizedString("aristocrats", comment: "Aristocrats")
             }
