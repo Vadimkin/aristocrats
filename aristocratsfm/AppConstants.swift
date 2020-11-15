@@ -12,6 +12,9 @@ import Combine
 enum Contacts {
     static let Email = "me@vadimklimenko.com"
     static let Telegram = "klimenko"
+
+    static let TelegramPublicID = "radioaristocrats"
+    static let TelegramChatID = "GC0sFhJGZwiUFR9yMvDWwA"
 }
 
 enum Design {
@@ -21,12 +24,41 @@ enum Design {
     }
 }
 
-enum Streams {
-    static let Main = StreamType(Name: "Main", URI: "http://air.aristocrats.fm:8000/live2", NowPlayingTrackURI: URL(string: "https://aristocrats.fm/service/nowplaying-aristocrats8.xml")!, PlaylistURI: URL(string: "https://aristocrats.fm/last10.php?s=live")!)
-    
-    // TODO Implement support for this stream
-    static let Music = StreamType(Name: "Music", URI: "http://air.aristocrats.fm:8000/live2", NowPlayingTrackURI: URL(string: "https://aristocrats.fm/service/nowplaying-amusic8.xml")!, PlaylistURI: URL(string: "https://aristocrats.fm/last10.php?s=music")!)
-    
-    // TODO Implement support for this stream
-    static let Jazz = StreamType(Name: "Jazz", URI: "http://air.aristocrats.fm:8000/live2", NowPlayingTrackURI: URL(string: "https://aristocrats.fm/service/nowplaying-amusic8.xml")!, PlaylistURI: URL(string: "https://aristocrats.fm/last10.php?s=jazz")!)
+struct Streams {
+    static let Main = StreamType(
+        name: "Main",
+        URI: URL(string: "http://air.aristocrats.fm:8000/live2")!,
+        nowPlayingTrackURI: URL(string: "https://aristocrats.fm/service/nowplaying-aristocrats8.xml")!,
+        playlistURI: URL(string: "https://aristocrats.fm/last10.php?s=live")!
+    )
+
+    // Returns 404 :(
+    static let Music = StreamType(
+        name: "Music",
+        URI: URL(string: "http://air.aristocrats.fm:8000/amusic-128")!,
+        nowPlayingTrackURI: URL(string: "https://aristocrats.fm/service/nowplaying-amusic8.xml")!,
+        playlistURI: URL(string: "https://aristocrats.fm/last10.php?s=music")!)
+
+    // Returns 404 :(
+    static let Jazz = StreamType(
+        name: "Jazz",
+        URI: URL(string: "http://air.aristocrats.fm:8000/ajazz")!,
+        nowPlayingTrackURI: URL(string: "https://aristocrats.fm/service/nowplaying-ajazz8.xml")!,
+        playlistURI: URL(string: "https://aristocrats.fm/last10.php?s=jazz")!
+    )
+
+    static func byName(name: String) -> StreamType {
+        switch name {
+        case Streams.Main.name:
+            return Streams.Main
+        case Streams.Music.name:
+            return Streams.Music
+        case Streams.Jazz.name:
+            return Streams.Jazz
+        default:
+            return Streams.Main
+        }
+    }
+
+    static let List = [Streams.Main, Streams.Jazz, Streams.Music]
 }

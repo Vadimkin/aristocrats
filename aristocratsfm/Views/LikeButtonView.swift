@@ -12,7 +12,7 @@ import CoreData
 struct LikeButtonView: View {
     var track: AristocratsTrack
     let dataController: DataController = DataController.shared
-    
+
     @FetchRequest var favorites: FetchedResults<Favorite>
     @State var animateLoading: Bool = false
 
@@ -57,7 +57,7 @@ struct LikeButtonView: View {
     }
 
     private func addToFavorites() {
-        if (track.isLive) {
+        if track.isLive {
             UINotificationFeedbackGenerator().notificationOccurred(.error)
             return
         }
@@ -77,7 +77,7 @@ struct LikeButtonView: View {
 struct LikeButton_Previews: PreviewProvider {
     static var previews: some View {
         let dataController = DataController.shared
-        
+
         let track = AristocratsTrack(artist: "Hey", song: "Hey")
         _ = self.createFavoriteTrack(track: track)
 

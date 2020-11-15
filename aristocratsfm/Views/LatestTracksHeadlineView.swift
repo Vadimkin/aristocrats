@@ -18,7 +18,14 @@ struct LatestTracksHeadlineView: View {
             .padding(.top, 20)
             .padding(.bottom, UIApplication.withHomeButton() ? 20 : 30)
             .padding(.horizontal)
-            .background(RoundedCornerView(color: Color(UIColor(named: "BaseColor")!), tl: 20, tr: 20, bl: 0, br: 0))
+            .background(
+                RoundedCornerView(
+                    color: Color(UIColor(named: "BaseColor")!),
+                    topLeft: 20,
+                    topRight: 20,
+                    bottomLeft: 0,
+                    bottomRight: 0)
+            )
     }
 }
 

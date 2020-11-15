@@ -10,8 +10,11 @@ import Combine
 
 extension Publishers {
     static func nowPlaying() -> AnyPublisher<AristocratsTrack?, Error> {
+        let streamName = UserDefaults.standard.string(forKey: "Stream")!
+        let stream = Streams.byName(name: streamName)
+
         return URLSession.shared
-            .dataTaskPublisher(for: Streams.Main.NowPlayingTrackURI)
+            .dataTaskPublisher(for: stream.nowPlayingTrackURI)
             .tryMap { response -> AristocratsTrack? in
                 let delegate: NowPlayingParserDelegate = .shared
 
@@ -41,10 +44,13 @@ extension Publishers {
             .decode(type: CoverArt.self, decoder: JSONDecoder.shared)
             .eraseToAnyPublisher()
     }
-    
+
     static func playlistPublisher() -> AnyPublisher<[AristocratsTrack]?, Error> {
+        let streamName = UserDefaults.standard.string(forKey: "Stream")!
+        let stream = Streams.byName(name: streamName)
+
         return URLSession.shared
-            .dataTaskPublisher(for: Streams.Main.PlaylistURI)
+            .dataTaskPublisher(for: stream.playlistURI)
             .tryMap { response -> [AristocratsTrack]? in
                 let delegate: PlaylistParserDelegate = .shared
 

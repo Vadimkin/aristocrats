@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AristocratsMainView: View {
     @Environment(\.colorScheme) var colorScheme
-    
+
     var body: some View {
         GeometryReader { geometry in
             ScrollViewReader { scrollView in
@@ -22,11 +22,11 @@ struct AristocratsMainView: View {
                             TopNavigationView()
 
                             RadioCurrentTrackView()
-                            
+
                             Spacer()
-                            
+
                             RadioControlsView()
-                            
+
                             Spacer()
 
                             LatestTracksHeadlineView()
@@ -46,7 +46,7 @@ struct AristocratsMainView: View {
                             PlaylistListView()
                                 .id("Playlist")
                         }
-                        
+
                     })
                 }
             }

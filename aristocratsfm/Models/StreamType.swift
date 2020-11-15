@@ -6,9 +6,9 @@
 //
 import Foundation
 
-struct StreamType {
-    var Name: String = ""
-    var URI: String = ""
-    var NowPlayingTrackURI: URL // URI to API service with current track
-    var PlaylistURI: URL // Last tracks
+struct StreamType: Hashable {
+    var name: String = ""
+    var URI: URL
+    var nowPlayingTrackURI: URL // URI to API service with current track
+    var playlistURI: URL // Last tracks
 }

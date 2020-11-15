@@ -11,20 +11,20 @@ import Lottie
 
 struct RadioPlayButtonView: View {
     @ObservedObject var player: PlayerObservableObject = .shared
-    
+
     func getPlayIconFontSymbol() -> String {
         if player.isPlaying {
-            return "pause.fill";
+            return "pause.fill"
         }
 
-        return "play.fill";
+        return "play.fill"
     }
-    
+
     var body: some View {
-        let iconImage: String = self.getPlayIconFontSymbol();
-        
+        let iconImage: String = self.getPlayIconFontSymbol()
+
         //  Put icons to center
-        let extraPadding: CGFloat = player.isPlaying ? -1.0 : 3.0;
+        let extraPadding: CGFloat = player.isPlaying ? -1.0 : 3.0
 
         ZStack {
             Circle()
@@ -32,15 +32,14 @@ struct RadioPlayButtonView: View {
                 .frame(maxHeight: 100, alignment: .center)
                 .overlay(
                     Button(action: {
-                        if (player.isPlaying) {
+                        if player.isPlaying {
                             self.player.player?.pause()
                         } else {
-                            self.player.playItem(at: Streams.Main.URI)
-                            self.player.player?.play()
+                            self.player.playItem()
                             UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                         }
                     }) {
-                        if (!player.isLoading) {
+                        if !player.isLoading {
                             Image(systemName: iconImage)
                                 .resizable()
                                 .foregroundColor(.white)
@@ -50,9 +49,8 @@ struct RadioPlayButtonView: View {
                         }
                     }
                 )
-            
-            
-            if (player.isLoading) {
+
+            if player.isLoading {
                 LoadingLottieView()
                     .frame(maxHeight: 100, alignment: .center)
                     .onTapGesture {

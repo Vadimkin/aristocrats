@@ -8,7 +8,6 @@
 import Foundation
 import Combine
 
-
 struct AristocratsTrack: Decodable, Equatable, Hashable {
     var artist: String = "Аристократи"
     var song: String = " "

@@ -15,15 +15,15 @@ class ImageLoaderObservableObject: ObservableObject {
             didChange.send(data)
         }
     }
-    
-    init(url:URL) {
-        let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) -> Void in
+
+    init(url: URL) {
+        let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, _, _) -> Void in
             guard let data = data else { return }
             DispatchQueue.main.async {
                 self.data = data
             }
         })
-        
+
         task.resume()
     }
 }
