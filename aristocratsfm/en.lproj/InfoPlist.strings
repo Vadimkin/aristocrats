@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  aristocratsfm
+
+  Created by Vadim Klimenko on 15.11.2020.
+  
+*/
+
+"CFBundleDisplayName" = "Aristocrats";
+"NSHumanReadableCopyright" = "2020 Vadym Klymenko";

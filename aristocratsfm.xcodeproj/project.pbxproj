@@ -59,6 +59,7 @@
 		16E32C7F256148D500A5AADC /* DiscussButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E32C7E256148D500A5AADC /* DiscussButtonView.swift */; };
 		16E32C8325614D4100A5AADC /* TelegramURI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E32C8225614D4100A5AADC /* TelegramURI.swift */; };
 		16E32C8625615EBD00A5AADC /* SettingsRadioStreamPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E32C8525615EBD00A5AADC /* SettingsRadioStreamPickerView.swift */; };
+		16E32C912561707400A5AADC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16E32C932561707400A5AADC /* InfoPlist.strings */; };
 		16E4AD0D25600BA0002FDC70 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E4AD0C25600BA0002FDC70 /* PreviewProvider.swift */; };
 		16E4AD1025603906002FDC70 /* LatestTracksHeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E4AD0F25603906002FDC70 /* LatestTracksHeadlineView.swift */; };
 		16EDE056255B29F700A3FBAD /* ImageLoaderObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EDE055255B29F700A3FBAD /* ImageLoaderObservableObject.swift */; };
@@ -124,6 +125,8 @@
 		16E32C7E256148D500A5AADC /* DiscussButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussButtonView.swift; sourceTree = "<group>"; };
 		16E32C8225614D4100A5AADC /* TelegramURI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramURI.swift; sourceTree = "<group>"; };
 		16E32C8525615EBD00A5AADC /* SettingsRadioStreamPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRadioStreamPickerView.swift; sourceTree = "<group>"; };
+		16E32C922561707400A5AADC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		16E32C952561707700A5AADC /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		16E4AD0C25600BA0002FDC70 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		16E4AD0F25603906002FDC70 /* LatestTracksHeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestTracksHeadlineView.swift; sourceTree = "<group>"; };
 		16EDE055255B29F700A3FBAD /* ImageLoaderObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderObservableObject.swift; sourceTree = "<group>"; };
@@ -183,6 +186,7 @@
 				1661F8C22555F189006C6630 /* DataController.swift */,
 				166200E2251FAA410073EEE5 /* AppConstants.swift */,
 				167BE13325603E6900E81F4C /* Localizable.strings */,
+				16E32C932561707400A5AADC /* InfoPlist.strings */,
 			);
 			path = aristocratsfm;
 			sourceTree = "<group>";
@@ -362,6 +366,7 @@
 			knownRegions = (
 				en,
 				uk,
+				Base,
 			);
 			mainGroup = 16020DD4251E6D4700D8B062;
 			productRefGroup = 16020DDE251E6D4700D8B062 /* Products */;
@@ -381,6 +386,7 @@
 				16C73870255C88FD0099BAB1 /* Purple-Icon-App.png in Resources */,
 				167BE13125603E6900E81F4C /* Localizable.strings in Resources */,
 				16C73871255C88FD0099BAB1 /* Dark-Icon-App@2x.png in Resources */,
+				16E32C912561707400A5AADC /* InfoPlist.strings in Resources */,
 				16C7386F255C88FD0099BAB1 /* Dark-Icon-App@3x.png in Resources */,
 				1693A5B42556FB4D00AAA2A4 /* LikeAnimatedButton.json in Resources */,
 				168B789D253774920078D0A5 /* LoadingDots.json in Resources */,
@@ -517,6 +523,15 @@
 				167BE13525603E7000E81F4C /* uk */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		16E32C932561707400A5AADC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16E32C922561707400A5AADC /* en */,
+				16E32C952561707700A5AADC /* uk */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
