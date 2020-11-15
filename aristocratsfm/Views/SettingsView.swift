@@ -9,7 +9,12 @@ import SwiftUI
 
 struct SettingsView: View {
     @AppStorage("ArtworkEnabled") private var isArtworkEnabled = true
+
     @EnvironmentObject var iconSettings: IconNamesObservableObject
+
+    // After 10, user should be able to select stream
+    @State var versionTapCount: Int = 0
+    @State var isRadioStationSelectorVisible: Bool = false
 
     // swiftlint:disable:next force_cast
     let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
@@ -60,6 +65,10 @@ struct SettingsView: View {
         let versionString = NSLocalizedString("version", comment: "Version")
         let settingsString = NSLocalizedString("settings", comment: "Settings")
 
+        let communityTitleString = NSLocalizedString("community", comment: "Title for community sections")
+        let communityTitleChannelString = NSLocalizedString("communityChannel", comment: "Telegram Public Channel")
+        let communityTitleChatString = NSLocalizedString("communityChat", comment: "Chat Radio (A)")
+
         return NavigationView {
             List {
                 Section {
@@ -86,7 +95,27 @@ struct SettingsView: View {
                             }
                         }
                     }
+                }
 
+                Section(header: Text(communityTitleString)) {
+                    HStack {
+                        Text(communityTitleChannelString)
+                        Spacer()
+                        Image(systemName: "chevron.right").font(.body)
+                    }
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        TelegramURI(type: .publicChannel, id: Contacts.TelegramPublicID).open()
+                    }
+                    HStack {
+                        Text(communityTitleChatString)
+                        Spacer()
+                        Image(systemName: "chevron.right").font(.body)
+                    }
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        TelegramURI(type: .chat, id: Contacts.TelegramChatID).open()
+                    }
                 }
 
                 Section(header: Text("\(ideasString) ❤️")) {
@@ -94,7 +123,9 @@ struct SettingsView: View {
                         Text("Email")
                         Spacer()
                         Text(Contacts.Email).foregroundColor(.gray)
+                        Image(systemName: "chevron.right").font(.body)
                     }
+                    .contentShape(Rectangle())
                     .onTapGesture {
                         if let url = URL(string: "mailto:\(Contacts.Email)") {
                             UIApplication.shared.open(url)
@@ -104,11 +135,11 @@ struct SettingsView: View {
                         Text(telegramString)
                         Spacer()
                         Text("@\(Contacts.Telegram)").foregroundColor(.gray)
+                        Image(systemName: "chevron.right").font(.body)
                     }
+                    .contentShape(Rectangle())
                     .onTapGesture {
-                        if let url = URL(string: "tg://resolve?domain=\(Contacts.Telegram)") {
-                            UIApplication.shared.open(url)
-                        }
+                        TelegramURI(type: .person, id: Contacts.Telegram).open()
                     }
                 }
 
@@ -118,6 +149,19 @@ struct SettingsView: View {
                         Spacer()
                         Text(version).font(.subheadline).foregroundColor(.gray)
                     }
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        self.versionTapCount += 1
+                        if !self.isRadioStationSelectorVisible && self.versionTapCount == 10 {
+                            UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+                            self.versionTapCount = 0
+                            self.isRadioStationSelectorVisible = true
+                        }
+                    }
+                }
+
+                if self.isRadioStationSelectorVisible {
+                    SettingsRadioStreamPickerView()
                 }
             }
             .listStyle(InsetGroupedListStyle())
