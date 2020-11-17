@@ -366,7 +366,6 @@
 			knownRegions = (
 				en,
 				uk,
-				Base,
 			);
 			mainGroup = 16020DD4251E6D4700D8B062;
 			productRefGroup = 16020DDE251E6D4700D8B062 /* Products */;
@@ -661,7 +660,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = aristocratsfm/aristocratsfm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = R5F5GL339W;
 				ENABLE_PREVIEWS = YES;
@@ -688,7 +687,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = aristocratsfm/aristocratsfm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = R5F5GL339W;
 				ENABLE_PREVIEWS = YES;

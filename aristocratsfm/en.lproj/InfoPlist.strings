@@ -6,5 +6,6 @@
   
 */
 
+"CFBundleName" = "Aristocrats";
 "CFBundleDisplayName" = "Aristocrats";
 "NSHumanReadableCopyright" = "2020 Vadym Klymenko";
