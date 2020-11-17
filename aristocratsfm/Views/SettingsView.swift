@@ -18,6 +18,8 @@ struct SettingsView: View {
 
     // swiftlint:disable:next force_cast
     let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+    // swiftlint:disable:next force_cast
+    let bundleVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
 
     func setIcon(selectedIconName: String) {
         let selectedIndex = self.iconSettings.iconNames.firstIndex(of: selectedIconName) ?? 0
@@ -147,7 +149,7 @@ struct SettingsView: View {
                     HStack {
                         Text(versionString)
                         Spacer()
-                        Text(version).font(.subheadline).foregroundColor(.gray)
+                        Text("\(version) (\(bundleVersion))").font(.subheadline).foregroundColor(.gray)
                     }
                     .contentShape(Rectangle())
                     .onTapGesture {

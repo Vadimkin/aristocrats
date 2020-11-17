@@ -20,7 +20,7 @@ struct SettingsRadioStreamPickerView: View {
             }.onChange(of: stream) { _ in
                 if player.isPlaying {
                     // Reset play state
-                    player.playItem()
+                    player.play()
                 }
             }
             .pickerStyle(SegmentedPickerStyle())
