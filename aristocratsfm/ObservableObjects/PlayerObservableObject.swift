@@ -11,7 +11,7 @@ import MediaPlayer
 import Combine
 import CoreData
 
-class PlayerObservableObject: AVPlayer, ObservableObject {
+class PlayerObservableObject: NSObject, ObservableObject {
     @Published var isPlaying: Bool = false
     @Published var isLoading: Bool = false
     @Published var isError: Bool = false
@@ -20,38 +20,47 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
     private var moc = DataController.shared.container.viewContext
 
     static let shared = PlayerObservableObject()
-    var cancellable: AnyCancellable?
 
     private var playerContext = 0
+    private var isInitialized: Bool = false
 
     var player: AVPlayer?
     var playerItem: AVPlayerItem?
 
-    func playItem() {
+    func play() {
         let streamName = UserDefaults.standard.string(forKey: "Stream")!
         let stream = Streams.byName(name: streamName)
         let url = stream.URI
 
         self.isLoading = true
 
-        // cleanup for previous player
-        self.player?.removeObserver(self, forKeyPath: "timeControlStatus")
-        self.playerItem?.removeObserver(self, forKeyPath: "status")
-        NotificationCenter.default.removeObserver(
-            self,
-            name: AVAudioSession.interruptionNotification,
-            object: AVAudioSession.sharedInstance()
-        )
+        self.clearObservers()
 
         try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
         try? AVAudioSession.sharedInstance().setActive(true)
 
         // setup new player
         let playerItem = AVPlayerItem(url: url)
-        playerItem.addObserver(self, forKeyPath: "status", options: [.old, .new], context: &playerContext)
-
         let newPlayer = AVPlayer(playerItem: playerItem)
-        newPlayer.addObserver(self, forKeyPath: "timeControlStatus", options: [.old, .new], context: &playerContext)
+
+        self.playerItem = playerItem
+        self.player = newPlayer
+
+        self.initObservers()
+
+        if !self.isInitialized {
+            setupRemoteTransportControls()
+            setupNowPlayingInfoCenter()
+
+            self.isInitialized.toggle()
+        }
+
+        self.player?.play()
+    }
+
+    func initObservers() {
+        self.playerItem?.addObserver(self, forKeyPath: "status", options: [.old, .new], context: &playerContext)
+        self.player?.addObserver(self, forKeyPath: "timeControlStatus", options: [.old, .new], context: &playerContext)
 
         NotificationCenter.default.addObserver(
             self,
@@ -59,13 +68,25 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
             name: AVAudioSession.interruptionNotification,
             object: AVAudioSession.sharedInstance()
         )
+    }
 
-        self.playerItem = playerItem
-        self.player = newPlayer
+    func clearObservers() {
+        // cleanup for previous player
+        self.player?.removeObserver(self, forKeyPath: "timeControlStatus")
+        self.playerItem?.removeObserver(self, forKeyPath: "status")
 
-        setupRemoteTransportControls()
-        setupNowPlayingInfoCenter()
+        NotificationCenter.default.removeObserver(
+            self,
+            name: AVAudioSession.interruptionNotification,
+            object: AVAudioSession.sharedInstance()
+        )
+    }
 
+    func pause() {
+        self.player?.pause()
+    }
+
+    func resume() {
         self.player?.play()
     }
 
@@ -96,13 +117,13 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
         // Add handler for Play Command
         commandCenter.playCommand.addTarget { [unowned self] _ in
             // Looks like we need to reinitialize playItem
-            playItem()
+            play()
             return .success
         }
 
         // Add handler for Pause Command
         commandCenter.pauseCommand.addTarget { [unowned self] _ in
-            self.player?.pause()
+            self.pause()
             return .success
         }
     }
@@ -171,7 +192,7 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
             return
         }
         if type == .began {
-            player?.pause()
+            debugPrint("Interruption Began")
         } else if type == .ended {
             guard let optionsValue =
                     info[AVAudioSessionInterruptionOptionKey] as? UInt else {
@@ -179,7 +200,7 @@ class PlayerObservableObject: AVPlayer, ObservableObject {
             }
             let options = AVAudioSession.InterruptionOptions(rawValue: optionsValue)
             if options.contains(.shouldResume) {
-                playItem()
+                self.play()
             }
         }
     }
