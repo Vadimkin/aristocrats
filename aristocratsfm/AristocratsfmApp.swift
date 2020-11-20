@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct AristocratsfmApp: App {
@@ -13,6 +14,8 @@ struct AristocratsfmApp: App {
 
     init() {
         UserDefaults.standard.register(defaults: ["ArtworkEnabled": true, "Stream": Streams.Main.name])
+
+        FirebaseApp.configure()
     }
 
     var body: some Scene {

@@ -30,6 +30,8 @@ struct ShareButtonView: View {
             popoverController.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
         }
 
+        FirebaseAnalytics.logTrackShare(track: unwappedTrack)
+
         UIApplication.shared.windows.first?.rootViewController?.present(activity, animated: true, completion: nil)
     }
 

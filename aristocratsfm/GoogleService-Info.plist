@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1030638615209-pso65jcgbbnajt8fq6o4gmuughoa4o1m.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1030638615209-pso65jcgbbnajt8fq6o4gmuughoa4o1m</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCz7e0f0tyCrUAdQCKfWOi40-R35TmFUSU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1030638615209</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.vadimkin.aristocrats</string>
+	<key>PROJECT_ID</key>
+	<string>aristocratsradio</string>
+	<key>STORAGE_BUCKET</key>
+	<string>aristocratsradio.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1030638615209:ios:6192f3e149a5388d0cc7b8</string>
+	<key>DATABASE_URL</key>
+	<string>https://aristocratsradio.firebaseio.com</string>
+</dict>
+</plist>

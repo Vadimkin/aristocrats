@@ -10,8 +10,6 @@ import SwiftUI
 struct RadioControlsView: View {
     @ObservedObject var nowPlaying: NowPlayingObservableObject = .shared
 
-    @State var currentTrack: AristocratsTrack?
-
     var body: some View {
         ZStack {
             HStack {

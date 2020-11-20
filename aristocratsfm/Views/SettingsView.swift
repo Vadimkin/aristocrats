@@ -12,7 +12,7 @@ struct SettingsView: View {
 
     @EnvironmentObject var iconSettings: IconNamesObservableObject
 
-    // After 10, user should be able to select stream
+    // After 10 tap, user should be able to select stream
     @State var versionTapCount: Int = 0
     @State var isRadioStationSelectorVisible: Bool = false
 
