@@ -8,5 +8,7 @@ target 'aristocratsfm' do
   # Pods for aristocratsfm
   pod 'lottie-ios'
   pod 'SwiftLint'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
 
 end

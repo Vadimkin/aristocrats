@@ -15,6 +15,7 @@
 		1613B0C1252A022C0068B045 /* PlaylistTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613B0C0252A022C0068B045 /* PlaylistTrackView.swift */; };
 		1613B0C5252A0F7E0068B045 /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613B0C4252A0F7E0068B045 /* RoundedCornerView.swift */; };
 		1615AEA1252910390026184B /* NowPlayingObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1615AEA0252910390026184B /* NowPlayingObservableObject.swift */; };
+		163A081F25684BC9003EA4BB /* FirebaseAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163A081E25684BC9003EA4BB /* FirebaseAnalytics.swift */; };
 		1661F8C32555F189006C6630 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1661F8C22555F189006C6630 /* DataController.swift */; };
 		166200DD251F50470073EEE5 /* RadioControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166200DC251F50470073EEE5 /* RadioControlsView.swift */; };
 		166200E0251F52210073EEE5 /* RadioPlayButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166200DF251F52210073EEE5 /* RadioPlayButtonView.swift */; };
@@ -41,6 +42,7 @@
 		169E9E052559C19B005F2BB4 /* CircleLoader.json in Resources */ = {isa = PBXBuildFile; fileRef = 169E9E042559C19B005F2BB4 /* CircleLoader.json */; };
 		169E9E092559C76C005F2BB4 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169E9E082559C76C005F2BB4 /* LottieView.swift */; };
 		16AA1CE92555D9C100839F30 /* Aristocrats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 16AA1CE72555D9C100839F30 /* Aristocrats.xcdatamodeld */; };
+		16BDDA642568441900C39323 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16BDDA632568441900C39323 /* GoogleService-Info.plist */; };
 		16BE322525573C95002403F2 /* FavoriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE322425573C95002403F2 /* FavoriteListView.swift */; };
 		16BE322825574078002403F2 /* FavoriteTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE322725574078002403F2 /* FavoriteTrack.swift */; };
 		16C73834255C6F240099BAB1 /* TeaCup.json in Resources */ = {isa = PBXBuildFile; fileRef = 16C73833255C6F240099BAB1 /* TeaCup.json */; };
@@ -78,6 +80,7 @@
 		1613B0C0252A022C0068B045 /* PlaylistTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTrackView.swift; sourceTree = "<group>"; };
 		1613B0C4252A0F7E0068B045 /* RoundedCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
 		1615AEA0252910390026184B /* NowPlayingObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingObservableObject.swift; sourceTree = "<group>"; };
+		163A081E25684BC9003EA4BB /* FirebaseAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalytics.swift; sourceTree = "<group>"; };
 		1661F8C22555F189006C6630 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		166200DC251F50470073EEE5 /* RadioControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioControlsView.swift; sourceTree = "<group>"; };
 		166200DF251F52210073EEE5 /* RadioPlayButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayButtonView.swift; sourceTree = "<group>"; };
@@ -107,6 +110,7 @@
 		169E9E042559C19B005F2BB4 /* CircleLoader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CircleLoader.json; sourceTree = "<group>"; };
 		169E9E082559C76C005F2BB4 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		16AA1CE82555D9C100839F30 /* Aristocrats.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Aristocrats.xcdatamodel; sourceTree = "<group>"; };
+		16BDDA632568441900C39323 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		16BE322425573C95002403F2 /* FavoriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListView.swift; sourceTree = "<group>"; };
 		16BE322725574078002403F2 /* FavoriteTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTrack.swift; sourceTree = "<group>"; };
 		16C73833255C6F240099BAB1 /* TeaCup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TeaCup.json; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 		16020DDF251E6D4700D8B062 /* aristocratsfm */ = {
 			isa = PBXGroup;
 			children = (
+				16BDDA632568441900C39323 /* GoogleService-Info.plist */,
 				16C7384F255C869A0099BAB1 /* Icons */,
 				16AA1CE72555D9C100839F30 /* Aristocrats.xcdatamodeld */,
 				167FE6222550CCC900E65949 /* aristocratsfm.entitlements */,
@@ -183,7 +188,6 @@
 				16020DE2251E6D4700D8B062 /* ContentView.swift */,
 				16020DE4251E6D4700D8B062 /* Assets.xcassets */,
 				16020DE9251E6D4700D8B062 /* Info.plist */,
-				1661F8C22555F189006C6630 /* DataController.swift */,
 				166200E2251FAA410073EEE5 /* AppConstants.swift */,
 				167BE13325603E6900E81F4C /* Localizable.strings */,
 				16E32C932561707400A5AADC /* InfoPlist.strings */,
@@ -194,7 +198,9 @@
 		1613B0C3252A0F6B0068B045 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1661F8C22555F189006C6630 /* DataController.swift */,
 				1613B0C4252A0F7E0068B045 /* RoundedCornerView.swift */,
+				163A081E25684BC9003EA4BB /* FirebaseAnalytics.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -335,6 +341,7 @@
 				16020DDB251E6D4700D8B062 /* Resources */,
 				32DF65010FC40A9C0B011E9A /* [CP] Embed Pods Frameworks */,
 				167BE13B256046F300E81F4C /* SwiftLint */,
+				16BDDA662568455700C39323 /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -352,7 +359,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					16020DDC251E6D4700D8B062 = {
 						CreatedOnToolsVersion = 12.0;
@@ -366,6 +373,7 @@
 			knownRegions = (
 				en,
 				uk,
+				Base,
 			);
 			mainGroup = 16020DD4251E6D4700D8B062;
 			productRefGroup = 16020DDE251E6D4700D8B062 /* Products */;
@@ -395,6 +403,7 @@
 				16C7386E255C88FD0099BAB1 /* Dark-Icon-App.png in Resources */,
 				16020DE5251E6D4700D8B062 /* Assets.xcassets in Resources */,
 				16C73872255C88FD0099BAB1 /* Purple-Icon-App@2x.png in Resources */,
+				16BDDA642568441900C39323 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +427,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n  \"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		16BDDA662568455700C39323 /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = Crashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		32DF65010FC40A9C0B011E9A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -492,6 +521,7 @@
 				168B78C025377B330078D0A5 /* Publisher.swift in Sources */,
 				16020DE3251E6D4700D8B062 /* ContentView.swift in Sources */,
 				1693A5B72556FB9D00AAA2A4 /* LikeButtonLottieView.swift in Sources */,
+				163A081F25684BC9003EA4BB /* FirebaseAnalytics.swift in Sources */,
 				16E32C7F256148D500A5AADC /* DiscussButtonView.swift in Sources */,
 				168B78C3253781C80078D0A5 /* ImageView.swift in Sources */,
 				169E9E092559C76C005F2BB4 /* LottieView.swift in Sources */,
@@ -540,6 +570,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -601,6 +632,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -661,6 +693,7 @@
 				CODE_SIGN_ENTITLEMENTS = aristocratsfm/aristocratsfm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = R5F5GL339W;
 				ENABLE_PREVIEWS = YES;

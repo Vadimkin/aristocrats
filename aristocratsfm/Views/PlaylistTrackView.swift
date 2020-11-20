@@ -31,6 +31,7 @@ struct PlaylistTrackView: View {
     private func addToFavorites() {
         try? dataController.insertFavoriteTrack(track: track)
 
+        FirebaseAnalytics.logTrackLike(track: track, source: FirebaseAnalyticsTrackSource.playlist)
         UINotificationFeedbackGenerator().notificationOccurred(.warning)
     }
 

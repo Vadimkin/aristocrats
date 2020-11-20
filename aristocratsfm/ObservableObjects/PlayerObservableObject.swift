@@ -171,6 +171,8 @@ class PlayerObservableObject: NSObject, ObservableObject {
         }
 
         try? self.dataController.insertFavoriteTrack(track: track)
+
+        FirebaseAnalytics.logTrackLike(track: track, source: FirebaseAnalyticsTrackSource.nowPlayingInfoCenter)
         return true
     }
 

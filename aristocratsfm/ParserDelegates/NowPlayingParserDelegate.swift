@@ -26,6 +26,12 @@ final class NowPlayingParserDelegate: NSObject, XMLParserDelegate {
         return nil
     }
 
+    func parserDidStartDocument(_ parser: XMLParser) {
+        self.artist = nil
+        self.song = nil
+        self.isLive = false
+    }
+
     func parser(
         _ parser: XMLParser,
         didStartElement elementName: String,

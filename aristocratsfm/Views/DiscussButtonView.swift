@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DiscussButtonView: View {
     func openTelegramChat() {
+        FirebaseAnalytics.logTelegramChatOpen()
         TelegramURI(type: .chat, id: Contacts.TelegramChatID).open()
     }
 

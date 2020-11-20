@@ -64,6 +64,8 @@ struct LikeButtonView: View {
         self.animateLoading = true
 
         try? dataController.insertFavoriteTrack(track: track)
+
+        FirebaseAnalytics.logTrackLike(track: track, source: FirebaseAnalyticsTrackSource.mainScreen)
         UINotificationFeedbackGenerator().notificationOccurred(.warning)
     }
 
