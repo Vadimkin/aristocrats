@@ -46,10 +46,10 @@ struct PlaylistTrackView: View {
     var body: some View {
             HStack {
                 VStack(alignment: .leading) {
-                    Text(track.artist)
+                    Text(track.song)
                         .foregroundColor(Color.white)
                         .font(.title3)
-                    Text(track.song)
+                    Text(track.artist)
                         .foregroundColor(Color.white)
                         .font(.headline)
                         .fontWeight(.light)

@@ -127,8 +127,6 @@
 			</dict>
 			<key>musicbrainz.org</key>
 			<dict>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
 				<key>NSIncludesSubdomains</key>
 				<true/>
 			</dict>

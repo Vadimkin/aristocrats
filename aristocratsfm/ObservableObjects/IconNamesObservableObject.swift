@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class IconNamesObservableObject: ObservableObject {
-    var iconNames: [String?] = [nil]
+    var iconNames: [String?] = [nil] // nil is application default icon
     @Published var currentIndex = 0
     @Published var currentName = "AppIcon"
 
@@ -41,7 +41,6 @@ class IconNamesObservableObject: ObservableObject {
 
                  guard let icon = iconFiles.first else {return}
                  iconNames.append(icon)
-
              }
         }
     }

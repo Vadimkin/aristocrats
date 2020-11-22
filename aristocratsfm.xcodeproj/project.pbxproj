@@ -81,6 +81,8 @@
 		1613B0C4252A0F7E0068B045 /* RoundedCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
 		1615AEA0252910390026184B /* NowPlayingObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingObservableObject.swift; sourceTree = "<group>"; };
 		163A081E25684BC9003EA4BB /* FirebaseAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalytics.swift; sourceTree = "<group>"; };
+		163A0848256A9E51003EA4BB /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		163A0849256A9E51003EA4BB /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		1661F8C22555F189006C6630 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		166200DC251F50470073EEE5 /* RadioControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioControlsView.swift; sourceTree = "<group>"; };
 		166200DF251F52210073EEE5 /* RadioPlayButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayButtonView.swift; sourceTree = "<group>"; };
@@ -373,7 +375,7 @@
 			knownRegions = (
 				en,
 				uk,
-				Base,
+				"en-GB",
 			);
 			mainGroup = 16020DD4251E6D4700D8B062;
 			productRefGroup = 16020DDE251E6D4700D8B062 /* Products */;
@@ -550,6 +552,7 @@
 			children = (
 				167BE13225603E6900E81F4C /* en */,
 				167BE13525603E7000E81F4C /* uk */,
+				163A0848256A9E51003EA4BB /* en-GB */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 			children = (
 				16E32C922561707400A5AADC /* en */,
 				16E32C952561707700A5AADC /* uk */,
+				163A0849256A9E51003EA4BB /* en-GB */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -692,7 +696,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = aristocratsfm/aristocratsfm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 13;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = R5F5GL339W;
@@ -720,7 +724,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = aristocratsfm/aristocratsfm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = R5F5GL339W;
 				ENABLE_PREVIEWS = YES;

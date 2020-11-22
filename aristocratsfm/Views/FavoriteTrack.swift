@@ -22,9 +22,9 @@ struct FavoriteTrack: View {
     var body: some View {
             HStack {
                 VStack(alignment: .leading) {
-                    Text(favorite.artist ?? "")
-                        .font(.title3)
                     Text(favorite.song ?? "")
+                        .font(.title3)
+                    Text(favorite.artist ?? "")
                         .font(.headline)
                         .fontWeight(.light)
                         .padding(.top, 3)
