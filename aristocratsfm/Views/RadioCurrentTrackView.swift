@@ -36,34 +36,36 @@ struct RadioCurrentTrackView: View {
 
     var artistText: some View {
         let playback = nowPlaying.playback
-        var author = NSLocalizedString("aristocrats", comment: "Aristocrats")
+        var author = "..."
 
         if case let .playing(track, _) = playback {
             author = track.artist
         }
 
         return Text(author)
-            .font(Font.system(size: 20, weight: .medium, design: .default))
-            .foregroundColor(colorScheme == .dark ? Color.white : Design.Primary.DarkGray)
-            .padding(.top, 20)
+            .font(Font.system(size: 17, weight: .light, design: .default))
+            .padding(.top, 11)
             .padding(.horizontal)
+            .foregroundColor(colorScheme == .dark ? Color.white : Design.Primary.LightGray)
             .multilineTextAlignment(.center)
+
     }
 
     var songText: some View {
         let playback = nowPlaying.playback
-        var song = "..."
+        var song = NSLocalizedString("aristocrats", comment: "Aristocrats")
 
         if case let .playing(track, _) = playback {
             song = track.song
         }
 
         return Text(song)
-            .font(Font.system(size: 17, weight: .light, design: .default))
-            .padding(.top, 11)
+            .font(Font.system(size: 20, weight: .medium, design: .default))
+            .foregroundColor(colorScheme == .dark ? Color.white : Design.Primary.DarkGray)
+            .padding(.top, 20)
             .padding(.horizontal)
-            .foregroundColor(colorScheme == .dark ? Color.white : Design.Primary.LightGray)
             .multilineTextAlignment(.center)
+
     }
 
     var body: some View {
@@ -93,8 +95,8 @@ struct RadioCurrentTrackView: View {
                 artworkView.overlay(artworkImage)
             }
 
-            artistText
             songText
+            artistText
         }
     }
 }
