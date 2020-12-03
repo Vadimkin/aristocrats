@@ -6,15 +6,12 @@
 //
 
 import SwiftUI
+import AppStorage
 
 struct SettingsView: View {
-    @AppStorage("ArtworkEnabled") private var isArtworkEnabled = true
+    @AppStorageCompat("ArtworkEnabled") private var isArtworkEnabled = true
 
     @EnvironmentObject var iconSettings: IconNamesObservableObject
-
-    // After 10 tap, user should be able to select stream
-    @State var versionTapCount: Int = 0
-    @State var isRadioStationSelectorVisible: Bool = false
 
     // swiftlint:disable:next force_cast
     let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
@@ -96,6 +93,8 @@ struct SettingsView: View {
                                     }
                             }
                         }
+
+
                     }
                 }
 
@@ -152,21 +151,9 @@ struct SettingsView: View {
                         Text("\(version) (\(bundleVersion))").font(.subheadline).foregroundColor(.gray)
                     }
                     .contentShape(Rectangle())
-                    .onTapGesture {
-                        self.versionTapCount += 1
-                        if !self.isRadioStationSelectorVisible && self.versionTapCount == 10 {
-                            UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
-                            self.versionTapCount = 0
-                            self.isRadioStationSelectorVisible = true
-                        }
-                    }
-                }
-
-                if self.isRadioStationSelectorVisible {
-                    SettingsRadioStreamPickerView()
                 }
             }
-            .listStyle(InsetGroupedListStyle())
+            .listStyle(GroupedListStyle())
             .navigationBarTitle(settingsString)
         }
     }

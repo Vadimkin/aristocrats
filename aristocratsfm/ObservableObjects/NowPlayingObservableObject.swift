@@ -25,7 +25,8 @@ class NowPlayingObservableObject: ObservableObject {
 
         self.cancellable = Deferred { Just(Date()) }
             .append(timer.autoconnect())
-            .flatMap { _ in Publishers.nowPlaying().replaceErrorWithNil(Error.self) }
+            .genericError()
+            .flatMap { _ in Publishers.nowPlaying().replaceErrorWithNil(Error.self).genericError() }
             .removeDuplicates()
             .flatMap { nowPlaying -> AnyPublisher<(AristocratsTrack, MusicBrainz?)?, Error> in
                 guard let nowPlaying = nowPlaying else {

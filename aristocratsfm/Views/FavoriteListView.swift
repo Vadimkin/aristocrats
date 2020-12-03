@@ -37,7 +37,7 @@ struct FavoriteListView: View {
                     LottieView(name: "TeaCup")
                         .frame(maxHeight: 300, alignment: .center)
                     Text(noFavoritesString)
-                        .font(.title3)
+                        .font(.body)
                         .lineSpacing(9)
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 60)

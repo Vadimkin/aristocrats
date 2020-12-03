@@ -15,7 +15,7 @@ struct TopNavigationView: View {
 
     func getImage(systemName: String) -> some View {
         return Image(systemName: systemName)
-            .font(.title2)
+            .font(.subheadline)
             .foregroundColor(Color(UIColor(named: "ButtonForegroundColor")!))
             .padding(.all, 12)
     }

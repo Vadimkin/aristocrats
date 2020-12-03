@@ -1,4 +1,5 @@
 PODS:
+  - AppStorage (1.0.3)
   - Firebase/Analytics (7.1.0):
     - Firebase/Core
   - Firebase/Core (7.1.0):
@@ -75,6 +76,7 @@ PODS:
   - SwiftLint (0.41.0)
 
 DEPENDENCIES:
+  - AppStorage (~> 1.0.3)
   - Firebase/Analytics
   - Firebase/Crashlytics
   - lottie-ios
@@ -82,6 +84,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - AppStorage
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -97,6 +100,7 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
+  AppStorage: dc9e2c18b5ebb7fed666af00c103b1c1432d459b
   Firebase: 78e8dd2e39d653de6270432ad84fe8b59f7bf4e8
   FirebaseAnalytics: 7f165a56dea86ddd5b8ce02af3bee982c683405c
   FirebaseCore: 20046127eef0fcb8fa25df7fc12f7b97d4e48611
@@ -111,6 +115,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   SwiftLint: c585ebd615d9520d7fbdbe151f527977b0534f1e
 
-PODFILE CHECKSUM: c69c75448679e3b2810b138464609596c7e867db
+PODFILE CHECKSUM: 98f7fa485ee0680c7379727cf918bb3165bf03e8
 
 COCOAPODS: 1.10.0

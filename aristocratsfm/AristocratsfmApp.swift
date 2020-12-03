@@ -9,7 +9,22 @@ import SwiftUI
 import Firebase
 
 @main
-struct AristocratsfmApp: App {
+struct MainApp {
+    static func main() {
+        if #available(iOS 14.0, *) {
+            AristocratsfmNewUIApp.main()
+        } else {
+            UIApplicationMain(
+                CommandLine.argc,
+                CommandLine.unsafeArgv,
+                nil,
+                NSStringFromClass(AppDelegate.self))
+        }
+    }
+}
+
+@available(iOS 14.0, *)
+struct AristocratsfmNewUIApp: App {
     let dataController = DataController.shared
 
     init() {
@@ -26,3 +41,16 @@ struct AristocratsfmApp: App {
         }
     }
 }
+
+//@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        UserDefaults.standard.register(defaults: ["ArtworkEnabled": true, "Stream": Streams.Main.name])
+        FirebaseApp.configure()
+
+        return true
+    }
+}
+
+
+

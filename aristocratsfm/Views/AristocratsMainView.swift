@@ -12,7 +12,7 @@ struct AristocratsMainView: View {
 
     var body: some View {
         GeometryReader { geometry in
-            ScrollViewReader { scrollView in
+//            ScrollViewReader { scrollView in
                 ScrollView {
                     // All Screens Stack:
                     VStack(alignment: .leading, spacing: 0, content: {
@@ -30,11 +30,11 @@ struct AristocratsMainView: View {
                             Spacer()
 
                             LatestTracksHeadlineView()
-                                .onTapGesture {
-                                    withAnimation {
-                                        scrollView.scrollTo("Playlist", anchor: .top)
-                                    }
-                                }
+//                                .onTapGesture {
+//                                    withAnimation {
+//                                        scrollView.scrollTo("Playlist", anchor: .top)
+//                                    }
+//                                }
                         })
                         .frame(
                             width: geometry.size.width,
@@ -48,7 +48,7 @@ struct AristocratsMainView: View {
                         }
 
                     })
-                }
+//                }
             }
         }
         .padding(.top, UIApplication.withHomeButton() ? 10 : 30)

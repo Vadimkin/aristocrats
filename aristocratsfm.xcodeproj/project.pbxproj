@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16020DE1251E6D4700D8B062 /* AristocratsfmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16020DE0251E6D4700D8B062 /* AristocratsfmApp.swift */; };
 		16020DE3251E6D4700D8B062 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16020DE2251E6D4700D8B062 /* ContentView.swift */; };
 		16020DE5251E6D4700D8B062 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16020DE4251E6D4700D8B062 /* Assets.xcassets */; };
 		16020DF1251E6E8E00D8B062 /* RadioCurrentTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16020DF0251E6E8E00D8B062 /* RadioCurrentTrackView.swift */; };
@@ -15,6 +14,8 @@
 		1613B0C1252A022C0068B045 /* PlaylistTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613B0C0252A022C0068B045 /* PlaylistTrackView.swift */; };
 		1613B0C5252A0F7E0068B045 /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613B0C4252A0F7E0068B045 /* RoundedCornerView.swift */; };
 		1615AEA1252910390026184B /* NowPlayingObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1615AEA0252910390026184B /* NowPlayingObservableObject.swift */; };
+		16189728257983480062B792 /* AristocratsfmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16189727257983480062B792 /* AristocratsfmApp.swift */; };
+		1618972B257985D90062B792 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1618972A257985D90062B792 /* SceneDelegate.swift */; };
 		163A081F25684BC9003EA4BB /* FirebaseAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163A081E25684BC9003EA4BB /* FirebaseAnalytics.swift */; };
 		1661F8C32555F189006C6630 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1661F8C22555F189006C6630 /* DataController.swift */; };
 		166200DD251F50470073EEE5 /* RadioControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166200DC251F50470073EEE5 /* RadioControlsView.swift */; };
@@ -60,7 +61,6 @@
 		16DA20C1252E70C3006FA9B2 /* CoverArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA20C0252E70C3006FA9B2 /* CoverArt.swift */; };
 		16E32C7F256148D500A5AADC /* DiscussButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E32C7E256148D500A5AADC /* DiscussButtonView.swift */; };
 		16E32C8325614D4100A5AADC /* TelegramURI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E32C8225614D4100A5AADC /* TelegramURI.swift */; };
-		16E32C8625615EBD00A5AADC /* SettingsRadioStreamPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E32C8525615EBD00A5AADC /* SettingsRadioStreamPickerView.swift */; };
 		16E32C912561707400A5AADC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16E32C932561707400A5AADC /* InfoPlist.strings */; };
 		16E4AD0D25600BA0002FDC70 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E4AD0C25600BA0002FDC70 /* PreviewProvider.swift */; };
 		16E4AD1025603906002FDC70 /* LatestTracksHeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E4AD0F25603906002FDC70 /* LatestTracksHeadlineView.swift */; };
@@ -71,7 +71,6 @@
 
 /* Begin PBXFileReference section */
 		16020DDD251E6D4700D8B062 /* aristocratsfm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aristocratsfm.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		16020DE0251E6D4700D8B062 /* AristocratsfmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AristocratsfmApp.swift; sourceTree = "<group>"; };
 		16020DE2251E6D4700D8B062 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		16020DE4251E6D4700D8B062 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16020DE9251E6D4700D8B062 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,6 +79,8 @@
 		1613B0C0252A022C0068B045 /* PlaylistTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTrackView.swift; sourceTree = "<group>"; };
 		1613B0C4252A0F7E0068B045 /* RoundedCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
 		1615AEA0252910390026184B /* NowPlayingObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingObservableObject.swift; sourceTree = "<group>"; };
+		16189727257983480062B792 /* AristocratsfmApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AristocratsfmApp.swift; sourceTree = "<group>"; };
+		1618972A257985D90062B792 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		163A081E25684BC9003EA4BB /* FirebaseAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalytics.swift; sourceTree = "<group>"; };
 		163A0848256A9E51003EA4BB /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		163A0849256A9E51003EA4BB /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -130,7 +131,6 @@
 		16DA20C0252E70C3006FA9B2 /* CoverArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverArt.swift; sourceTree = "<group>"; };
 		16E32C7E256148D500A5AADC /* DiscussButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussButtonView.swift; sourceTree = "<group>"; };
 		16E32C8225614D4100A5AADC /* TelegramURI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramURI.swift; sourceTree = "<group>"; };
-		16E32C8525615EBD00A5AADC /* SettingsRadioStreamPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRadioStreamPickerView.swift; sourceTree = "<group>"; };
 		16E32C922561707400A5AADC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		16E32C952561707700A5AADC /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		16E4AD0C25600BA0002FDC70 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
@@ -175,6 +175,7 @@
 		16020DDF251E6D4700D8B062 /* aristocratsfm */ = {
 			isa = PBXGroup;
 			children = (
+				16189727257983480062B792 /* AristocratsfmApp.swift */,
 				16BDDA632568441900C39323 /* GoogleService-Info.plist */,
 				16C7384F255C869A0099BAB1 /* Icons */,
 				16AA1CE72555D9C100839F30 /* Aristocrats.xcdatamodeld */,
@@ -186,13 +187,13 @@
 				1615AE912528EBBD0026184B /* Resources */,
 				16A0CCCF25250C1B0092C693 /* Views */,
 				167711872524FDAC0011D6A6 /* Models */,
-				16020DE0251E6D4700D8B062 /* AristocratsfmApp.swift */,
 				16020DE2251E6D4700D8B062 /* ContentView.swift */,
 				16020DE4251E6D4700D8B062 /* Assets.xcassets */,
 				16020DE9251E6D4700D8B062 /* Info.plist */,
 				166200E2251FAA410073EEE5 /* AppConstants.swift */,
 				167BE13325603E6900E81F4C /* Localizable.strings */,
 				16E32C932561707400A5AADC /* InfoPlist.strings */,
+				1618972A257985D90062B792 /* SceneDelegate.swift */,
 			);
 			path = aristocratsfm;
 			sourceTree = "<group>";
@@ -284,7 +285,6 @@
 				16C73836255C71740099BAB1 /* SettingsView.swift */,
 				16E4AD0F25603906002FDC70 /* LatestTracksHeadlineView.swift */,
 				16E32C7E256148D500A5AADC /* DiscussButtonView.swift */,
-				16E32C8525615EBD00A5AADC /* SettingsRadioStreamPickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -499,7 +499,6 @@
 				166200DD251F50470073EEE5 /* RadioControlsView.swift in Sources */,
 				167711892524FDD30011D6A6 /* PlayerObservableObject.swift in Sources */,
 				166200E3251FAA410073EEE5 /* AppConstants.swift in Sources */,
-				16E32C8625615EBD00A5AADC /* SettingsRadioStreamPickerView.swift in Sources */,
 				16E4AD1025603906002FDC70 /* LatestTracksHeadlineView.swift in Sources */,
 				166200E6251FB4210073EEE5 /* AristocratsMainView.swift in Sources */,
 				16C73843255C80670099BAB1 /* IconNamesObservableObject.swift in Sources */,
@@ -513,9 +512,11 @@
 				167FE61A2550BA2F00E65949 /* PlaylistObservableObject.swift in Sources */,
 				1613B0C1252A022C0068B045 /* PlaylistTrackView.swift in Sources */,
 				16659F16254EF06F005F7D2C /* UIImage.swift in Sources */,
+				16189728257983480062B792 /* AristocratsfmApp.swift in Sources */,
 				16DA20BA252E557E006FA9B2 /* MusicBrainz.swift in Sources */,
 				16EDE056255B29F700A3FBAD /* ImageLoaderObservableObject.swift in Sources */,
 				16E32C8325614D4100A5AADC /* TelegramURI.swift in Sources */,
+				1618972B257985D90062B792 /* SceneDelegate.swift in Sources */,
 				16BE322525573C95002403F2 /* FavoriteListView.swift in Sources */,
 				1613B0BE2529FE070068B045 /* PlaylistListView.swift in Sources */,
 				166200E0251F52210073EEE5 /* RadioPlayButtonView.swift in Sources */,
@@ -538,7 +539,6 @@
 				168B78B425377A420078D0A5 /* URL.swift in Sources */,
 				168B78B725377A6F0078D0A5 /* Publishers.swift in Sources */,
 				16DA20C1252E70C3006FA9B2 /* CoverArt.swift in Sources */,
-				16020DE1251E6D4700D8B062 /* AristocratsfmApp.swift in Sources */,
 				1661F8C32555F189006C6630 /* DataController.swift in Sources */,
 				16C73837255C71740099BAB1 /* SettingsView.swift in Sources */,
 			);
@@ -622,7 +622,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -678,7 +678,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -702,7 +702,7 @@
 				DEVELOPMENT_TEAM = R5F5GL339W;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = aristocratsfm/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -729,7 +729,7 @@
 				DEVELOPMENT_TEAM = R5F5GL339W;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = aristocratsfm/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

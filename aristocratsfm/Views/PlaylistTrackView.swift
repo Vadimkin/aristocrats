@@ -48,10 +48,10 @@ struct PlaylistTrackView: View {
                 VStack(alignment: .leading) {
                     Text(track.song)
                         .foregroundColor(Color.white)
-                        .font(.title3)
+                        .font(.headline)
                     Text(track.artist)
                         .foregroundColor(Color.white)
-                        .font(.headline)
+                        .font(.subheadline)
                         .fontWeight(.light)
                         .padding(.top, 3)
                 }
@@ -59,7 +59,7 @@ struct PlaylistTrackView: View {
                 if track.time != nil {
                     Text(track.time!)
                         .foregroundColor(Color.white)
-                        .font(.title2)
+                        .font(.subheadline)
                         .fontWeight(.light)
                 }
                 Button(action: {

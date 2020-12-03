@@ -11,7 +11,7 @@ struct PlaylistListView: View {
     @ObservedObject var playlist: PlaylistObservableObject = .shared
 
     var body: some View {
-        LazyVStack {
+        VStack {
             if playlist.playlist != nil {
                 ForEach(playlist.playlist!, id: \.self) { track in
                     PlaylistTrackView(track: track)

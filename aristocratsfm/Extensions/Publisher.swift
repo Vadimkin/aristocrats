@@ -36,4 +36,11 @@ extension Publisher {
     func wrapInResult() -> AnyPublisher<Result<Output, Failure>, Never> {
         wrapInResult { $0 }
     }
+
+    func genericError() -> AnyPublisher<Self.Output, Error> {
+      return self
+        .mapError({ (error: Self.Failure) -> Error in
+          return error
+        }).eraseToAnyPublisher()
+    }
 }
