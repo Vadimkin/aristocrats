@@ -37,9 +37,6 @@ struct TelegramURI {
         }
         }
 
-        print(telegramAppURL)
-        print(telegramFallbackURL)
-
         if UIApplication.shared.canOpenURL(telegramAppURL) {
             UIApplication.shared.open(telegramAppURL)
         } else {
