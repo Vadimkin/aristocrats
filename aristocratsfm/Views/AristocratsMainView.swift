@@ -12,43 +12,25 @@ struct AristocratsMainView: View {
 
     var body: some View {
         GeometryReader { geometry in
-            ScrollViewReader { scrollView in
-                ScrollView {
-                    // All Screens Stack:
-                    VStack(alignment: .leading, spacing: 0, content: {
+            ScrollViewReader { _ in
+                VStack(alignment: .leading, spacing: 0, content: {
+                    VStack(alignment: .center, spacing: 0, content: {
+                        TopNavigationView()
 
-                        // First screen:
-                        VStack(alignment: .center, spacing: 0, content: {
-                            TopNavigationView()
+                        RadioCurrentTrackView()
 
-                            RadioCurrentTrackView()
+                        Spacer()
 
-                            Spacer()
+                        RadioControlsView()
 
-                            RadioControlsView()
-
-                            Spacer(minLength: 1)
-
-//                            LatestTracksHeadlineView()
-//                                .onTapGesture {
-//                                    withAnimation {
-//                                        scrollView.scrollTo("Playlist", anchor: .top)
-//                                    }
-//                                }
-                        })
-                        .frame(
-                            width: geometry.size.width,
-                            height: geometry.size.height,
-                            alignment: .center
-                        )
-                        // END First screen
-//                        VStack(alignment: .leading) {
-//                            PlaylistListView()
-//                                .id("Playlist")
-//                        }
-
+                        Spacer(minLength: 1)
                     })
-                }
+                    .frame(
+                        width: geometry.size.width,
+                        height: geometry.size.height,
+                        alignment: .center
+                    )
+                })
             }
         }
         .padding(.top, UIApplication.withHomeButton() ? 10 : 30)
