@@ -21,7 +21,7 @@ class NowPlayingObservableObject: ObservableObject {
     private var cancellable: Cancellable?
 
     init() {
-        let timer = Timer.publish(every: 5, tolerance: 0.5, on: .main, in: .common)
+        let timer = Timer.publish(every: 15, tolerance: 0.5, on: .main, in: .common)
 
         self.cancellable = Deferred { Just(Date()) }
             .append(timer.autoconnect())
