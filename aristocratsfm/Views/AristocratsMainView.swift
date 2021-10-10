@@ -27,14 +27,14 @@ struct AristocratsMainView: View {
 
                             RadioControlsView()
 
-                            Spacer()
+                            Spacer(minLength: 1)
 
-                            LatestTracksHeadlineView()
-                                .onTapGesture {
-                                    withAnimation {
-                                        scrollView.scrollTo("Playlist", anchor: .top)
-                                    }
-                                }
+//                            LatestTracksHeadlineView()
+//                                .onTapGesture {
+//                                    withAnimation {
+//                                        scrollView.scrollTo("Playlist", anchor: .top)
+//                                    }
+//                                }
                         })
                         .frame(
                             width: geometry.size.width,
@@ -42,10 +42,10 @@ struct AristocratsMainView: View {
                             alignment: .center
                         )
                         // END First screen
-                        VStack(alignment: .leading) {
-                            PlaylistListView()
-                                .id("Playlist")
-                        }
+//                        VStack(alignment: .leading) {
+//                            PlaylistListView()
+//                                .id("Playlist")
+//                        }
 
                     })
                 }
