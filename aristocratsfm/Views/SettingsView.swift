@@ -141,6 +141,8 @@ struct SettingsView: View {
                     }
                 }
 
+                SettingsRadioStreamPickerView()
+
                 Section {
                     HStack {
                         Text(versionString)
@@ -149,8 +151,6 @@ struct SettingsView: View {
                     }
                     .contentShape(Rectangle())
                 }
-
-                SettingsRadioStreamPickerView()
             }
             .listStyle(InsetGroupedListStyle())
             .navigationBarTitle(settingsString)
