@@ -130,6 +130,11 @@
 				<key>NSIncludesSubdomains</key>
 				<true/>
 			</dict>
+			<key>vadimklimenko.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
 		</dict>
 	</dict>
 	<key>UIApplicationSceneManifest</key>
