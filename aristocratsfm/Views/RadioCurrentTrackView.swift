@@ -12,8 +12,6 @@ struct RadioCurrentTrackView: View {
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var nowPlaying: NowPlayingObservableObject = .shared
 
-    var stream: String? = Streams.Main.name
-
     var artworkView: some View {
         let playback = nowPlaying.playback
 

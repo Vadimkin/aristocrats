@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct SettingsRadioStreamPickerView: View {
-    @AppStorage("Stream") private var stream = Streams.Main.name
+    @AppStorage("Stream") private var stream = Streams.Normal.name
     @ObservedObject var player: PlayerObservableObject = .shared
 
     var body: some View {
-        Section(header: Text("Stream")) {
+        Section(header: Text("Stream Quality")) {
             Picker("Stream", selection: $stream) {
                 ForEach(Streams.List, id:\.name) { stream in
                     Text(stream.name)

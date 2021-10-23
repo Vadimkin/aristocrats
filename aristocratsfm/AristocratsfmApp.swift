@@ -13,7 +13,7 @@ struct AristocratsfmApp: App {
     let dataController = DataController.shared
 
     init() {
-        UserDefaults.standard.register(defaults: ["ArtworkEnabled": true, "Stream": Streams.Main.name])
+        UserDefaults.standard.register(defaults: ["ArtworkEnabled": true, "Stream": Streams.Normal.name])
 
         FirebaseApp.configure()
     }

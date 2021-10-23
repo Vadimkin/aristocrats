@@ -9,8 +9,6 @@ import Foundation
 
 extension URL {
     enum Music {
-        static let nowPlaying = Streams.Main.nowPlayingTrackURI
-
         static func musicBrainz(artist: String, song: String) -> URL {
             var components = URLComponents(string: "https://musicbrainz.org/ws/2/recording")!
             components.queryItems = [

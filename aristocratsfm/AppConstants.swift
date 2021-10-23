@@ -25,30 +25,36 @@ enum Design {
 }
 
 struct Streams {
-    static let Main = StreamType(
-        name: "Main",
-        URI: URL(string: "http://air.aristocrats.fm:8000/live2")!,
-        nowPlayingTrackURI: URL(string: "https://vadimklimenko.com/arstcr/current_track.xml")!,
-        playlistURI: URL(string: "https://aristocrats.fm/last10.php?s=live")!
+    static let Low = StreamType(
+        name: "Low",
+        URI: URL(string: "http://air.aristocrats.fm:8000/live2-64")!
     )
 
-    // Returns 404 :(
-    static let Main320 = StreamType(
-        name: "Main320",
-        URI: URL(string: "http://air.aristocrats.fm:8000/live2-320")!,
-        nowPlayingTrackURI: URL(string: "https://vadimklimenko.com/arstcr/current_track.xml")!,
-        playlistURI: URL(string: "https://aristocrats.fm/last10.php?s=live")!)
+    static let Normal = StreamType(
+        name: "Normal",
+        URI: URL(string: "http://air.aristocrats.fm:8000/live2")!
+    )
+
+    static let High = StreamType(
+        name: "High",
+        URI: URL(string: "http://air.aristocrats.fm:8000/live2-320")!
+    )
 
     static func byName(name: String) -> StreamType {
         switch name {
-        case Streams.Main.name:
-            return Streams.Main
-        case Streams.Main320.name:
-            return Streams.Main320
+        case Streams.Low.name:
+            return Streams.Low
+        case Streams.Normal.name:
+            return Streams.Normal
+        case Streams.High.name:
+            return Streams.High
         default:
-            return Streams.Main
+            return Streams.Normal
         }
     }
 
-    static let List = [Streams.Main, Streams.Main320]
+    static let NowPlayingTrackURL = URL(string: "https://vadimklimenko.com/arstcr/current_track.xml")!
+    static let PlaylistURL = URL(string: "https://vadimklimenko.com/arstcr/last10.xml")!
+
+    static let List = [Streams.Low, Streams.Normal, Streams.High]
 }
