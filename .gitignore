@@ -135,3 +135,5 @@ iOSInjectionProject/
 !*.xcworkspace/contents.xcworkspacedata
 **/xcshareddata/WorkspaceSettings.xcsettings
 
+### Credentials ###
+aristocratsfm/GoogleService-Info.plist
