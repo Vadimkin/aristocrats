@@ -38,7 +38,6 @@ struct FavoriteListView: View {
                         .frame(maxHeight: 300, alignment: .center)
                     Text(noFavoritesString)
                         .font(.title3)
-                        .lineSpacing(9)
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 60)
                         .padding(.top, 20)

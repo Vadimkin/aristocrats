@@ -11,30 +11,11 @@ import Combine
 struct RadioCurrentTrackView: View {
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var nowPlaying: NowPlayingObservableObject = .shared
-
-    var artworkView: some View {
-        let playback = nowPlaying.playback
-
-        var fillWrapperColor = colorScheme == .dark ? Color(UIColor(named: "BaseColor")!) : Color.white
-        if colorScheme == .dark {
-            if case let .playing(_, artwork) = playback {
-                if artwork != nil {
-                    fillWrapperColor = Design.Primary.DarkGray
-                }
-            }
-        }
-
-        let rectangle = Rectangle()
-            .fill(fillWrapperColor)
-            .padding()
-            .aspectRatio(1.0, contentMode: .fit)
-
-        return rectangle
-    }
+    @ObservedObject var imageLoader: ImageLoaderObservableObject = .shared
 
     var artistText: some View {
         let playback = nowPlaying.playback
-        var author = "..."
+        var author = "…"
 
         if case let .playing(track, _) = playback {
             author = track.artist
@@ -46,7 +27,6 @@ struct RadioCurrentTrackView: View {
             .padding(.horizontal)
             .foregroundColor(colorScheme == .dark ? Color.white : Design.Primary.LightGray)
             .multilineTextAlignment(.center)
-
     }
 
     var songText: some View {
@@ -67,31 +47,35 @@ struct RadioCurrentTrackView: View {
     }
 
     var body: some View {
-        let playback = nowPlaying.playback
+        let artworkImage: UIImage
 
-        let artworkImage = Image("AristocratsCat")
-            .resizable()
-            .scaledToFit()
-            .padding()
+        switch imageLoader.image {
+        case .nothing(image: let placeholder),
+             .loading(image: let placeholder):
+            artworkImage = placeholder
+        case .playing(image: let uiImage):
+            artworkImage = uiImage
+        }
 
-        var artworkImageView: ImageView?
-        if case let .playing(_, artwork) = playback {
-            if artwork != nil {
-                if let artworkUnsecuredImage = artwork?.images.first?.thumbnails.large {
-                    if let artworkImage = URL(string: artworkUnsecuredImage) {
-                        artworkImageView = ImageView(withURL: URL.alwaysSecuredURL(insecuredURL: artworkImage))
-                    }
-                }
-            }
+        // FIXME Fix it someday.
+        //  The difference is only loading lottie overlay
+        var artwork =
+            AnyView(
+                Image(uiImage: artworkImage)
+                .resizable()
+                .scaledToFit()
+                .padding()
+            )
+
+        if case .loading = imageLoader.image {
+            artwork = AnyView(
+                artwork
+                .overlay(LottieView().opacity(0.7))
+            )
         }
 
         return VStack {
-            // TODO Optimize it somehow
-            if artworkImageView != nil {
-                artworkView.overlay(artworkImageView)
-            } else {
-                artworkView.overlay(artworkImage)
-            }
+            artwork
 
             songText
             artistText

@@ -130,27 +130,70 @@ class PlayerObservableObject: NSObject, ObservableObject {
 
     func setupNowPlayingInfoCenter() {
         let nowPlayingObservableObject = NowPlayingObservableObject.shared
+        let imageLoaderObservableObject = ImageLoaderObservableObject.shared
+        
 
         let subscriber = Subscribers.Sink<Playback, Never>(
             receiveCompletion: {
                 _ in
             }) { value in
-            if case let .playing(track, _) = value {
-                self.setNowPlayingTrack(currentTrack: track)
+            if case let .playing(track, coverArt) = value {
+                self.setNowPlayingTrack(currentTrack: track, artworkImage: nil)
             }
         }
 
+        let imageSubscriber = Subscribers.Sink<ImageLoader, Never>(
+            receiveCompletion: {
+                _ in
+            }) { value in
+                switch value {
+                case .nothing(image: let image):
+                    self.setNowPlayingArtwork(uiImage: image)
+                case .loading(image: let image):
+                    self.setNowPlayingArtwork(uiImage: image)
+                case .playing(image: let uiImage):
+                    self.setNowPlayingArtwork(uiImage: uiImage)
+                }
+        }
+
+        imageLoaderObservableObject.$image.subscribe(imageSubscriber)
         nowPlayingObservableObject.$playback.subscribe(subscriber)
     }
 
-    func setNowPlayingTrack(currentTrack: AristocratsTrack) {
+    func setNowPlayingTrack(currentTrack: AristocratsTrack?, artworkImage: MPMediaItemArtwork?) {
         var nowPlayingInfo = [String: Any]()
-        nowPlayingInfo[MPMediaItemPropertyTitle] = currentTrack.song
-        nowPlayingInfo[MPMediaItemPropertyArtist] = currentTrack.artist
-        nowPlayingInfo[MPNowPlayingInfoPropertyIsLiveStream] = true
 
-        let albumArtwork = getNowPlayingArtwork()
-        nowPlayingInfo[MPMediaItemPropertyArtwork] = albumArtwork
+        if (MPNowPlayingInfoCenter.default().nowPlayingInfo != nil) {
+            nowPlayingInfo = MPNowPlayingInfoCenter.default().nowPlayingInfo!
+        }
+
+        if let track = currentTrack {
+            nowPlayingInfo[MPMediaItemPropertyTitle] = track.song
+            nowPlayingInfo[MPMediaItemPropertyArtist] = track.artist
+            nowPlayingInfo[MPNowPlayingInfoPropertyIsLiveStream] = true
+        }
+
+        if artworkImage != nil {
+            nowPlayingInfo[MPMediaItemPropertyArtwork] = artworkImage
+        }
+
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+    }
+
+    func setNowPlayingArtwork(uiImage: UIImage) {
+        let canvasSize = CGSize(width: 512, height: 512)
+
+        let artwork = MPMediaItemArtwork.init(boundsSize: canvasSize, requestHandler: { (_) -> UIImage in
+            return uiImage
+        })
+
+        var nowPlayingInfo = [String: Any]()
+
+        if (MPNowPlayingInfoCenter.default().nowPlayingInfo != nil) {
+            nowPlayingInfo = MPNowPlayingInfoCenter.default().nowPlayingInfo!
+        }
+
+        nowPlayingInfo[MPMediaItemPropertyArtwork] = artwork
 
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
@@ -174,17 +217,6 @@ class PlayerObservableObject: NSObject, ObservableObject {
 
         FirebaseAnalytics.logTrackLike(track: track, source: FirebaseAnalyticsTrackSource.nowPlayingInfoCenter)
         return true
-    }
-
-    func getNowPlayingArtwork() -> MPMediaItemArtwork {
-        // TODO Fetch real artwork?
-        let canvasSize = CGSize(width: 512, height: 512)
-
-        let albumArtwork = MPMediaItemArtwork.init(boundsSize: canvasSize, requestHandler: { (_) -> UIImage in
-            return UIImage(named: "AristocratsCat")!
-        })
-
-        return albumArtwork
     }
 
     @objc func handleInterruption(_ notification: Notification) {

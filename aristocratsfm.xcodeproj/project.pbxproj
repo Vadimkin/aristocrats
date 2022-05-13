@@ -34,7 +34,6 @@
 		168B78B725377A6F0078D0A5 /* Publishers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B78B625377A6F0078D0A5 /* Publishers.swift */; };
 		168B78BB25377AFC0078D0A5 /* NowPlayingParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B78BA25377AFC0078D0A5 /* NowPlayingParserDelegate.swift */; };
 		168B78C025377B330078D0A5 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B78BF25377B330078D0A5 /* Publisher.swift */; };
-		168B78C3253781C80078D0A5 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B78C2253781C80078D0A5 /* ImageView.swift */; };
 		1693A5B02556F39400AAA2A4 /* ShareButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1693A5AF2556F39400AAA2A4 /* ShareButtonView.swift */; };
 		1693A5B42556FB4D00AAA2A4 /* LikeAnimatedButton.json in Resources */ = {isa = PBXBuildFile; fileRef = 1693A5B32556FB4D00AAA2A4 /* LikeAnimatedButton.json */; };
 		1693A5B72556FB9D00AAA2A4 /* LikeButtonLottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1693A5B62556FB9D00AAA2A4 /* LikeButtonLottieView.swift */; };
@@ -104,7 +103,6 @@
 		168B78B625377A6F0078D0A5 /* Publishers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publishers.swift; sourceTree = "<group>"; };
 		168B78BA25377AFC0078D0A5 /* NowPlayingParserDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingParserDelegate.swift; sourceTree = "<group>"; };
 		168B78BF25377B330078D0A5 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
-		168B78C2253781C80078D0A5 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		1693A5AF2556F39400AAA2A4 /* ShareButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButtonView.swift; sourceTree = "<group>"; };
 		1693A5B32556FB4D00AAA2A4 /* LikeAnimatedButton.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LikeAnimatedButton.json; sourceTree = "<group>"; };
 		1693A5B62556FB9D00AAA2A4 /* LikeButtonLottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButtonLottieView.swift; sourceTree = "<group>"; };
@@ -218,6 +216,42 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		163A3B8B282EDFF600870EA9 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				16020DF0251E6E8E00D8B062 /* RadioCurrentTrackView.swift */,
+				166200DC251F50470073EEE5 /* RadioControlsView.swift */,
+				16700F162554806E003A2F23 /* LikeButtonView.swift */,
+				166200DF251F52210073EEE5 /* RadioPlayButtonView.swift */,
+				166200E5251FB4210073EEE5 /* AristocratsMainView.swift */,
+				1693A5AF2556F39400AAA2A4 /* ShareButtonView.swift */,
+				16EDE05C255B2AC400A3FBAD /* TopNavigationView.swift */,
+				16E32C7E256148D500A5AADC /* DiscussButtonView.swift */,
+				1613B0C0252A022C0068B045 /* PlaylistTrackView.swift */,
+				1613B0BD2529FE070068B045 /* PlaylistListView.swift */,
+				16E4AD0F25603906002FDC70 /* LatestTracksHeadlineView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		163A3B8C282EE01000870EA9 /* FavoriteSheetView */ = {
+			isa = PBXGroup;
+			children = (
+				16BE322725574078002403F2 /* FavoriteTrack.swift */,
+				16BE322425573C95002403F2 /* FavoriteListView.swift */,
+			);
+			path = FavoriteSheetView;
+			sourceTree = "<group>";
+		};
+		163A3B8D282EE0AF00870EA9 /* SettingsSheetView */ = {
+			isa = PBXGroup;
+			children = (
+				16E32C8525615EBD00A5AADC /* SettingsRadioStreamPickerView.swift */,
+				16C73836255C71740099BAB1 /* SettingsView.swift */,
+			);
+			path = SettingsSheetView;
+			sourceTree = "<group>";
+		};
 		167711872524FDAC0011D6A6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,23 +302,10 @@
 		16A0CCCF25250C1B0092C693 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				163A3B8D282EE0AF00870EA9 /* SettingsSheetView */,
+				163A3B8C282EE01000870EA9 /* FavoriteSheetView */,
+				163A3B8B282EDFF600870EA9 /* MainView */,
 				16EDE04D255B1AA000A3FBAD /* LottieView */,
-				1613B0BD2529FE070068B045 /* PlaylistListView.swift */,
-				1613B0C0252A022C0068B045 /* PlaylistTrackView.swift */,
-				16020DF0251E6E8E00D8B062 /* RadioCurrentTrackView.swift */,
-				166200DC251F50470073EEE5 /* RadioControlsView.swift */,
-				166200DF251F52210073EEE5 /* RadioPlayButtonView.swift */,
-				166200E5251FB4210073EEE5 /* AristocratsMainView.swift */,
-				168B78C2253781C80078D0A5 /* ImageView.swift */,
-				16700F162554806E003A2F23 /* LikeButtonView.swift */,
-				1693A5AF2556F39400AAA2A4 /* ShareButtonView.swift */,
-				16BE322425573C95002403F2 /* FavoriteListView.swift */,
-				16BE322725574078002403F2 /* FavoriteTrack.swift */,
-				16EDE05C255B2AC400A3FBAD /* TopNavigationView.swift */,
-				16C73836255C71740099BAB1 /* SettingsView.swift */,
-				16E4AD0F25603906002FDC70 /* LatestTracksHeadlineView.swift */,
-				16E32C7E256148D500A5AADC /* DiscussButtonView.swift */,
-				16E32C8525615EBD00A5AADC /* SettingsRadioStreamPickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -525,7 +546,6 @@
 				1693A5B72556FB9D00AAA2A4 /* LikeButtonLottieView.swift in Sources */,
 				163A081F25684BC9003EA4BB /* FirebaseAnalytics.swift in Sources */,
 				16E32C7F256148D500A5AADC /* DiscussButtonView.swift in Sources */,
-				168B78C3253781C80078D0A5 /* ImageView.swift in Sources */,
 				169E9E092559C76C005F2BB4 /* LottieView.swift in Sources */,
 				16020DF1251E6E8E00D8B062 /* RadioCurrentTrackView.swift in Sources */,
 				16700F172554806E003A2F23 /* LikeButtonView.swift in Sources */,
@@ -696,7 +716,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = aristocratsfm/aristocratsfm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 19;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = R5F5GL339W;
@@ -724,7 +744,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = aristocratsfm/aristocratsfm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = R5F5GL339W;
 				ENABLE_PREVIEWS = YES;

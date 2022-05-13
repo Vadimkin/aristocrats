@@ -10,6 +10,10 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage("ArtworkEnabled") private var isArtworkEnabled = true
 
+    init() {
+        UIScrollView.appearance().bounces = true
+    }
+
     @EnvironmentObject var iconSettings: IconNamesObservableObject
 
     // swiftlint:disable:next force_cast

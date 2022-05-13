@@ -10,6 +10,10 @@ import SwiftUI
 struct AristocratsMainView: View {
     @Environment(\.colorScheme) var colorScheme
 
+    init() {
+        UIScrollView.appearance().bounces = false
+    }
+
     var body: some View {
         GeometryReader { geometry in
             ScrollViewReader { scrollView in

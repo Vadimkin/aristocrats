@@ -10,7 +10,17 @@ import SwiftUI
 struct FavoriteTrack: View {
     let favorite: Favorite
 
+    let timer = Timer.publish(
+        every: 1, // second
+        on: .main,
+        in: .common
+    )
+        .autoconnect()
+        .prepend(Date())
+
     let formatter = RelativeDateTimeFormatter()
+
+    @State var formattedTime: String = ""
 
     init(favorite: Favorite) {
         self.favorite = favorite
@@ -32,7 +42,12 @@ struct FavoriteTrack: View {
                 Spacer()
 
                 if favorite.createdAt != nil {
-                    Text(formatter.string(for: favorite.createdAt)!)
+                    Text(formattedTime)
+                        .onReceive(timer) { (_) in
+                            if (favorite.createdAt != nil) {
+                                self.formattedTime = formatter.string(for: favorite.createdAt)!
+                            }
+                        }
                 }
 
             }
