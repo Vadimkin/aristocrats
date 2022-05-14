@@ -29,7 +29,6 @@
 		167FE61D2550BE9800E65949 /* PlaylistParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167FE61C2550BE9800E65949 /* PlaylistParserDelegate.swift */; };
 		168B789D253774920078D0A5 /* LoadingDots.json in Resources */ = {isa = PBXBuildFile; fileRef = 168B789C253774920078D0A5 /* LoadingDots.json */; };
 		168B78A0253774D40078D0A5 /* LoadingLottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B789F253774D40078D0A5 /* LoadingLottieView.swift */; };
-		168B78B025377A2C0078D0A5 /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B78AF25377A2C0078D0A5 /* JSONDecoder.swift */; };
 		168B78B425377A420078D0A5 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B78B325377A420078D0A5 /* URL.swift */; };
 		168B78B725377A6F0078D0A5 /* Publishers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B78B625377A6F0078D0A5 /* Publishers.swift */; };
 		168B78BB25377AFC0078D0A5 /* NowPlayingParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B78BA25377AFC0078D0A5 /* NowPlayingParserDelegate.swift */; };
@@ -55,15 +54,13 @@
 		16C73873255C88FD0099BAB1 /* Purple-Icon-App@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16C7386D255C88FD0099BAB1 /* Purple-Icon-App@3x.png */; };
 		16DA2092252E40B5006FA9B2 /* AristocratsTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA2091252E40B5006FA9B2 /* AristocratsTrack.swift */; };
 		16DA209B252E459B006FA9B2 /* StreamType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA209A252E459B006FA9B2 /* StreamType.swift */; };
-		16DA20BA252E557E006FA9B2 /* MusicBrainz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA20B9252E557E006FA9B2 /* MusicBrainz.swift */; };
-		16DA20C1252E70C3006FA9B2 /* CoverArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA20C0252E70C3006FA9B2 /* CoverArt.swift */; };
 		16E32C7F256148D500A5AADC /* DiscussButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E32C7E256148D500A5AADC /* DiscussButtonView.swift */; };
 		16E32C8325614D4100A5AADC /* TelegramURI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E32C8225614D4100A5AADC /* TelegramURI.swift */; };
 		16E32C8625615EBD00A5AADC /* SettingsRadioStreamPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E32C8525615EBD00A5AADC /* SettingsRadioStreamPickerView.swift */; };
 		16E32C912561707400A5AADC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16E32C932561707400A5AADC /* InfoPlist.strings */; };
 		16E4AD0D25600BA0002FDC70 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E4AD0C25600BA0002FDC70 /* PreviewProvider.swift */; };
 		16E4AD1025603906002FDC70 /* LatestTracksHeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E4AD0F25603906002FDC70 /* LatestTracksHeadlineView.swift */; };
-		16EDE056255B29F700A3FBAD /* ImageLoaderObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EDE055255B29F700A3FBAD /* ImageLoaderObservableObject.swift */; };
+		16EDE056255B29F700A3FBAD /* ArtworkImageObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EDE055255B29F700A3FBAD /* ArtworkImageObservableObject.swift */; };
 		16EDE05D255B2AC400A3FBAD /* TopNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EDE05C255B2AC400A3FBAD /* TopNavigationView.swift */; };
 		66FCEF8AE8C5E7ADE782C965 /* Pods_aristocratsfm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0A38687F9B48F3310C1AD8 /* Pods_aristocratsfm.framework */; };
 /* End PBXBuildFile section */
@@ -98,7 +95,6 @@
 		167FE6222550CCC900E65949 /* aristocratsfm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = aristocratsfm.entitlements; sourceTree = "<group>"; };
 		168B789C253774920078D0A5 /* LoadingDots.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LoadingDots.json; sourceTree = "<group>"; };
 		168B789F253774D40078D0A5 /* LoadingLottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingLottieView.swift; sourceTree = "<group>"; };
-		168B78AF25377A2C0078D0A5 /* JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
 		168B78B325377A420078D0A5 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		168B78B625377A6F0078D0A5 /* Publishers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publishers.swift; sourceTree = "<group>"; };
 		168B78BA25377AFC0078D0A5 /* NowPlayingParserDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingParserDelegate.swift; sourceTree = "<group>"; };
@@ -124,8 +120,6 @@
 		16C7386D255C88FD0099BAB1 /* Purple-Icon-App@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple-Icon-App@3x.png"; sourceTree = "<group>"; };
 		16DA2091252E40B5006FA9B2 /* AristocratsTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AristocratsTrack.swift; sourceTree = "<group>"; };
 		16DA209A252E459B006FA9B2 /* StreamType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamType.swift; sourceTree = "<group>"; };
-		16DA20B9252E557E006FA9B2 /* MusicBrainz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicBrainz.swift; sourceTree = "<group>"; };
-		16DA20C0252E70C3006FA9B2 /* CoverArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverArt.swift; sourceTree = "<group>"; };
 		16E32C7E256148D500A5AADC /* DiscussButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussButtonView.swift; sourceTree = "<group>"; };
 		16E32C8225614D4100A5AADC /* TelegramURI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramURI.swift; sourceTree = "<group>"; };
 		16E32C8525615EBD00A5AADC /* SettingsRadioStreamPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRadioStreamPickerView.swift; sourceTree = "<group>"; };
@@ -133,7 +127,7 @@
 		16E32C952561707700A5AADC /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		16E4AD0C25600BA0002FDC70 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		16E4AD0F25603906002FDC70 /* LatestTracksHeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestTracksHeadlineView.swift; sourceTree = "<group>"; };
-		16EDE055255B29F700A3FBAD /* ImageLoaderObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderObservableObject.swift; sourceTree = "<group>"; };
+		16EDE055255B29F700A3FBAD /* ArtworkImageObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkImageObservableObject.swift; sourceTree = "<group>"; };
 		16EDE05C255B2AC400A3FBAD /* TopNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationView.swift; sourceTree = "<group>"; };
 		4C88BD31FCC6DF9D5D7A7346 /* Pods-aristocratsfm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aristocratsfm.release.xcconfig"; path = "Target Support Files/Pods-aristocratsfm/Pods-aristocratsfm.release.xcconfig"; sourceTree = "<group>"; };
 		52FA9DA3C0E8544254434888 /* Pods-aristocratsfm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aristocratsfm.debug.xcconfig"; path = "Target Support Files/Pods-aristocratsfm/Pods-aristocratsfm.debug.xcconfig"; sourceTree = "<group>"; };
@@ -257,8 +251,6 @@
 			children = (
 				16DA2091252E40B5006FA9B2 /* AristocratsTrack.swift */,
 				16DA209A252E459B006FA9B2 /* StreamType.swift */,
-				16DA20B9252E557E006FA9B2 /* MusicBrainz.swift */,
-				16DA20C0252E70C3006FA9B2 /* CoverArt.swift */,
 				16E32C8225614D4100A5AADC /* TelegramURI.swift */,
 			);
 			path = Models;
@@ -270,7 +262,7 @@
 				167FE6192550BA2F00E65949 /* PlaylistObservableObject.swift */,
 				167711882524FDD30011D6A6 /* PlayerObservableObject.swift */,
 				1615AEA0252910390026184B /* NowPlayingObservableObject.swift */,
-				16EDE055255B29F700A3FBAD /* ImageLoaderObservableObject.swift */,
+				16EDE055255B29F700A3FBAD /* ArtworkImageObservableObject.swift */,
 				16C73842255C80670099BAB1 /* IconNamesObservableObject.swift */,
 			);
 			path = ObservableObjects;
@@ -288,7 +280,6 @@
 		168B78AE25377A1A0078D0A5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				168B78AF25377A2C0078D0A5 /* JSONDecoder.swift */,
 				168B78B325377A420078D0A5 /* URL.swift */,
 				168B78B625377A6F0078D0A5 /* Publishers.swift */,
 				168B78BF25377B330078D0A5 /* Publisher.swift */,
@@ -526,7 +517,6 @@
 				16C73843255C80670099BAB1 /* IconNamesObservableObject.swift in Sources */,
 				1613B0C5252A0F7E0068B045 /* RoundedCornerView.swift in Sources */,
 				167FE61D2550BE9800E65949 /* PlaylistParserDelegate.swift in Sources */,
-				168B78B025377A2C0078D0A5 /* JSONDecoder.swift in Sources */,
 				168B78A0253774D40078D0A5 /* LoadingLottieView.swift in Sources */,
 				16DA209B252E459B006FA9B2 /* StreamType.swift in Sources */,
 				1693A5B02556F39400AAA2A4 /* ShareButtonView.swift in Sources */,
@@ -534,8 +524,7 @@
 				167FE61A2550BA2F00E65949 /* PlaylistObservableObject.swift in Sources */,
 				1613B0C1252A022C0068B045 /* PlaylistTrackView.swift in Sources */,
 				16659F16254EF06F005F7D2C /* UIImage.swift in Sources */,
-				16DA20BA252E557E006FA9B2 /* MusicBrainz.swift in Sources */,
-				16EDE056255B29F700A3FBAD /* ImageLoaderObservableObject.swift in Sources */,
+				16EDE056255B29F700A3FBAD /* ArtworkImageObservableObject.swift in Sources */,
 				16E32C8325614D4100A5AADC /* TelegramURI.swift in Sources */,
 				16BE322525573C95002403F2 /* FavoriteListView.swift in Sources */,
 				1613B0BE2529FE070068B045 /* PlaylistListView.swift in Sources */,
@@ -557,7 +546,6 @@
 				169E9DFD25583366005F2BB4 /* UIApplication.swift in Sources */,
 				168B78B425377A420078D0A5 /* URL.swift in Sources */,
 				168B78B725377A6F0078D0A5 /* Publishers.swift in Sources */,
-				16DA20C1252E70C3006FA9B2 /* CoverArt.swift in Sources */,
 				16020DE1251E6D4700D8B062 /* AristocratsfmApp.swift in Sources */,
 				1661F8C32555F189006C6630 /* DataController.swift in Sources */,
 				16C73837255C71740099BAB1 /* SettingsView.swift in Sources */,

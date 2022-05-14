@@ -103,7 +103,7 @@ class PlayerObservableObject: NSObject, ObservableObject {
         commandCenter.bookmarkCommand.addTarget { [unowned self] _ in
             let nowPlayingObservableObject = NowPlayingObservableObject.shared
 
-            if case let .playing(track, _) = nowPlayingObservableObject.playback {
+            if case let .playing(track) = nowPlayingObservableObject.playback {
                 if !track.isLive {
                     let isSuccess = self.addToFavorites(track: track)
                     if isSuccess {
@@ -130,18 +130,18 @@ class PlayerObservableObject: NSObject, ObservableObject {
 
     func setupNowPlayingInfoCenter() {
         let nowPlayingObservableObject = NowPlayingObservableObject.shared
-        let imageLoaderObservableObject = ImageLoaderObservableObject.shared
+        let imageLoaderObservableObject = ArtworkImageObservableObject.shared
 
         let subscriber = Subscribers.Sink<Playback, Never>(
             receiveCompletion: {
                 _ in
             }) { value in
-            if case let .playing(track, _) = value {
+            if case let .playing(track) = value {
                 self.setNowPlayingTrack(currentTrack: track)
             }
         }
 
-        let imageSubscriber = Subscribers.Sink<ImageLoader, Never>(
+        let imageSubscriber = Subscribers.Sink<ArtworkImage, Never>(
             receiveCompletion: {
                 _ in
             }) { value in

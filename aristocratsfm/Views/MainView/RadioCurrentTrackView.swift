@@ -11,13 +11,13 @@ import Combine
 struct RadioCurrentTrackView: View {
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var nowPlaying: NowPlayingObservableObject = .shared
-    @ObservedObject var imageLoader: ImageLoaderObservableObject = .shared
+    @ObservedObject var imageLoader: ArtworkImageObservableObject = .shared
 
     var artistText: some View {
         let playback = nowPlaying.playback
         var author = "…"
 
-        if case let .playing(track, _) = playback {
+        if case let .playing(track) = playback {
             author = track.artist
         }
 
@@ -33,7 +33,7 @@ struct RadioCurrentTrackView: View {
         let playback = nowPlaying.playback
         var song = NSLocalizedString("aristocrats", comment: "Aristocrats")
 
-        if case let .playing(track, _) = playback {
+        if case let .playing(track) = playback {
             song = track.song
         }
 

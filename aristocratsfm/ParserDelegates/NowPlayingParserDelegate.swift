@@ -12,13 +12,14 @@ final class NowPlayingParserDelegate: NSObject, XMLParserDelegate {
 
     private var artist: String?
     private var song: String?
+    private var artwork: String?
     private var isLive: Bool = false
 
     private var error: Error?
 
     func build() throws -> AristocratsTrack? {
-        if let artist = artist, let song = song {
-            return AristocratsTrack(artist: artist, song: song, isLive: isLive)
+        if let artist = artist, let song = song, let artwork = artwork {
+            return AristocratsTrack(artist: artist, song: song, artwork: artwork, isLive: isLive)
         } else if let error = error {
             throw error
         }
@@ -29,6 +30,7 @@ final class NowPlayingParserDelegate: NSObject, XMLParserDelegate {
     func parserDidStartDocument(_ parser: XMLParser) {
         self.artist = nil
         self.song = nil
+        self.artwork = nil
         self.isLive = false
     }
 
@@ -55,6 +57,13 @@ final class NowPlayingParserDelegate: NSObject, XMLParserDelegate {
                 self.song = NSLocalizedString("live", comment: "Live Stream")
             }
 
+        case "artwork":
+            if attributeDict["title"] != "" {
+                self.artwork = attributeDict["title"]!.trimmingCharacters(in: .whitespacesAndNewlines)
+            } else {
+                self.artwork = ""
+            }
+
         default:
             break
         }
@@ -63,6 +72,7 @@ final class NowPlayingParserDelegate: NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
         artist = nil
         song = nil
+        artwork = nil
         isLive = false
     }
 }

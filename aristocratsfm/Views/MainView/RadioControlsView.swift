@@ -13,13 +13,13 @@ struct RadioControlsView: View {
     var body: some View {
         ZStack {
             HStack {
-                if case let .playing(track, _) = nowPlaying.playback {
+                if case let .playing(track) = nowPlaying.playback {
                     LikeButtonView(track: track)
                 }
 
                 Spacer()
 
-                if case let .playing(track, _) = nowPlaying.playback {
+                if case let .playing(track) = nowPlaying.playback {
                     if track.isLive {
                         DiscussButtonView()
                     } else {
