@@ -23,7 +23,8 @@ struct RadioControlsView: View {
                     if track.isLive {
                         DiscussButtonView()
                     } else {
-                        ShareButtonView(track: track)
+                        // Padding to set the same width as LikeButtonView
+                        ShareButtonView(track: track).padding(.horizontal, 3.9)
                     }
                 }
             }
