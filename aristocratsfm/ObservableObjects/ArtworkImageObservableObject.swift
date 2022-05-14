@@ -28,6 +28,11 @@ class ArtworkImageObservableObject: ObservableObject {
             receiveCompletion: {
                 _ in
             }) { value in
+                if UserDefaults.standard.bool(forKey: "ArtworkEnabled") == false {
+                    self.image = .loading(image: placeholderImage)
+                    return
+                }
+
                 if case let .playing(track) = value {
                 if let artworkImage = URL(string: track.artwork) {
                     self.image = .loading(image: placeholderImage)

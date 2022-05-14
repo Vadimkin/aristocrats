@@ -13,7 +13,14 @@ struct AristocratsTrack: Decodable, Equatable, Hashable {
     var song: String = " "
     var artwork: String = ""
 
-    var time: String? // Is empty when this track is for playlist, usually in format HH:MM
+    func isLive() -> Bool {
+        return self.artist == "Аристократи"
+    }
+}
 
-    var isLive: Bool = false // Live stream from studio
+struct AristocratsPlaylistTrack: Decodable, Equatable, Hashable {
+    var artist: String = "Аристократи"
+    var song: String = " "
+
+    var time: String
 }

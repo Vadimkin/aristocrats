@@ -57,7 +57,7 @@ struct LikeButtonView: View {
     }
 
     private func addToFavorites() {
-        if track.isLive {
+        if track.isLive() {
             UINotificationFeedbackGenerator().notificationOccurred(.error)
             return
         }

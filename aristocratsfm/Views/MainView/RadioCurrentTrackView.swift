@@ -31,10 +31,12 @@ struct RadioCurrentTrackView: View {
 
     var songText: some View {
         let playback = nowPlaying.playback
-        var song = NSLocalizedString("aristocrats", comment: "Aristocrats")
+        var song = NSLocalizedString("live", comment: "Live")
 
         if case let .playing(track) = playback {
-            song = track.song
+            if !track.isLive() {
+                song = track.song
+            }
         }
 
         return Text(song)

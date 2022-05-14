@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PlaylistTrackView: View {
-    let track: AristocratsTrack
+    let track: AristocratsPlaylistTrack
     let dataController = DataController.shared
 
     @Environment(\.colorScheme) var colorScheme
@@ -16,7 +16,7 @@ struct PlaylistTrackView: View {
 
     var favorite: Favorite? { favorites.first }
 
-    init(track: AristocratsTrack) {
+    init(track: AristocratsPlaylistTrack) {
         self.track = track
         self._favorites = FetchRequest(
             entity: Favorite.entity(),
@@ -56,12 +56,10 @@ struct PlaylistTrackView: View {
                         .padding(.top, 3)
                 }
                 Spacer()
-                if track.time != nil {
-                    Text(track.time!)
-                        .foregroundColor(Color.white)
-                        .font(.title2)
-                        .fontWeight(.light)
-                }
+                Text(track.time)
+                    .foregroundColor(Color.white)
+                    .font(.title2)
+                    .fontWeight(.light)
                 Button(action: {
                     if favorite != nil {
                         removeFromFavorite(self.favorite!)
@@ -87,7 +85,7 @@ struct PlaylistSingleTrack_Previews: PreviewProvider {
     static var previews: some View {
         let dataController = DataController.shared
 
-        PlaylistTrackView(track: AristocratsTrack(artist: "Hey", song: "Hop", time: "10:10"))
+        PlaylistTrackView(track: AristocratsPlaylistTrack(artist: "Hey", song: "Hop", time: "10:10"))
             .environment(\.managedObjectContext, dataController.container.viewContext)
             .background(Color(UIColor(named: "BaseColor")!))
     }

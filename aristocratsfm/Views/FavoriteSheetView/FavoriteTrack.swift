@@ -44,12 +44,11 @@ struct FavoriteTrack: View {
                 if favorite.createdAt != nil {
                     Text(formattedTime)
                         .onReceive(timer) { (_) in
-                            if (favorite.createdAt != nil) {
+                            if favorite.createdAt != nil {
                                 self.formattedTime = formatter.string(for: favorite.createdAt)!
                             }
                         }
                 }
-
             }
             .padding(.vertical, 10)
     }

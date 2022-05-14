@@ -20,7 +20,7 @@ struct RadioControlsView: View {
                 Spacer()
 
                 if case let .playing(track) = nowPlaying.playback {
-                    if track.isLive {
+                    if track.isLive() {
                         DiscussButtonView()
                     } else {
                         // Padding to set the same width as LikeButtonView

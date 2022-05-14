@@ -104,7 +104,7 @@ class PlayerObservableObject: NSObject, ObservableObject {
             let nowPlayingObservableObject = NowPlayingObservableObject.shared
 
             if case let .playing(track) = nowPlayingObservableObject.playback {
-                if !track.isLive {
+                if !track.isLive() {
                     let isSuccess = self.addToFavorites(track: track)
                     if isSuccess {
                         return .success
