@@ -5,9 +5,7 @@
 //  Created by Vadim Klimenko on 26.09.2020.
 //
 
-import Foundation
 import SwiftUI
-import Combine
 
 enum Contacts {
     static let Email = "me@vadimklimenko.com"
