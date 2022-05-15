@@ -24,39 +24,37 @@ class ArtworkImageObservableObject: ObservableObject {
     init() {
         let placeholderImage = UIImage(named: "AristocratsCat")!
 
-        let subscriber = Subscribers.Sink<Playback, Never>(receiveCompletion: { _ in })
-        { value in
-            if UserDefaults.standard.bool(forKey: "ArtworkEnabled") == false {
-                self.image = .loading(image: placeholderImage)
-                return
-            }
+        UserDefaults.standard
+            .publisher(for: \.isArtworkEnabled)
+            .combineLatest(nowPlayingObservableObject.$playback)
+            .flatMap { isArtworkEnabled, playback -> AnyPublisher<ArtworkImage, Never> in
+                let placeholder = ArtworkImage.loading(image: placeholderImage)
 
-            if case let .playing(track) = value {
-                if let artworkImage = URL(string: track.artwork) {
-                    self.image = .loading(image: placeholderImage)
-
-                    let task = URLSession.shared.dataTask(
-                        with: artworkImage,
-                        completionHandler: { (data, _, _) -> Void in
-                            guard let data = data else { return }
-                            DispatchQueue.main.async {
-                                self.image = .playing(image: UIImage(data: data)!)
-                            }
-                        }
-                    )
-
-                    task.resume()
-                } else {
-                    self.image = .nothing(image: placeholderImage)
+                guard
+                    isArtworkEnabled,
+                    case let .playing(track) = playback,
+                    let artworkImageURL = URL(string: track.artwork)
+                else {
+                    return Just(placeholder).eraseToAnyPublisher()
                 }
+
+                return URLSession.shared
+                    .dataTaskPublisher(for: artworkImageURL)
+                    .map(\.data)
+                    .map(UIImage.init(data:))
+                    .replaceError(with: .none)
+                    .map { image in
+                        image.map(ArtworkImage.playing(image:)) ?? placeholder
+                    }
+                    .eraseToAnyPublisher()
             }
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$image)
+    }
+}
 
-            if case .live = value {
-                self.image = .nothing(image: placeholderImage)
-            }
-        }
-
-        nowPlayingObservableObject.$playback.subscribe(subscriber)
-
+extension UserDefaults {
+    var isArtworkEnabled: Bool {
+        bool(forKey: "ArtworkEnabled")
     }
 }
