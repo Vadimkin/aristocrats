@@ -57,10 +57,6 @@ struct LikeButtonView: View {
     }
 
     private func addToFavorites() {
-        if track.isLive() {
-            UINotificationFeedbackGenerator().notificationOccurred(.error)
-            return
-        }
         self.animateLoading = true
 
         try? dataController.insertFavoriteTrack(track: track)

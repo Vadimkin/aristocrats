@@ -14,7 +14,7 @@ struct SettingsRadioStreamPickerView: View {
     var body: some View {
         Section(header: Text("Stream Quality")) {
             Picker("Stream", selection: $stream) {
-                ForEach(Streams.List, id:\.name) { stream in
+                ForEach(Streams.List, id: \.name) { stream in
                     Text(stream.name)
                 }
             }.onChange(of: stream) { _ in

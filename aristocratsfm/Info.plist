@@ -54,8 +54,8 @@
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>Dark-Icon-App</string>
-					<string>Dark-Icon-App@2x</string>
-					<string>Dark-Icon-App@3x</string>
+					<string>Dark-Icon-App@2x~ipad</string>
+					<string>Dark-Icon-App@3x~ipad</string>
 				</array>
 				<key>UIPrerenderedIcon</key>
 				<false/>
@@ -65,8 +65,8 @@
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>Purple-Icon-App</string>
-					<string>Purple-Icon-App@2x</string>
-					<string>Purple-Icon-App@3x</string>
+					<string>Purple-Icon-App@2x~ipad</string>
+					<string>Purple-Icon-App@3x~ipad</string>
 				</array>
 				<key>UIPrerenderedIcon</key>
 				<false/>

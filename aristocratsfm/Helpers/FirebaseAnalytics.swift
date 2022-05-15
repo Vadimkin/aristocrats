@@ -40,13 +40,13 @@ struct FirebaseAnalytics {
     static func logTrackShare(track: AristocratsTrack) {
         Analytics.logEvent(AnalyticsEvents.TrackShare, parameters: [
             "artist": track.artist as NSObject,
-            "song": track.song as NSObject,
+            "song": track.song as NSObject
         ])
     }
 
     static func logTelegramChatOpen() {
         Analytics.logEvent(AnalyticsEvents.TelegramChatOpen, parameters: [
-            "from": "main_screen" as NSObject,
+            "from": "main_screen" as NSObject
         ])
     }
 }

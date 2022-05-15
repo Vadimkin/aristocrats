@@ -13,30 +13,12 @@ struct RadioCurrentTrackView: View {
     @ObservedObject var nowPlaying: NowPlayingObservableObject = .shared
     @ObservedObject var imageLoader: ArtworkImageObservableObject = .shared
 
-    var artistText: some View {
-        let playback = nowPlaying.playback
-        var author = "…"
-
-        if case let .playing(track) = playback {
-            author = track.artist
-        }
-
-        return Text(author)
-            .font(Font.system(size: 17, weight: .light, design: .default))
-            .padding(.top, 11)
-            .padding(.horizontal)
-            .foregroundColor(colorScheme == .dark ? Color.white : Design.Primary.LightGray)
-            .multilineTextAlignment(.center)
-    }
-
     var songText: some View {
         let playback = nowPlaying.playback
-        var song = NSLocalizedString("live", comment: "Live")
+        var song = NSLocalizedString("aristocrats", comment: "Aristocrats")
 
         if case let .playing(track) = playback {
-            if !track.isLive() {
-                song = track.song
-            }
+            song = track.song
         }
 
         return Text(song)
@@ -45,7 +27,27 @@ struct RadioCurrentTrackView: View {
             .padding(.top, 20)
             .padding(.horizontal)
             .multilineTextAlignment(.center)
+    }
 
+    var artistText: some View {
+        let playback = nowPlaying.playback
+        var author = "…"
+
+        if case let .playing(track) = playback {
+            author = track.artist
+        }
+        if case .live = playback {
+            author = NSLocalizedString("live", comment: "Live")
+        }
+
+        return HStack {
+            Text(author)
+                .font(Font.system(size: 17, weight: .light, design: .default))
+                .padding(.top, 11)
+                .padding(.horizontal)
+                .foregroundColor(colorScheme == .dark ? Color.white : Design.Primary.LightGray)
+                .multilineTextAlignment(.center)
+        }
     }
 
     var body: some View {

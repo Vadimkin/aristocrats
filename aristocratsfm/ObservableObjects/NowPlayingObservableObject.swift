@@ -11,6 +11,7 @@ import Combine
 enum Playback: Equatable {
     case nothing
     case playing(_ playing: AristocratsTrack)
+    case live
 }
 
 class NowPlayingObservableObject: ObservableObject {
@@ -26,7 +27,6 @@ class NowPlayingObservableObject: ObservableObject {
         self.cancellable = Deferred { Just(Date()) }
             .append(timer.autoconnect())
             .flatMap { _ in Publishers.nowPlaying().replaceErrorWithNil(Error.self) }
-            .removeDuplicates()
             .flatMap { nowPlaying -> AnyPublisher<(AristocratsTrack)?, Error> in
                 if let nowPlaying = nowPlaying {
                     return Result.Publisher((nowPlaying))
@@ -37,8 +37,14 @@ class NowPlayingObservableObject: ObservableObject {
                         .eraseToAnyPublisher()
                 }
             }
+            .removeDuplicates()
             .map { nowPlaying in
                 nowPlaying.map {
+                    let isLive = ($0.artist == "" && $0.song == "")
+                    if isLive {
+                        return Playback.live
+                    }
+
                     return Playback.playing($0)
                 } ?? Playback.nothing
             }
@@ -51,6 +57,8 @@ class NowPlayingObservableObject: ObservableObject {
                     switch playback {
                     case .nothing:
                         print("Nothing is playing right now.")
+                    case .live:
+                        print("Live stream is playing right now")
                     case let .playing(playing):
                         print("Now playing: \(playing.artist) - \(playing.song) " +
                               "[\(playing.artwork)]")

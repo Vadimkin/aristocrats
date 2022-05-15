@@ -104,11 +104,9 @@ class PlayerObservableObject: NSObject, ObservableObject {
             let nowPlayingObservableObject = NowPlayingObservableObject.shared
 
             if case let .playing(track) = nowPlayingObservableObject.playback {
-                if !track.isLive() {
-                    let isSuccess = self.addToFavorites(track: track)
-                    if isSuccess {
-                        return .success
-                    }
+                let isSuccess = self.addToFavorites(track: track)
+                if isSuccess {
+                    return .success
                 }
             }
             return .commandFailed
@@ -133,18 +131,17 @@ class PlayerObservableObject: NSObject, ObservableObject {
         let imageLoaderObservableObject = ArtworkImageObservableObject.shared
 
         let subscriber = Subscribers.Sink<Playback, Never>(
-            receiveCompletion: {
-                _ in
-            }) { value in
+            receiveCompletion: { _ in }) { value in
             if case let .playing(track) = value {
                 self.setNowPlayingTrack(currentTrack: track)
+            }
+            if case .live = value {
+                self.setNowPlayingLiveStream()
             }
         }
 
         let imageSubscriber = Subscribers.Sink<ArtworkImage, Never>(
-            receiveCompletion: {
-                _ in
-            }) { value in
+            receiveCompletion: {_ in }) { value in
                 switch value {
                 case .nothing(image: let image):
                     self.setNowPlayingArtwork(uiImage: image)
@@ -168,6 +165,23 @@ class PlayerObservableObject: NSObject, ObservableObject {
 
         nowPlayingInfo[MPMediaItemPropertyTitle] = currentTrack.song
         nowPlayingInfo[MPMediaItemPropertyArtist] = currentTrack.artist
+        nowPlayingInfo[MPNowPlayingInfoPropertyIsLiveStream] = true
+
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+    }
+
+    func setNowPlayingLiveStream() {
+        var nowPlayingInfo = [String: Any]()
+
+        if let currentNowPlaying = MPNowPlayingInfoCenter.default().nowPlayingInfo {
+            nowPlayingInfo = currentNowPlaying
+        }
+
+        let song = NSLocalizedString("aristocrats", comment: "Aristocrats")
+        let aristocratsName = NSLocalizedString("live", comment: "Live")
+
+        nowPlayingInfo[MPMediaItemPropertyTitle] = song
+        nowPlayingInfo[MPMediaItemPropertyArtist] = aristocratsName
         nowPlayingInfo[MPNowPlayingInfoPropertyIsLiveStream] = true
 
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
@@ -231,6 +245,7 @@ class PlayerObservableObject: NSObject, ObservableObject {
         }
     }
 
+    // swiftlint:disable block_based_kvo
     override func observeValue(forKeyPath keyPath: String?,
                                of object: Any?,
                                change: [NSKeyValueChangeKey: Any]?,
@@ -277,4 +292,5 @@ class PlayerObservableObject: NSObject, ObservableObject {
             }
         }
     }
+    // swiftlint:enable block_based_kvo
 }

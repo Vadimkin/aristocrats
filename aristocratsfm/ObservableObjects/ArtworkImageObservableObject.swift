@@ -24,30 +24,35 @@ class ArtworkImageObservableObject: ObservableObject {
     init() {
         let placeholderImage = UIImage(named: "AristocratsCat")!
 
-        let subscriber = Subscribers.Sink<Playback, Never>(
-            receiveCompletion: {
-                _ in
-            }) { value in
-                if UserDefaults.standard.bool(forKey: "ArtworkEnabled") == false {
-                    self.image = .loading(image: placeholderImage)
-                    return
-                }
+        let subscriber = Subscribers.Sink<Playback, Never>(receiveCompletion: { _ in })
+        { value in
+            if UserDefaults.standard.bool(forKey: "ArtworkEnabled") == false {
+                self.image = .loading(image: placeholderImage)
+                return
+            }
 
-                if case let .playing(track) = value {
+            if case let .playing(track) = value {
                 if let artworkImage = URL(string: track.artwork) {
                     self.image = .loading(image: placeholderImage)
 
-                    let task = URLSession.shared.dataTask(with: artworkImage, completionHandler: { (data, _, _) -> Void in
-                        guard let data = data else { return }
-                        DispatchQueue.main.async {
-                            self.image = .playing(image: UIImage(data: data)!)
+                    let task = URLSession.shared.dataTask(
+                        with: artworkImage,
+                        completionHandler: { (data, _, _) -> Void in
+                            guard let data = data else { return }
+                            DispatchQueue.main.async {
+                                self.image = .playing(image: UIImage(data: data)!)
+                            }
                         }
-                    })
+                    )
 
                     task.resume()
                 } else {
                     self.image = .nothing(image: placeholderImage)
                 }
+            }
+
+            if case .live = value {
+                self.image = .nothing(image: placeholderImage)
             }
         }
 

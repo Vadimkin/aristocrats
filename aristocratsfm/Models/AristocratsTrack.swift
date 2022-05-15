@@ -12,10 +12,6 @@ struct AristocratsTrack: Decodable, Equatable, Hashable {
     var artist: String = "Аристократи"
     var song: String = " "
     var artwork: String = ""
-
-    func isLive() -> Bool {
-        return self.artist == "Аристократи"
-    }
 }
 
 struct AristocratsPlaylistTrack: Decodable, Equatable, Hashable {
