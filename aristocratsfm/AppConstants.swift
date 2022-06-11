@@ -5,9 +5,7 @@
 //  Created by Vadim Klimenko on 26.09.2020.
 //
 
-import Foundation
 import SwiftUI
-import Combine
 
 enum Contacts {
     static let Email = "me@vadimklimenko.com"
@@ -53,8 +51,8 @@ struct Streams {
         }
     }
 
-    static let NowPlayingTrackURL = URL(string: "https://vadimklimenko.com/arstcr/current_track.xml")!
-    static let PlaylistURL = URL(string: "https://vadimklimenko.com/arstcr/last10.xml")!
+    static let NowPlayingTrackURL = URL(string: "https://vadimklimenko.com/arstcr/current_track.json")!
+    static let PlaylistURL = URL(string: "https://vadimklimenko.com/arstcr/last10.json")!
 
     static let List = [Streams.Low, Streams.Normal, Streams.High]
 }

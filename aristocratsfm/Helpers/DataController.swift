@@ -68,6 +68,17 @@ struct DataController {
         try context.save()
     }
 
+    func insertFavoriteTrack(track: AristocratsPlaylistTrack) throws {
+        let newFavorite = Favorite(context: self.context)
+
+        newFavorite.uuid = UUID()
+        newFavorite.artist = track.artist
+        newFavorite.song = track.song
+        newFavorite.createdAt = Date()
+
+        try context.save()
+    }
+
     func delete(favorite: Favorite) throws {
         context.delete(favorite)
 

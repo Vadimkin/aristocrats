@@ -9,6 +9,11 @@ import SwiftUI
 
 struct AristocratsMainView: View {
     @Environment(\.colorScheme) var colorScheme
+    @ObservedObject var playlist: PlaylistObservableObject = .shared
+
+    init() {
+        UIScrollView.appearance().bounces = false
+    }
 
     var body: some View {
         GeometryReader { geometry in
@@ -33,6 +38,7 @@ struct AristocratsMainView: View {
                                          scrollView.scrollTo("Playlist", anchor: .top)
                                      }
                                  }
+                                 .opacity(playlist.playlist != nil ? 1 : 0)
                         })
                         .frame(
                             width: geometry.size.width,
@@ -41,9 +47,11 @@ struct AristocratsMainView: View {
                         )
                         // END First screen
 
-                        VStack(alignment: .leading) {
-                            PlaylistListView()
-                        }.id("Playlist")
+                        if playlist.playlist != nil {
+                            VStack(alignment: .leading) {
+                                PlaylistListView()
+                            }.id("Playlist")
+                        }
                     })
                 }
             }

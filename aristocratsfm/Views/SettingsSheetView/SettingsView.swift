@@ -10,6 +10,10 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage("ArtworkEnabled") private var isArtworkEnabled = true
 
+    init() {
+        UIScrollView.appearance().bounces = true
+    }
+
     @EnvironmentObject var iconSettings: IconNamesObservableObject
 
     // swiftlint:disable:next force_cast
@@ -46,8 +50,9 @@ struct SettingsView: View {
 
         if isActive {
             image = AnyView(
-                image.overlay(RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color(UIColor(named: "BaseColor")!), lineWidth: 2))
+                image
+                    .overlay(RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color(UIColor(named: "BaseColor")!), lineWidth: 2))
                     .shadow(radius: 2)
             )
         }
@@ -78,14 +83,15 @@ struct SettingsView: View {
                         Text(iconString)
                         Spacer()
 
-                        ForEach(0..<iconSettings.iconNames.count) {
-                            let isActiveIcon = iconSettings.currentIndex == $0
-                            if let iconName = self.iconSettings.iconNames[$0] {
+                        ForEach(iconSettings.iconNames, id: \.self) { iconName in
+                            if let iconName = iconName {
+                                let isActiveIcon = iconSettings.currentName == iconName
                                 self.getIconImage(uiImage: UIImage(named: iconName)!, isActive: isActiveIcon)
                                     .onTapGesture {
                                         setIcon(selectedIconName: iconName)
                                     }
                             } else {
+                                let isActiveIcon = iconSettings.currentName == "AppIcon"
                                 self.getIconImage(uiImage: UIImage.appIcon!, isActive: isActiveIcon)
                                     .onTapGesture {
                                         setIcon(selectedIconName: "AppIcon")

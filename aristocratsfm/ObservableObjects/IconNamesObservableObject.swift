@@ -9,13 +9,11 @@ import Foundation
 import UIKit
 
 class IconNamesObservableObject: ObservableObject {
-    var iconNames: [String?] = [nil] // nil is application default icon
+    let iconNames: [String?] = [nil, "Purple-Icon-App", "Dark-Icon-App"] // nil is application default icon
     @Published var currentIndex = 0
     @Published var currentName = "AppIcon"
 
     init() {
-        getAlternateIconNames()
-
         refreshCurrentIcon()
     }
 
@@ -26,22 +24,6 @@ class IconNamesObservableObject: ObservableObject {
         } else {
             self.currentIndex = 0
             self.currentName = "AppIcon"
-        }
-    }
-
-    func getAlternateIconNames() {
-        if let icons = Bundle.main.object(forInfoDictionaryKey: "CFBundleIcons") as? [String: Any],
-            let alternateIcons = icons["CFBundleAlternateIcons"] as? [String: Any] {
-
-             for (_, value) in alternateIcons {
-
-                 guard let iconList = value as? [String: Any] else {return}
-                 guard let iconFiles = iconList["CFBundleIconFiles"] as? [String]
-                     else {return}
-
-                 guard let icon = iconFiles.first else {return}
-                 iconNames.append(icon)
-             }
         }
     }
 }

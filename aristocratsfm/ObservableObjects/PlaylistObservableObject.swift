@@ -11,7 +11,7 @@ import Combine
 class PlaylistObservableObject: ObservableObject {
     static let shared = PlaylistObservableObject.init()
 
-    @Published var playlist: [AristocratsTrack]?
+    @Published var playlist: [AristocratsPlaylistTrack]?
     @Published var cancellable: Cancellable?
 
     init() {
@@ -31,7 +31,7 @@ class PlaylistObservableObject: ObservableObject {
                 do {
                     let playback = try result.get()
                     if playback != nil {
-                        self.playlist = playback as? [AristocratsTrack]
+                        self.playlist = playback
                     }
                 } catch {
                     debugPrint(error)

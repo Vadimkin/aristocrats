@@ -10,7 +10,8 @@ import Combine
 
 enum Playback: Equatable {
     case nothing
-    case playing(_ playing: AristocratsTrack, _ coverArt: CoverArt?)
+    case playing(_ playing: AristocratsTrack)
+    case live
 }
 
 class NowPlayingObservableObject: ObservableObject {
@@ -26,60 +27,25 @@ class NowPlayingObservableObject: ObservableObject {
         self.cancellable = Deferred { Just(Date()) }
             .append(timer.autoconnect())
             .flatMap { _ in Publishers.nowPlaying().replaceErrorWithNil(Error.self) }
-            .removeDuplicates()
-            .flatMap { nowPlaying -> AnyPublisher<(AristocratsTrack, MusicBrainz?)?, Error> in
-                guard let nowPlaying = nowPlaying else {
-                    return Just(nil)
-                        .setFailureType(to: Error.self)
-                        .eraseToAnyPublisher()
-                }
-
+            .flatMap { nowPlaying -> AnyPublisher<(AristocratsTrack)?, Error> in
                 if let nowPlaying = nowPlaying {
-                    if UserDefaults.standard.bool(forKey: "ArtworkEnabled") == false {
-                        // User refuses to load any Artworks
-                        return Result.Publisher((nowPlaying, nil))
-                            .eraseToAnyPublisher()
-                    }
-
-                    return Publishers.musicBrainzPublisher(
-                        artist: nowPlaying.artist,
-                        song: nowPlaying.song
-                    )
-                    .replaceErrorWithNil(Error.self)
-                    .map {
-                        (nowPlaying, $0)
-                    }
-                    .eraseToAnyPublisher()
-                }
-
-                return Just(nil)
-                    .setFailureType(to: Error.self)
-                    .eraseToAnyPublisher()
-            }
-            .flatMap { (nowPlayingMusicBrainz) -> AnyPublisher<(AristocratsTrack, CoverArt?)?, Error> in
-                guard let nowPlayingMusicBrainz = nowPlayingMusicBrainz else {
+                    return Result.Publisher((nowPlaying))
+                        .eraseToAnyPublisher()
+                } else {
                     return Just(nil)
                         .setFailureType(to: Error.self)
                         .eraseToAnyPublisher()
                 }
-
-                guard
-                    let musicBrainz = nowPlayingMusicBrainz.1,
-                    let releaseId = musicBrainz.recordings.first?.releases.first?.id
-                else {
-                    return Just((nowPlayingMusicBrainz.0, nil))
-                        .setFailureType(to: Error.self)
-                        .eraseToAnyPublisher()
-                }
-
-                return Publishers.coverArtArchivePublisher(id: releaseId)
-                    .replaceErrorWithNil(Error.self)
-                    .map { (nowPlayingMusicBrainz.0, $0) }
-                    .eraseToAnyPublisher()
             }
-            .map { nowPlayingCoverArt in
-                nowPlayingCoverArt.map {
-                    return Playback.playing($0.0, $0.1)
+            .removeDuplicates()
+            .map { nowPlaying in
+                nowPlaying.map {
+                    let isLive = ($0.artist == "" && $0.song == "")
+                    if isLive {
+                        return Playback.live
+                    }
+
+                    return Playback.playing($0)
                 } ?? Playback.nothing
             }
             .wrapInResult()
@@ -91,9 +57,11 @@ class NowPlayingObservableObject: ObservableObject {
                     switch playback {
                     case .nothing:
                         print("Nothing is playing right now.")
-                    case let .playing(playing, coverArt):
+                    case .live:
+                        print("Live stream is playing right now")
+                    case let .playing(playing):
                         print("Now playing: \(playing.artist) - \(playing.song) " +
-                              "[\(coverArt?.images.first?.thumbnails.large ?? "no cover")]")
+                              "[\(playing.artwork)]")
                     }
                 } catch {
                     debugPrint(error)

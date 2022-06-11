@@ -103,12 +103,10 @@ class PlayerObservableObject: NSObject, ObservableObject {
         commandCenter.bookmarkCommand.addTarget { [unowned self] _ in
             let nowPlayingObservableObject = NowPlayingObservableObject.shared
 
-            if case let .playing(track, _) = nowPlayingObservableObject.playback {
-                if !track.isLive {
-                    let isSuccess = self.addToFavorites(track: track)
-                    if isSuccess {
-                        return .success
-                    }
+            if case let .playing(track) = nowPlayingObservableObject.playback {
+                let isSuccess = self.addToFavorites(track: track)
+                if isSuccess {
+                    return .success
                 }
             }
             return .commandFailed
@@ -130,27 +128,78 @@ class PlayerObservableObject: NSObject, ObservableObject {
 
     func setupNowPlayingInfoCenter() {
         let nowPlayingObservableObject = NowPlayingObservableObject.shared
+        let imageLoaderObservableObject = ArtworkImageObservableObject.shared
 
         let subscriber = Subscribers.Sink<Playback, Never>(
-            receiveCompletion: {
-                _ in
-            }) { value in
-            if case let .playing(track, _) = value {
+            receiveCompletion: { _ in }) { value in
+            if case let .playing(track) = value {
                 self.setNowPlayingTrack(currentTrack: track)
+            }
+            if case .live = value {
+                self.setNowPlayingLiveStream()
             }
         }
 
+        let imageSubscriber = Subscribers.Sink<ArtworkImage, Never>(
+            receiveCompletion: {_ in }) { value in
+                switch value {
+                case .nothing(image: let image):
+                    self.setNowPlayingArtwork(uiImage: image)
+                case .loading(image: let image):
+                    self.setNowPlayingArtwork(uiImage: image)
+                case .playing(image: let uiImage):
+                    self.setNowPlayingArtwork(uiImage: uiImage)
+                }
+        }
+
+        imageLoaderObservableObject.$image.subscribe(imageSubscriber)
         nowPlayingObservableObject.$playback.subscribe(subscriber)
     }
 
     func setNowPlayingTrack(currentTrack: AristocratsTrack) {
         var nowPlayingInfo = [String: Any]()
+
+        if let currentNowPlaying = MPNowPlayingInfoCenter.default().nowPlayingInfo {
+            nowPlayingInfo = currentNowPlaying
+        }
+
         nowPlayingInfo[MPMediaItemPropertyTitle] = currentTrack.song
         nowPlayingInfo[MPMediaItemPropertyArtist] = currentTrack.artist
         nowPlayingInfo[MPNowPlayingInfoPropertyIsLiveStream] = true
 
-        let albumArtwork = getNowPlayingArtwork()
-        nowPlayingInfo[MPMediaItemPropertyArtwork] = albumArtwork
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+    }
+
+    func setNowPlayingLiveStream() {
+        var nowPlayingInfo = [String: Any]()
+
+        if let currentNowPlaying = MPNowPlayingInfoCenter.default().nowPlayingInfo {
+            nowPlayingInfo = currentNowPlaying
+        }
+
+        let song = NSLocalizedString("aristocrats", comment: "Aristocrats")
+        let aristocratsName = NSLocalizedString("live", comment: "Live")
+
+        nowPlayingInfo[MPMediaItemPropertyTitle] = song
+        nowPlayingInfo[MPMediaItemPropertyArtist] = aristocratsName
+        nowPlayingInfo[MPNowPlayingInfoPropertyIsLiveStream] = true
+
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+    }
+
+    func setNowPlayingArtwork(uiImage: UIImage) {
+        var nowPlayingInfo = [String: Any]()
+
+        if let currentNowPlaying = MPNowPlayingInfoCenter.default().nowPlayingInfo {
+            nowPlayingInfo = currentNowPlaying
+        }
+
+        let canvasSize = CGSize(width: 512, height: 512)
+        let artwork = MPMediaItemArtwork.init(boundsSize: canvasSize, requestHandler: { (_) -> UIImage in
+            return uiImage
+        })
+
+        nowPlayingInfo[MPMediaItemPropertyArtwork] = artwork
 
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
@@ -176,17 +225,6 @@ class PlayerObservableObject: NSObject, ObservableObject {
         return true
     }
 
-    func getNowPlayingArtwork() -> MPMediaItemArtwork {
-        // TODO Fetch real artwork?
-        let canvasSize = CGSize(width: 512, height: 512)
-
-        let albumArtwork = MPMediaItemArtwork.init(boundsSize: canvasSize, requestHandler: { (_) -> UIImage in
-            return UIImage(named: "AristocratsCat")!
-        })
-
-        return albumArtwork
-    }
-
     @objc func handleInterruption(_ notification: Notification) {
         guard let info = notification.userInfo,
               let typeValue = info[AVAudioSessionInterruptionTypeKey] as? UInt,
@@ -207,6 +245,7 @@ class PlayerObservableObject: NSObject, ObservableObject {
         }
     }
 
+    // swiftlint:disable block_based_kvo
     override func observeValue(forKeyPath keyPath: String?,
                                of object: Any?,
                                change: [NSKeyValueChangeKey: Any]?,
@@ -253,4 +292,5 @@ class PlayerObservableObject: NSObject, ObservableObject {
             }
         }
     }
+    // swiftlint:enable block_based_kvo
 }

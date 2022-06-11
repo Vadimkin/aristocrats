@@ -5,7 +5,6 @@
 //  Created by Vadim Klimenko on 15.11.2020.
 //
 
-import Foundation
 import SwiftUI
 
 enum TelegramType {

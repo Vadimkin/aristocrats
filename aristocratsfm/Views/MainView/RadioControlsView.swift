@@ -13,18 +13,18 @@ struct RadioControlsView: View {
     var body: some View {
         ZStack {
             HStack {
-                if case let .playing(track, _) = nowPlaying.playback {
+                if case let .playing(track) = nowPlaying.playback {
                     LikeButtonView(track: track)
                 }
 
                 Spacer()
 
-                if case let .playing(track, _) = nowPlaying.playback {
-                    if track.isLive {
-                        DiscussButtonView()
-                    } else {
-                        ShareButtonView(track: track)
-                    }
+                if case let .playing(track) = nowPlaying.playback {
+                    // Padding to set the same width as LikeButtonView
+                    ShareButtonView(track: track).padding(.horizontal, 3.9)
+                }
+                if case .live = nowPlaying.playback {
+                    DiscussButtonView()
                 }
             }
             RadioPlayButtonView()
