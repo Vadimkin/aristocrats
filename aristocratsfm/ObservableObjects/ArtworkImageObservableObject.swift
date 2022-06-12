@@ -24,11 +24,17 @@ class ArtworkImageObservableObject: ObservableObject {
     init() {
         let placeholderImage = UIImage(named: "AristocratsCat")!
 
+        // TODO Do not wait for publisher when isArtworkEnabled is disabled
+        //  or was just disabled.
         UserDefaults.standard
             .publisher(for: \.isArtworkEnabled)
             .combineLatest(nowPlayingObservableObject.$playback)
             .flatMap { isArtworkEnabled, playback -> AnyPublisher<ArtworkImage, Never> in
                 let placeholder = ArtworkImage.loading(image: placeholderImage)
+
+                if !isArtworkEnabled {
+                    return Just(ArtworkImage.nothing(image: placeholderImage)).eraseToAnyPublisher()
+                }
 
                 guard
                     isArtworkEnabled,
@@ -54,7 +60,7 @@ class ArtworkImageObservableObject: ObservableObject {
 }
 
 extension UserDefaults {
-    var isArtworkEnabled: Bool {
+    @objc dynamic var isArtworkEnabled: Bool {
         bool(forKey: "ArtworkEnabled")
     }
 }
