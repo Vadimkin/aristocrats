@@ -36,6 +36,14 @@ class ArtworkImageObservableObject: ObservableObject {
                     return Just(ArtworkImage.nothing(image: placeholderImage)).eraseToAnyPublisher()
                 }
 
+                if case let .playing(track) = playback {
+                    // Artwork can't be determined,
+                    // so render only placeholder picture
+                    if (track.artwork == "") {
+                        return Just(ArtworkImage.nothing(image: placeholderImage)).eraseToAnyPublisher()
+                    }
+                }
+
                 guard
                     isArtworkEnabled,
                     case let .playing(track) = playback,
