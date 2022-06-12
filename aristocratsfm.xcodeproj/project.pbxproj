@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		1613B0C1252A022C0068B045 /* PlaylistTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613B0C0252A022C0068B045 /* PlaylistTrackView.swift */; };
 		1613B0C5252A0F7E0068B045 /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613B0C4252A0F7E0068B045 /* RoundedCornerView.swift */; };
 		1615AEA1252910390026184B /* NowPlayingObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1615AEA0252910390026184B /* NowPlayingObservableObject.swift */; };
+		161E361428564F340022DCEA /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 161E361328564F340022DCEA /* FirebaseAnalytics */; };
+		161E361628564F340022DCEA /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 161E361528564F340022DCEA /* FirebaseCrashlytics */; };
 		163A081F25684BC9003EA4BB /* FirebaseAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163A081E25684BC9003EA4BB /* FirebaseAnalytics.swift */; };
 		1661F8C32555F189006C6630 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1661F8C22555F189006C6630 /* DataController.swift */; };
 		166200DD251F50470073EEE5 /* RadioControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166200DC251F50470073EEE5 /* RadioControlsView.swift */; };
@@ -22,6 +24,7 @@
 		166200E3251FAA410073EEE5 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166200E2251FAA410073EEE5 /* AppConstants.swift */; };
 		166200E6251FB4210073EEE5 /* AristocratsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166200E5251FB4210073EEE5 /* AristocratsMainView.swift */; };
 		16659F16254EF06F005F7D2C /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16659F15254EF06F005F7D2C /* UIImage.swift */; };
+		166CE31E28564C46008D0471 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 166CE31D28564C46008D0471 /* Lottie */; };
 		16700F172554806E003A2F23 /* LikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16700F162554806E003A2F23 /* LikeButtonView.swift */; };
 		167711892524FDD30011D6A6 /* PlayerObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167711882524FDD30011D6A6 /* PlayerObservableObject.swift */; };
 		167BE13125603E6900E81F4C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 167BE13325603E6900E81F4C /* Localizable.strings */; };
@@ -61,7 +64,6 @@
 		16E4AD1025603906002FDC70 /* LatestTracksHeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E4AD0F25603906002FDC70 /* LatestTracksHeadlineView.swift */; };
 		16EDE056255B29F700A3FBAD /* ArtworkImageObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EDE055255B29F700A3FBAD /* ArtworkImageObservableObject.swift */; };
 		16EDE05D255B2AC400A3FBAD /* TopNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EDE05C255B2AC400A3FBAD /* TopNavigationView.swift */; };
-		66FCEF8AE8C5E7ADE782C965 /* Pods_aristocratsfm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0A38687F9B48F3310C1AD8 /* Pods_aristocratsfm.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -127,9 +129,6 @@
 		16E4AD0F25603906002FDC70 /* LatestTracksHeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestTracksHeadlineView.swift; sourceTree = "<group>"; };
 		16EDE055255B29F700A3FBAD /* ArtworkImageObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkImageObservableObject.swift; sourceTree = "<group>"; };
 		16EDE05C255B2AC400A3FBAD /* TopNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationView.swift; sourceTree = "<group>"; };
-		4C88BD31FCC6DF9D5D7A7346 /* Pods-aristocratsfm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aristocratsfm.release.xcconfig"; path = "Target Support Files/Pods-aristocratsfm/Pods-aristocratsfm.release.xcconfig"; sourceTree = "<group>"; };
-		52FA9DA3C0E8544254434888 /* Pods-aristocratsfm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aristocratsfm.debug.xcconfig"; path = "Target Support Files/Pods-aristocratsfm/Pods-aristocratsfm.debug.xcconfig"; sourceTree = "<group>"; };
-		8B0A38687F9B48F3310C1AD8 /* Pods_aristocratsfm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aristocratsfm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +136,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66FCEF8AE8C5E7ADE782C965 /* Pods_aristocratsfm.framework in Frameworks */,
+				161E361628564F340022DCEA /* FirebaseCrashlytics in Frameworks */,
+				161E361428564F340022DCEA /* FirebaseAnalytics in Frameworks */,
+				166CE31E28564C46008D0471 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +150,6 @@
 			children = (
 				16020DDF251E6D4700D8B062 /* aristocratsfm */,
 				16020DDE251E6D4700D8B062 /* Products */,
-				AD83E4CA77C234AD29FD2DCF /* Pods */,
 				98D3BA43ACA3CA0402EAF409 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -317,18 +317,8 @@
 			isa = PBXGroup;
 			children = (
 				1677119A2525082F0011D6A6 /* Lottie.framework */,
-				8B0A38687F9B48F3310C1AD8 /* Pods_aristocratsfm.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		AD83E4CA77C234AD29FD2DCF /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				52FA9DA3C0E8544254434888 /* Pods-aristocratsfm.debug.xcconfig */,
-				4C88BD31FCC6DF9D5D7A7346 /* Pods-aristocratsfm.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,12 +328,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 16020DEC251E6D4700D8B062 /* Build configuration list for PBXNativeTarget "aristocratsfm" */;
 			buildPhases = (
-				4272A7729F62EFB0B3B47918 /* [CP] Check Pods Manifest.lock */,
 				16020DD9251E6D4700D8B062 /* Sources */,
 				16020DDA251E6D4700D8B062 /* Frameworks */,
 				16020DDB251E6D4700D8B062 /* Resources */,
-				32DF65010FC40A9C0B011E9A /* [CP] Embed Pods Frameworks */,
-				167BE13B256046F300E81F4C /* SwiftLint */,
 				16BDDA662568455700C39323 /* Crashlytics */,
 			);
 			buildRules = (
@@ -351,6 +338,11 @@
 			dependencies = (
 			);
 			name = aristocratsfm;
+			packageProductDependencies = (
+				166CE31D28564C46008D0471 /* Lottie */,
+				161E361328564F340022DCEA /* FirebaseAnalytics */,
+				161E361528564F340022DCEA /* FirebaseCrashlytics */,
+			);
 			productName = aristocratsfm;
 			productReference = 16020DDD251E6D4700D8B062 /* aristocratsfm.app */;
 			productType = "com.apple.product-type.application";
@@ -379,6 +371,10 @@
 				"en-GB",
 			);
 			mainGroup = 16020DD4251E6D4700D8B062;
+			packageReferences = (
+				166CE31C28564C46008D0471 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				161E361228564F340022DCEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 16020DDE251E6D4700D8B062 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -413,24 +409,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		167BE13B256046F300E81F4C /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n  \"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
 		16BDDA662568455700C39323 /* Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -449,46 +427,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
-		};
-		32DF65010FC40A9C0B011E9A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-aristocratsfm/Pods-aristocratsfm-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-aristocratsfm/Pods-aristocratsfm-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-aristocratsfm/Pods-aristocratsfm-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4272A7729F62EFB0B3B47918 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-aristocratsfm-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -686,7 +625,6 @@
 		};
 		16020DED251E6D4700D8B062 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52FA9DA3C0E8544254434888 /* Pods-aristocratsfm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -714,7 +652,6 @@
 		};
 		16020DEE251E6D4700D8B062 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C88BD31FCC6DF9D5D7A7346 /* Pods-aristocratsfm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -761,6 +698,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		161E361228564F340022DCEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		166CE31C28564C46008D0471 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		161E361328564F340022DCEA /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 161E361228564F340022DCEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		161E361528564F340022DCEA /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 161E361228564F340022DCEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		166CE31D28564C46008D0471 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 166CE31C28564C46008D0471 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		16AA1CE72555D9C100839F30 /* Aristocrats.xcdatamodeld */ = {
