@@ -42,6 +42,10 @@
 		169E9E052559C19B005F2BB4 /* CircleLoader.json in Resources */ = {isa = PBXBuildFile; fileRef = 169E9E042559C19B005F2BB4 /* CircleLoader.json */; };
 		169E9E092559C76C005F2BB4 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169E9E082559C76C005F2BB4 /* LottieView.swift */; };
 		16AA1CE92555D9C100839F30 /* Aristocrats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 16AA1CE72555D9C100839F30 /* Aristocrats.xcdatamodeld */; };
+		16ABBB622859083A00E8B6D1 /* Dark-Icon-App@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 16ABBB602859083A00E8B6D1 /* Dark-Icon-App@2x~ipad.png */; };
+		16ABBB632859083A00E8B6D1 /* Dark-Icon-App@3x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 16ABBB612859083A00E8B6D1 /* Dark-Icon-App@3x~ipad.png */; };
+		16ABBB662859084A00E8B6D1 /* Purple-Icon-App@3x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 16ABBB642859084A00E8B6D1 /* Purple-Icon-App@3x~ipad.png */; };
+		16ABBB672859084A00E8B6D1 /* Purple-Icon-App@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 16ABBB652859084A00E8B6D1 /* Purple-Icon-App@2x~ipad.png */; };
 		16BDDA642568441900C39323 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16BDDA632568441900C39323 /* GoogleService-Info.plist */; };
 		16BE322525573C95002403F2 /* FavoriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE322425573C95002403F2 /* FavoriteListView.swift */; };
 		16BE322825574078002403F2 /* FavoriteTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE322725574078002403F2 /* FavoriteTrack.swift */; };
@@ -106,6 +110,10 @@
 		169E9E042559C19B005F2BB4 /* CircleLoader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CircleLoader.json; sourceTree = "<group>"; };
 		169E9E082559C76C005F2BB4 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		16AA1CE82555D9C100839F30 /* Aristocrats.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Aristocrats.xcdatamodel; sourceTree = "<group>"; };
+		16ABBB602859083A00E8B6D1 /* Dark-Icon-App@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dark-Icon-App@2x~ipad.png"; sourceTree = "<group>"; };
+		16ABBB612859083A00E8B6D1 /* Dark-Icon-App@3x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dark-Icon-App@3x~ipad.png"; sourceTree = "<group>"; };
+		16ABBB642859084A00E8B6D1 /* Purple-Icon-App@3x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple-Icon-App@3x~ipad.png"; sourceTree = "<group>"; };
+		16ABBB652859084A00E8B6D1 /* Purple-Icon-App@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purple-Icon-App@2x~ipad.png"; sourceTree = "<group>"; };
 		16BDDA632568441900C39323 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		16BE322425573C95002403F2 /* FavoriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListView.swift; sourceTree = "<group>"; };
 		16BE322725574078002403F2 /* FavoriteTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTrack.swift; sourceTree = "<group>"; };
@@ -293,6 +301,10 @@
 		16C7384F255C869A0099BAB1 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				16ABBB602859083A00E8B6D1 /* Dark-Icon-App@2x~ipad.png */,
+				16ABBB652859084A00E8B6D1 /* Purple-Icon-App@2x~ipad.png */,
+				16ABBB642859084A00E8B6D1 /* Purple-Icon-App@3x~ipad.png */,
+				16ABBB612859083A00E8B6D1 /* Dark-Icon-App@3x~ipad.png */,
 				16C73868255C88FD0099BAB1 /* Dark-Icon-App.png */,
 				16C7386B255C88FD0099BAB1 /* Dark-Icon-App@2x.png */,
 				16C73869255C88FD0099BAB1 /* Dark-Icon-App@3x.png */,
@@ -395,13 +407,17 @@
 				16E32C912561707400A5AADC /* InfoPlist.strings in Resources */,
 				16C7386F255C88FD0099BAB1 /* Dark-Icon-App@3x.png in Resources */,
 				1693A5B42556FB4D00AAA2A4 /* LikeAnimatedButton.json in Resources */,
+				16ABBB672859084A00E8B6D1 /* Purple-Icon-App@2x~ipad.png in Resources */,
 				168B789D253774920078D0A5 /* LoadingDots.json in Resources */,
 				16C73834255C6F240099BAB1 /* TeaCup.json in Resources */,
 				169E9E052559C19B005F2BB4 /* CircleLoader.json in Resources */,
+				16ABBB632859083A00E8B6D1 /* Dark-Icon-App@3x~ipad.png in Resources */,
 				16C73873255C88FD0099BAB1 /* Purple-Icon-App@3x.png in Resources */,
 				16C7386E255C88FD0099BAB1 /* Dark-Icon-App.png in Resources */,
 				16020DE5251E6D4700D8B062 /* Assets.xcassets in Resources */,
 				16C73872255C88FD0099BAB1 /* Purple-Icon-App@2x.png in Resources */,
+				16ABBB622859083A00E8B6D1 /* Dark-Icon-App@2x~ipad.png in Resources */,
+				16ABBB662859084A00E8B6D1 /* Purple-Icon-App@3x~ipad.png in Resources */,
 				16BDDA642568441900C39323 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -630,7 +646,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = aristocratsfm/aristocratsfm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = R5F5GL339W;
@@ -641,7 +657,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vadimkin.aristocrats;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -657,7 +673,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = aristocratsfm/aristocratsfm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = R5F5GL339W;
 				ENABLE_PREVIEWS = YES;
@@ -667,7 +683,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vadimkin.aristocrats;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;

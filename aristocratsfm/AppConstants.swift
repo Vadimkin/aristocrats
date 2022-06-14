@@ -9,7 +9,6 @@ import SwiftUI
 
 enum Contacts {
     static let Email = "me@vadimklimenko.com"
-    static let Telegram = "klimenko"
 
     static let TelegramPublicID = "radioaristocrats"
     static let TelegramChatID = "GC0sFhJGZwiUFR9yMvDWwA"

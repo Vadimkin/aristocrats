@@ -64,7 +64,6 @@ struct SettingsView: View {
         let noFavoritesString = NSLocalizedString("artworks", comment: "Artworks")
         let iconString = NSLocalizedString("icon", comment: "Icon")
         let ideasString = NSLocalizedString("ideasProposals", comment: "For ideas and proposals")
-        let telegramString = NSLocalizedString("telegram", comment: "Telegram")
         let versionString = NSLocalizedString("version", comment: "Version")
         let settingsString = NSLocalizedString("settings", comment: "Settings")
 
@@ -134,16 +133,6 @@ struct SettingsView: View {
                         if let url = URL(string: "mailto:\(Contacts.Email)") {
                             UIApplication.shared.open(url)
                         }
-                    }
-                    HStack {
-                        Text(telegramString)
-                        Spacer()
-                        Text("@\(Contacts.Telegram)").foregroundColor(.gray)
-                        Image(systemName: "chevron.right").font(.body)
-                    }
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        TelegramURI(type: .person, id: Contacts.Telegram).open()
                     }
                 }
 
